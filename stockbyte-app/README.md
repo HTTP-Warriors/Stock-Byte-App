@@ -1,5 +1,17 @@
 # README
 
+## Setup
+- $ bundle install
+- $ rails db:create
+- $ rails db:migrate
+- $ rails webpacker:install
+- $ rails webpacker:install:react
+- $ rails generate react:install
+- $ yarn install
+- $ npm install bootswatch
+- $ yarn install --check-files
+- $ rails s
+
 ## Set Up Devise
 - $ rails new stockbyte_app -d postgresql -T
 - $ cd apartment_app
