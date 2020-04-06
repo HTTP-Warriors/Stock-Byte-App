@@ -1,5 +1,11 @@
 # README
 
+## Upgrade Ruby
+- $ \curl -sSL https://get.rvm.io | bash -s stable
+- $ rvm install 2.7.0
+- $ rvm --default use 2.7.0
+- $ ruby -v
+
 ## Setup
 - $ bundle install
 - $ rails db:create
