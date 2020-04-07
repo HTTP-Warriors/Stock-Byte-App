@@ -8,16 +8,21 @@
 test = User.first
 test.portfolios.create name: "default"
 test_portfolio = test.portfolios.first
-stock =
+stock1 =
   {
   symbol: "AAPL",
   }
 
-test_portfolio.stocks.create stock
+stock2 =
+    {
+    symbol: "AMZN",
+    }
+test_portfolio.stocks.create stock1
+test_portfolio.stocks.create stock2
 
-test_stock = test_portfolio.stocks.first
+test_stock1 = test_portfolio.stocks.first
 
-trades = [
+trades1 = [
   {
     action:1,
     price:250,
@@ -30,6 +35,25 @@ trades = [
   }
 ]
 
-trades.each do |attributes|
-  test_stock.trades.create attributes
+trades1.each do |attributes|
+  test_stock1.trades.create attributes
+end
+
+test_stock2 = test_portfolio.stocks.second
+
+trades2 = [
+  {
+    action:1,
+    price:340,
+    quantity:90,
+  },
+  {
+    action:1,
+    price:380,
+    quantity:35
+  }
+]
+
+trades2.each do |attributes|
+  test_stock2.trades.create attributes
 end

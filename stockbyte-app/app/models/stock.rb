@@ -3,21 +3,28 @@ class Stock < ApplicationRecord
     has_many :trades
 
     def total_quantity
-        Trade.all.sum(:quantity)
+        @sum = 0
+        trades.each do |trade|
+          @sum += trade.quantity
+        end
+        @sum
     end
-
     def value
         @sum = 0
         trades.each do |trade|
             @sum += trade.cost
         end
-        @sum
+        @sum.round(2)
+    end
+    def average_price
+        (value / total_quantity).round(2)
+    end
+    def as_json(options = {})
+      super options.merge(methods: [:total_quantity, :value, :average_price])
     end
 
-    def average_price
-        value / total_quantity
-    end
-    
+
     validates :symbol, presence: true
-    
+    validates :symbol, uniqueness: true
+
 end
