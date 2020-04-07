@@ -1,6 +1,6 @@
 class Trade < ApplicationRecord
     belongs_to :stock
-    def sale
+    def cost
         action * quantity * price
     end
 end

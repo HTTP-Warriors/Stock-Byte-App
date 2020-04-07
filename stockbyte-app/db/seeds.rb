@@ -6,13 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 test = User.first
-test.portfolios.create name: "default", total_worth:nil, total_cost:nil
+test.portfolios.create name: "default"
 test_portfolio = test.portfolios.first
 stock =
   {
   symbol: "AAPL",
-  total_quantity: nil,
-  average_price: nil
   }
 
 test_portfolio.stocks.create stock
