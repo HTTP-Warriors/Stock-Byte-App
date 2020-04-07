@@ -17,4 +17,7 @@ class Stock < ApplicationRecord
     def average_price
         value / total_quantity
     end
+    
+    validates :symbol, presence: true
+    
 end

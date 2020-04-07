@@ -1,6 +1,7 @@
 class Portfolio < ApplicationRecord
     belongs_to :user
     has_many :stocks
+    
     def total_cost
       @sum=0
       stocks.each do |stock|
@@ -8,4 +9,7 @@ class Portfolio < ApplicationRecord
       end
       @sum
     end
+    
+    validates :name, presence: true
+    
 end
