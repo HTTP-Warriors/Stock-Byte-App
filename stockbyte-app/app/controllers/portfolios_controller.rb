@@ -1,7 +1,8 @@
 class PortfoliosController < ApplicationController
     def index
       @user = current_user
-      render json: @user
+      @portfolio = @user.portfolios.all
+      render json: @portfolio
     end
 
     def create

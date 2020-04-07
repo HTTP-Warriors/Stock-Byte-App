@@ -9,6 +9,9 @@ class Portfolio < ApplicationRecord
       end
       @sum
     end
+    def as_json(options = {})
+      super options.merge(methods: [:total_cost])
+    end
 
     validates :name, presence: true
     validates :name, uniqueness: true
