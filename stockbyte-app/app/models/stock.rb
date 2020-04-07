@@ -17,8 +17,13 @@ class Stock < ApplicationRecord
         @sum.round(2)
     end
     def average_price
-        (value / total_quantity).round(2)
+        if total_quantity == 0
+            return 0
+        else
+            (value / total_quantity).round(2)
+        end
     end
+    
     def as_json(options = {})
       super options.merge(methods: [:total_quantity, :value, :average_price])
     end

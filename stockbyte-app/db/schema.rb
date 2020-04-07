@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_07_174453) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "symbol"
+    t.integer "total_quantity"
     t.integer "portfolio_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
