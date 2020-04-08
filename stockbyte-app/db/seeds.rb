@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 test = User.first
 test.portfolios.create name: "default"
 test_portfolio = test.portfolios.first
@@ -57,3 +58,4 @@ trades2 = [
 trades2.each do |attributes|
   test_stock2.trades.create attributes
 end
+
