@@ -27,4 +27,20 @@ class StocksController < ApplicationController
     render json: @stock
   end
   
+  def create
+    #Assigns user if there is no current user
+    if current_user
+      @portfolio = current_user.portfolios.find_by(name: params[:portfolio])
+    else
+      @user = User.first
+      @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+    end
+    
+    @stock = @portfolio.stocks.create(stock_params)
+    render json: @stock
+  end
+  
+  def stock_params
+    params.require(:stock).permit(:symbol)
+  end
 end

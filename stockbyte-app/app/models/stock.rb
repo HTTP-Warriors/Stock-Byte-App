@@ -23,7 +23,6 @@ class Stock < ApplicationRecord
             (value / total_quantity).round(2)
         end
     end
-    
     def as_json(options = {})
       super options.merge(methods: [:total_quantity, :value, :average_price])
     end
