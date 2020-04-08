@@ -1,6 +1,6 @@
 class TradesController < ApplicationController
     # use http://localhost:3000/trades?portfolio=${portfolio name}&stock=${stock symbol}
-    # e.g: http://localhost:3000/trades?portfolio=default&stock=AAPL
+    # GET http://localhost:3000/trades?portfolio=default&stock=AAPL
     def index
         #Assigns Users if there is no current user
         if current_user
@@ -15,7 +15,7 @@ class TradesController < ApplicationController
         render json: @trades
 
     end
-
+    # POST http://localhost:3000/trades?portfolio=default&stock=AAPL, trade_params
     def create
         #Assigns user if there is no current user
         if current_user

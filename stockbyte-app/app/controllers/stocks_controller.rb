@@ -26,7 +26,7 @@ class StocksController < ApplicationController
     render json: @stock
   end
 
-  # POST http://localhost:3000/stocks?portfolio=default
+  # POST http://localhost:3000/stocks?portfolio=default, stock_params
   def create
     #Assigns user if there is no current user
     if current_user

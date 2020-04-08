@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  # GET http://localhost:3000/portfolios
     def index
       if current_user
         @portfolio = current_user.portfolios.all
@@ -8,7 +9,7 @@ class PortfoliosController < ApplicationController
       end
       render json: @portfolio
     end
-
+  # POST http://localhost:3000/portfolios, portfolio_params
     def create
       if current_user
         @portfolio = current_user.portfolios.create(portfolio_params)
