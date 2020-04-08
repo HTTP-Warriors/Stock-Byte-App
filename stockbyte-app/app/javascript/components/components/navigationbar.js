@@ -17,26 +17,21 @@ class NavBar extends React.Component {
 
 <React.Fragment>
 
-        
-        
-        
-        
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+    <a class="nav-link" data-toggle="tab" href="/">Overview</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#Profile">Overview</a>
+    <a class="nav-link" data-toggle="tab" href="/portfolio">Portfolio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="#">Portfolio</a>
+    <a class="nav-link" data-toggle="tab" href="/stock">Stock</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#Profile">Account</a>
   </li>
 
-
-
-  
-        
-  <li class="nav-item dropdown">
+  {/* <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="#">Action</a>
@@ -45,16 +40,15 @@ class NavBar extends React.Component {
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#">Separated link</a>
     </div>
-  </li>
-   {logged_in &&
-    <li class="nav-item">
+  </li> */}
+    {logged_in &&
+      <li class="nav-item">
     <a class href={sign_out_route}>Sign Out</a>
   </li>}
-   {!logged_in &&
+    {!logged_in &&
       <li class="nav-item">
     <a class href={sign_in_route}>Sign In</a>
   </li>}
-  
   
 </ul>
 

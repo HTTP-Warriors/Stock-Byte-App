@@ -1,12 +1,13 @@
 import React from "react"
 
 class Stock extends React.Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             
-        }
+    render () {
+        return (
+            <React.Fragment>
+                <h2>Stock Placeholder</h2>
+            </React.Fragment>
+        );
     }
-    
 }
+
+export default Stock
