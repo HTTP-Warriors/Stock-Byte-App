@@ -6,6 +6,13 @@
 - $ rvm --default use 2.7.0
 - $ ruby -v
 
+## Setup database
+- $ rails db:drop
+- $ rails db:create
+- $ rails db:migrate
+- sign up a test user
+- $ rails db:seed
+
 ## Setup
 - $ bundle install
 - $ rails db:create
