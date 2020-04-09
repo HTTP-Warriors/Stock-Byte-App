@@ -70,30 +70,39 @@ class Portfolio extends React.Component {
     return (
         <React.Fragment>
             { this.state.hasPortfolio &&
-              <button onClick={() => this.createPortfolio()}>
-               Create Portfolio 
-               </button>}
-            <h3>Portfolio List</h3>
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Symbol</th>
-                  <th scope="col">Average Price</th>
-                  <th scope="col">Quantity</th>
-                </tr>
-              </thead>
-              <tbody>
-              { this.state.stockList.map((stock, index) => {
-                return(
-                  <tr class="table-active" key={ index }>
-                    <th scope="row">{ stock.symbol }</th>
-                    <td>{ stock.average_price }</td>
-                    <td>{ stock.total_quantity }</td>
-                  </tr>)}
-                )
-              }
-              </tbody>
-            </table>
+              <div>
+                <p>Do you want to create a portfolio?</p>
+                <button onClick={() => this.createPortfolio()}>
+                  Create Portfolio
+                </button>
+              </div>}
+            { !this.state.hasPortfolio &&
+              <div>
+                <h3>Portfolio List</h3>
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Symbol</th>
+                      <th scope="col">Average Price</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Cost</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  { this.state.stockList.map((stock, index) => {
+                    return(
+                      <tr class="table-active" key={ index }>
+                        <th scope="row"><a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a></th>
+                        <td>{ stock.average_price }</td>
+                        <td>{ stock.total_quantity }</td>
+                        <td>{ stock.value } </td>
+                      </tr>)}
+                    )
+                  }
+                  </tbody>
+                </table>
+              </div>
+          }
         </React.Fragment>
         );
     }
