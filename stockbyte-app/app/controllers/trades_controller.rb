@@ -1,5 +1,4 @@
 class TradesController < ApplicationController
-    # use http://localhost:3000/trades?portfolio=${portfolio name}&stock=${stock symbol}
     # GET http://localhost:3000/trades?portfolio=default&stock=AAPL
     def index
         #Assigns Users if there is no current user
