@@ -76,6 +76,7 @@ class Portfolio extends React.Component {
                   Create Portfolio
                 </button>
               </div>}
+              { this.state.success && <Redirect to="./overview"/>}
             { !this.state.hasPortfolio &&
               <div>
                 <h3>Portfolio List</h3>
