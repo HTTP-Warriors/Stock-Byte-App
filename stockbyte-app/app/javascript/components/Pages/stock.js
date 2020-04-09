@@ -31,7 +31,7 @@ class Stock extends React.Component {
    })
   }
   getStockInfo = () => {
-    fetch(`http://localhost:3000/stocks?portfolio=default`)
+    fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -50,7 +50,7 @@ class Stock extends React.Component {
       }
     })
     if(id > 0){
-      fetch(`http://localhost:3000/stocks/${id}?portfolio=default`)
+      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks/${id}?portfolio=default`)
      .then((response)=>{
        if(response.status === 200){
          return(response.json())
