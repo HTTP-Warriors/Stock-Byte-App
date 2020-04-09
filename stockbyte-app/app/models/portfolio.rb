@@ -14,6 +14,5 @@ class Portfolio < ApplicationRecord
     end
 
     validates :name, presence: true
-    validates :name, uniqueness: true
-
+    validates_uniqueness_of :name, scope: :user_id
 end
