@@ -7,7 +7,10 @@ class Portfolio extends React.Component {
         this.state={
             hasPortfolio: false,
             success: false,
-            stockList:[]
+            stockList:[],
+            form: {
+                symbol: ""
+            }
         }
         this.getPortfolio()
         this.getStockList()
@@ -17,7 +20,7 @@ class Portfolio extends React.Component {
         this.getStockList()
     }
     getPortfolio = () => {
-        fetch(`http://localhost:3000/portfolios`)
+        fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`)
         .then((response) => {
             if(response.status === 200){
                 return(response.json())
@@ -34,7 +37,7 @@ class Portfolio extends React.Component {
     }
 
     createPortfolio = () => {
-        return fetch(`http://localhost:3000/portfolios`, {
+        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`, {
             body: JSON.stringify({'name': 'default'}),
 
             headers: {
@@ -53,7 +56,7 @@ class Portfolio extends React.Component {
     }
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
-      fetch(`http://localhost:3000/stocks?portfolio=default`)
+      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
         .then((response)=>{
           if(response.status === 200){
             return(response.json())
@@ -63,10 +66,34 @@ class Portfolio extends React.Component {
           this.setState({stockList:result})
         })
       }
-
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.createStock(this.state.form)
+        console.log(this.state.form.symbol)
+    }
+    
+    handleChange = (event) => {
+        let { form } = this.state
+        form[event.target.name] = event.target.value
+        this.setState({ form: form})
+        console.log(this.state.form.symbol)
+    }
+    createStock = (form) => {
+        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`, {
+            body: JSON.stringify(form),
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST"
+        })
+        .then((response) => {
+            if(response.ok){
+                return this.getStockList()
+            }
+        })
+    }
+    
     render () {
-
-
     return (
         <React.Fragment>
             { this.state.hasPortfolio &&
@@ -79,6 +106,11 @@ class Portfolio extends React.Component {
               { this.state.success && <Redirect to="./overview"/>}
             { !this.state.hasPortfolio &&
               <div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Default input</label>
+                    <input onChange={ this.handleChange } type="text" class="form-control" name="symbol"/>
+                    <button type="submit" onClick= { this.handleSubmit }>Submit</button>
+                </div>
                 <h3>Portfolio List</h3>
                 <table class="table table-hover">
                   <thead>
