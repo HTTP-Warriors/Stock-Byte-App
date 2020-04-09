@@ -1,19 +1,23 @@
 import React from "react"
+import { Redirect } from "react-router-dom"
 
 class Portfolio extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            createPortfolio: false,
-            
+            hasPortfolio: false,
+            success: false,
+            stockList:[]
         }
         this.getPortfolio()
+        this.getStockList()
     }
     componentDidMount(){
         this.getPortfolio()
+        this.getStockList()
     }
     getPortfolio = () => {
-        fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`)
+        fetch(`http://localhost:3000/portfolios`)
         .then((response) => {
             if(response.status === 200){
                 return(response.json())
@@ -23,15 +27,16 @@ class Portfolio extends React.Component {
     .then((result) => {
         if(result.length === 0){
             this.setState({
-                createPortfolio: true
+                hasPortfolio: true
             })
         }
     })
     }
+
     createPortfolio = () => {
-        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`, {
+        return fetch(`http://localhost:3000/portfolios`, {
             body: JSON.stringify({'name': 'default'}),
-            
+
             headers: {
                 "Content-Type": "application/json"
             },
@@ -39,16 +44,56 @@ class Portfolio extends React.Component {
         })
         .then((response) => {
             if(response.ok){
-                return this.getPortfolio()
+              this.setState({
+                success: true
+              })
+              return this.getPortfolio()
             }
         })
     }
+    // this method retrieve stock list of current_user's default portfolio
+    getStockList = () => {
+      fetch(`http://localhost:3000/stocks?portfolio=default`)
+        .then((response)=>{
+          if(response.status === 200){
+            return(response.json())
+          }
+        })
+        .then((result)=>{
+          this.setState({stockList:result})
+        })
+      }
+
     render () {
+
 
     return (
         <React.Fragment>
-            <h2>Portfolio Placeholder</h2>
-            {this.state.createPortfolio && <button onClick={() => this.createPortfolio()}> Portfolio Created </button>}
+            { this.state.hasPortfolio &&
+              <button onClick={() => this.createPortfolio()}>
+               Create Portfolio 
+               </button>}
+            <h3>Portfolio List</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Symbol</th>
+                  <th scope="col">Average Price</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+              { this.state.stockList.map((stock, index) => {
+                return(
+                  <tr class="table-active" key={ index }>
+                    <th scope="row">{ stock.symbol }</th>
+                    <td>{ stock.average_price }</td>
+                    <td>{ stock.total_quantity }</td>
+                  </tr>)}
+                )
+              }
+              </tbody>
+            </table>
         </React.Fragment>
         );
     }
