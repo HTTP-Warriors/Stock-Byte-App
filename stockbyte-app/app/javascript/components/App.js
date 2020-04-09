@@ -25,12 +25,15 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
+
         <NavBar
+
         logged_in = { logged_in }
         sign_in_route = { sign_in_route }
         sign_out_route = { sign_out_route }
         />
       <Router>
+
         <Switch>
           <Route
           exact path="/" exact component={ Overview }
