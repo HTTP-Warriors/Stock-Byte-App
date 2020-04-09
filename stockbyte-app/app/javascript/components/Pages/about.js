@@ -1,14 +1,15 @@
 import React from "react"
 
-class Overview extends React.Component {
+
+class About extends React.Component {
     render () {
 
     return (
         <React.Fragment>
-            <h2>Overview placeholder</h2>
+            <h2>About Placeholder</h2>
         </React.Fragment>
         );
     }
 }
 
-export default Overview
+export default About
