@@ -74,7 +74,7 @@ class Stock extends React.Component {
           <p>{ symbol } current price is { this.state.currentPrice }</p>
           <p>{ symbol } average holding price is { this.state.average_price }</p>
           <p>{ symbol } quantity is { this.state.total_quantity }</p>
-
+          <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
       </React.Fragment>
     );
   }
