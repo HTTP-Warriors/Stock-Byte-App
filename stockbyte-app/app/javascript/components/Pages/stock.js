@@ -7,14 +7,17 @@ class Stock extends React.Component {
       currentPrice:null,
       average_price:null,
       total_quantity:null,
-      stockList:[]
+      stockList:[],
+      tradeList:[]
       }
     this.getCurrentPrice()
     this.getStockInfo()
+    this.getTrades()
     }
   componentDidMount(){
     this.getCurrentPrice()
     this.getStockInfo()
+    this.getTrades()
     }
   getCurrentPrice = () => {
     const { symbol } = this.props.match.params
@@ -29,6 +32,20 @@ class Stock extends React.Component {
        currentPrice: result.price
      })
    })
+  }
+  getTrades = () => {
+    const { symbol } = this.props.match.params
+    fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/trades?stock=${symbol}&portfolio=default`)
+    .then((response) => {
+      if(response.statuse === 200){
+        return(response.json())
+      }
+    })
+    .then((result) => {
+      this.setState({ 
+        tradeList: result
+      })
+    })
   }
   getStockInfo = () => {
     fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
