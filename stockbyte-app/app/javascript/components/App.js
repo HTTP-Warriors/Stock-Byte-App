@@ -39,7 +39,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/about/" component={ About } />
-          <Route exact path="/stock/:symbol" render={ (props) => <Stock /> } />
+          <Route exact path="/stock/:symbol" render={ (props) => <Stock {...props}/> } />
           <Route exact path="/portfolio/" render={ (props) => <Portfolio /> } />
           <Route exact path="/overview/" render={ (props) => <Overview /> } />
           <Route exact path="/" exact component={ Home } />
