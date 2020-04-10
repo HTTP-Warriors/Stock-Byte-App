@@ -17,7 +17,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "react_ujs": "^2.6.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.42.1"
   },
   "scripts": {
     "start": "react-scripts start",
