@@ -18,6 +18,9 @@
     "react_ujs": "^2.6.1",
     "turbolinks": "^5.2.0"
   },
+  "scripts" : {
+    "start" : "rails s"
+  },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
