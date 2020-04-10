@@ -28243,3 +28243,86 @@ Processing by HomeController#root as HTML
 Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 4992)
 
 
+Started GET "/" for ::1 at 2020-04-10 11:11:22 -0700
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 94.6ms | Allocations: 6152)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-04-10 11:11:26 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1271)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 3aef158b3e4cf8ef4a6e
+Version: webpack 4.42.1
+Time: 7344ms
+Built at: 04/10/2020 11:11:33 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-b34956ba5b621fa71f49.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-b34956ba5b621fa71f49.js.map  2.47 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-2ac1b0851a16e2d9dcec.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-2ac1b0851a16e2d9dcec.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-b34956ba5b621fa71f49.js js/application-b34956ba5b621fa71f49.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-2ac1b0851a16e2d9dcec.js js/server_rendering-2ac1b0851a16e2d9dcec.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 10501ms (Views: 10418.1ms | ActiveRecord: 74.9ms | Allocations: 25102)
+
+
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 3aef158b3e4cf8ef4a6e
+Version: webpack 4.42.1
+Time: 5936ms
+Built at: 04/10/2020 11:11:34 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-b34956ba5b621fa71f49.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-b34956ba5b621fa71f49.js.map  2.47 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-2ac1b0851a16e2d9dcec.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-2ac1b0851a16e2d9dcec.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-b34956ba5b621fa71f49.js js/application-b34956ba5b621fa71f49.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-2ac1b0851a16e2d9dcec.js js/server_rendering-2ac1b0851a16e2d9dcec.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 8675ms (Views: 8672.5ms | ActiveRecord: 1.7ms | Allocations: 9378)
+
+
