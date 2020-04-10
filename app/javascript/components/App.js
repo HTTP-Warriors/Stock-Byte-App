@@ -14,7 +14,6 @@ import ReactRailsUJS from 'react_ujs'
 
 
 
-
 class App extends React.Component {
 
 

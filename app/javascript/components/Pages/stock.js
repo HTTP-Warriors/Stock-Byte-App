@@ -17,6 +17,7 @@ class Stock extends React.Component {
     this.getCurrentPrice()
     this.getStockInfo()
     }
+
   getCurrentPrice = () => {
     const { symbol } = this.props.match.params
     fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
@@ -91,17 +92,26 @@ class Stock extends React.Component {
           <p>{ symbol } quantity is { this.state.total_quantity }</p>
           <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
           {(tradeList.length>0) &&
-          <div>
-            <ol>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Action</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
           { tradeList.map((trade, index)=>{
             return(
-              <li>
-                { trade.price }, { trade.quantity }
-              </li>
+              <tr class="table-light" key={ index }>
+                <td>{ (trade.action===1)?"Buy":"Sell" }</td>
+                <td>{ trade.price }</td>
+                <td>{ trade.quantity }</td>
+              </tr>
             )
           })}
-          </ol>
-        </div>}
+          </tbody>
+        </table>}
       </React.Fragment>
     );
   }
