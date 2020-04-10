@@ -20,7 +20,7 @@ class Portfolio extends React.Component {
         this.getStockList()
     }
     getPortfolio = () => {
-        fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`)
+        fetch(`http://localhost:3000/portfolios`)
         .then((response) => {
             if(response.status === 200){
                 return(response.json())
@@ -37,7 +37,7 @@ class Portfolio extends React.Component {
     }
 
     createPortfolio = () => {
-        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`, {
+        return fetch(`http://localhost:3000/portfolios`, {
             body: JSON.stringify({'name': 'default'}),
 
             headers: {
@@ -56,7 +56,7 @@ class Portfolio extends React.Component {
     }
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
-      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
+      fetch(`http://localhost:3000/stocks?portfolio=default`)
         .then((response)=>{
           if(response.status === 200){
             return(response.json())
@@ -71,7 +71,7 @@ class Portfolio extends React.Component {
         this.createStock(this.state.form)
         console.log(this.state.form.symbol)
     }
-    
+
     handleChange = (event) => {
         let { form } = this.state
         form[event.target.name] = event.target.value
@@ -79,7 +79,7 @@ class Portfolio extends React.Component {
         console.log(this.state.form.symbol)
     }
     createStock = (form) => {
-        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`, {
+        return fetch(`http://localhost:3000/stocks?portfolio=default`, {
             body: JSON.stringify(form),
             headers: {
                 "Content-Type": "application/json"
@@ -92,7 +92,7 @@ class Portfolio extends React.Component {
             }
         })
     }
-    
+
     render () {
     return (
         <React.Fragment>

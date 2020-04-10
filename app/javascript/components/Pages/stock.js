@@ -12,12 +12,10 @@ class Stock extends React.Component {
       }
     this.getCurrentPrice()
     this.getStockInfo()
-    this.getTrades()
     }
   componentDidMount(){
     this.getCurrentPrice()
     this.getStockInfo()
-    this.getTrades()
     }
   getCurrentPrice = () => {
     const { symbol } = this.props.match.params
@@ -33,20 +31,7 @@ class Stock extends React.Component {
      })
    })
   }
-  getTrades = () => {
-    const { symbol } = this.props.match.params
-    fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/trades?stock=${symbol}&portfolio=default`)
-    .then((response) => {
-      if(response.statuse === 200){
-        return(response.json())
-      }
-    })
-    .then((result) => {
-      this.setState({ 
-        tradeList: result
-      })
-    })
-  }
+
   getStockInfo = () => {
     fetch(`http://localhost:3000/stocks?portfolio=default`)
       .then((response)=>{
@@ -80,10 +65,23 @@ class Stock extends React.Component {
         })
      })
      }
+     if(id > 0){
+       fetch(`http://localhost:3000/trades?stock=${symbol}&portfolio=default`)
+      .then((response)=>{
+        if(response.status === 200){
+          return(response.json())
+        }
+      })
+      .then((result)=>{
+        this.setState({
+          tradeList:result
+         })
+      })
+      }
   }
 
   render () {
-
+    const { tradeList } = this.state
     const { symbol } = this.props.match.params
     return (
       <React.Fragment>
@@ -92,6 +90,18 @@ class Stock extends React.Component {
           <p>{ symbol } average holding price is { this.state.average_price }</p>
           <p>{ symbol } quantity is { this.state.total_quantity }</p>
           <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
+          {(tradeList.length>0) &&
+          <div>
+            <ol>
+          { tradeList.map((trade, index)=>{
+            return(
+              <li>
+                { trade.price }, { trade.quantity }
+              </li>
+            )
+          })}
+          </ol>
+        </div>}
       </React.Fragment>
     );
   }

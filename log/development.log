@@ -13940,3 +13940,1953 @@ Processing by StocksController#index as */*
 Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 2905)
 
 
+Started GET "/" for ::1 at 2020-04-09 19:43:40 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 31.2ms | Allocations: 6542)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-04-09 19:43:44 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1271)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 52b29e50656dfb822128
+Version: webpack 4.42.1
+Time: 10510ms
+Built at: 04/09/2020 7:43:53 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-d361d4a8e3f24ed64a3d.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-d361d4a8e3f24ed64a3d.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-1cd69e0d979a0c03c2de.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-1cd69e0d979a0c03c2de.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-d361d4a8e3f24ed64a3d.js js/application-d361d4a8e3f24ed64a3d.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-1cd69e0d979a0c03c2de.js js/server_rendering-1cd69e0d979a0c03c2de.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 13072ms (Views: 13053.4ms | ActiveRecord: 9.2ms | Allocations: 44573)
+
+
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 52b29e50656dfb822128
+Version: webpack 4.42.1
+Time: 8127ms
+Built at: 04/09/2020 7:43:54 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-d361d4a8e3f24ed64a3d.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-d361d4a8e3f24ed64a3d.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-1cd69e0d979a0c03c2de.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-1cd69e0d979a0c03c2de.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-d361d4a8e3f24ed64a3d.js js/application-d361d4a8e3f24ed64a3d.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-1cd69e0d979a0c03c2de.js js/server_rendering-1cd69e0d979a0c03c2de.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 9837ms (Views: 9833.5ms | ActiveRecord: 2.7ms | Allocations: 11074)
+
+
+Started GET "/" for ::1 at 2020-04-09 19:43:57 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1152)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.4ms | Allocations: 5592)
+
+
+Started GET "/users/edit" for ::1 at 2020-04-09 19:43:59 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 29.3ms | Allocations: 7355)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.4ms | Allocations: 14372)
+
+
+Started GET "/" for ::1 at 2020-04-09 19:44:02 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1158)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.6ms | Allocations: 5578)
+
+
+Started GET "/overview" for ::1 at 2020-04-09 19:44:04 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"overview"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.4ms | Allocations: 5581)
+
+
+Started GET "/portfolio" for ::1 at 2020-04-09 19:44:04 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"portfolio"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.0ms | Allocations: 5551)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:04 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:04 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 9], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 8]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 8]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+Completed 200 OK in 71ms (Views: 13.3ms | ActiveRecord: 27.9ms | Allocations: 18623)
+
+
+Completed 200 OK in 68ms (Views: 2.5ms | ActiveRecord: 15.9ms | Allocations: 17264)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:04 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:04 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 8]]
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 9], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+Completed 200 OK in 10ms (Views: 4.6ms | ActiveRecord: 2.1ms | Allocations: 5538)
+
+
+  [1m[36mStock Load (13.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 8]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Completed 200 OK in 21ms (Views: 1.3ms | ActiveRecord: 14.8ms | Allocations: 5677)
+
+
+Started GET "/about" for ::1 at 2020-04-09 19:44:08 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"about"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.4ms | Allocations: 5568)
+
+
+Started GET "/about" for ::1 at 2020-04-09 19:44:11 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"about"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1137)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 5577)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-04-09 19:44:12 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms | Allocations: 3069)
+
+
+Started GET "/" for ::1 at 2020-04-09 19:44:13 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 2.4ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4694)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-09 19:44:13 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 597)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 2381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 8126)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-04-09 19:44:29 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"opw2UNsvEZSV22OSSQCz15mgy3IYeaAtqTXXnYh9UuwJVwQmZv+/sIyXXCRpuwWrOv/l3WcEBZme2+i5qCjsDg==", "user"=>{"email"=>"testuser@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "testuser@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.3ms | Allocations: 2139)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"opw2UNsvEZSV22OSSQCz15mgy3IYeaAtqTXXnYh9UuwJVwQmZv+/sIyXXCRpuwWrOv/l3WcEBZme2+i5qCjsDg==", "user"=>{"email"=>"testuser@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1037)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 147ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 6432)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-04-09 19:44:37 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DSQVJr5aJLWrBDLwi9kmMhIaL0ScwbYDXkhaumorT1Jd9cGAGK6/WtRlD36VotBzYIy9PjzUH6CKO99Se+nLUg==", "user"=>{"email"=>"testuser@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "testuser@test.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 136ms (ActiveRecord: 2.4ms | Allocations: 4548)
+
+
+Started GET "/" for ::1 at 2020-04-09 19:44:37 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1141)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 5555)
+
+
+Started GET "/portfolio" for ::1 at 2020-04-09 19:44:40 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"portfolio"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 5561)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:40 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:40 -0700
+Processing by StocksController#index as */*
+Processing by PortfoliosController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mPortfolio Load (1.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (1.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 42ms (Views: 17.0ms | ActiveRecord: 22.5ms | Allocations: 16706)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:40 -0700
+Processing by PortfoliosController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+Completed 200 OK in 55ms (Views: 13.1ms | ActiveRecord: 37.7ms | Allocations: 21688)
+
+
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:40 -0700
+  [1m[36mTrade Load (2.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 14ms (Views: 6.5ms | ActiveRecord: 5.2ms | Allocations: 6917)
+
+
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 12ms (Views: 4.5ms | ActiveRecord: 3.4ms | Allocations: 4604)
+
+
+Started GET "/stock/AAPL" for ::1 at 2020-04-09 19:44:42 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AAPL"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 5570)
+
+
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:44:42 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:42 -0700
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by StocksController#index as */*
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (1.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (2.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 18ms (Views: 2.3ms | ActiveRecord: 6.7ms | Allocations: 8750)
+
+
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 3.9ms | Allocations: 7270)
+
+
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:44:42 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:42 -0700
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:44:42 -0700
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (7.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mStock Load (1.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 20ms (Views: 1.5ms | ActiveRecord: 13.9ms | Allocations: 6627)
+
+
+  [1m[36mPortfolio Load (3.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (1.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 28ms (Views: 4.5ms | ActiveRecord: 19.1ms | Allocations: 9198)
+
+
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (11.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 25ms (Views: 1.8ms | ActiveRecord: 13.8ms | Allocations: 3876)
+
+
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:44:42 -0700
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 7ms (Views: 1.4ms | ActiveRecord: 1.3ms | Allocations: 3715)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:52 -0700
+Processing by PortfoliosController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (0.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mTrade Load (2.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 4.7ms | Allocations: 6315)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Processing by PortfoliosController#index as */*
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 4.1ms | Allocations: 8489)
+
+
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mTrade Load (2.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mTrade Load (1.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 6.4ms | Allocations: 8307)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Processing by PortfoliosController#index as */*
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mTrade Load (1.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 15ms (Views: 4.9ms | ActiveRecord: 4.2ms | Allocations: 8451)
+
+
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 3.3ms | Allocations: 7450)
+
+
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+Started GET "/portfolios" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+Processing by PortfoliosController#index as */*
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mTrade Load (1.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mStock Load (1.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (1.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 19ms (Views: 4.7ms | ActiveRecord: 4.1ms | Allocations: 8926)
+
+
+  [1m[36mTrade Load (1.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:52 -0700
+  [1m[36mTrade Load (2.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 6.9ms | Allocations: 8449)
+
+
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 2.1ms | Allocations: 4614)
+
+
+Started GET "/stock/AMZN" for ::1 at 2020-04-09 19:44:53 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AMZN"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 5573)
+
+
+Started GET "/trades?stock=AMZN&portfolio=default" for ::1 at 2020-04-09 19:44:53 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:53 -0700
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AMZN", "portfolio"=>"default"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mStock Load (1.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AMZN"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 12ms (Views: 1.4ms | ActiveRecord: 2.8ms | Allocations: 5776)
+
+
+Started GET "/trades?stock=AMZN&portfolio=default" for ::1 at 2020-04-09 19:44:53 -0700
+Processing by TradesController#index as */*
+  [1m[36mPortfolio Load (10.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  Parameters: {"stock"=>"AMZN", "portfolio"=>"default"}
+  [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 3.9ms | ActiveRecord: 14.1ms | Allocations: 10443)
+
+
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AMZN"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:44:53 -0700
+Started GET "/stocks/2?portfolio=default" for ::1 at 2020-04-09 19:44:53 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mTrade Load (7.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 18ms (Views: 1.6ms | ActiveRecord: 8.4ms | Allocations: 9678)
+
+
+  [1m[36mUser Load (13.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (4.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mPortfolio Load (1.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 11ms (Views: 1.4ms | ActiveRecord: 3.1ms | Allocations: 6159)
+
+
+  [1m[36mTrade Load (1.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 30ms (Views: 5.6ms | ActiveRecord: 20.8ms | Allocations: 10590)
+
+
+Started GET "/stocks/2?portfolio=default" for ::1 at 2020-04-09 19:44:53 -0700
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 3699)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:45:05 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:05 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (4.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mPortfolio Load (2.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (1.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 22ms (Views: 11.6ms | ActiveRecord: 7.9ms | Allocations: 9140)
+
+
+Completed 200 OK in 21ms (Views: 8.0ms | ActiveRecord: 7.4ms | Allocations: 8451)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:45:05 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:05 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mPortfolio Load (2.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (1.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 3.8ms | Allocations: 7772)
+
+
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 5.8ms | Allocations: 9362)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:05 -0700
+Started GET "/portfolios" for ::1 at 2020-04-09 19:45:05 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (1.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 4.6ms | Allocations: 8228)
+
+
+  [1m[36mTrade Load (1.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 3.8ms | Allocations: 8854)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-09 19:45:05 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:05 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (1.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (1.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 15ms (Views: 8.8ms | ActiveRecord: 4.4ms | Allocations: 8494)
+
+
+  [1m[36mTrade Load (3.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 7.3ms | Allocations: 8849)
+
+
+Started POST "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:35 -0700
+Processing by StocksController#create as */*
+  Parameters: {"symbol"=>"BAC", "portfolio"=>"default", "stock"=>{"symbol"=>"BAC"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:32:in `create'
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:33:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/stocks_controller.rb:38:in `create'
+  [1m[36mStock Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "stocks" WHERE "stocks"."symbol" = $1 AND "stocks"."portfolio_id" = $2 LIMIT $3[0m  [["symbol", "BAC"], ["portfolio_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:38:in `create'
+  [1m[36mStock Create (0.6ms)[0m  [1m[32mINSERT INTO "stocks" ("symbol", "portfolio_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["symbol", "BAC"], ["portfolio_id", 1], ["created_at", "2020-04-10 02:45:35.873808"], ["updated_at", "2020-04-10 02:45:35.873808"]]
+  ↳ app/controllers/stocks_controller.rb:38:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/stocks_controller.rb:38:in `create'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 2.8ms | Allocations: 6850)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:35 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.4ms | Allocations: 5421)
+
+
+Started GET "/stock/BAC" for ::1 at 2020-04-09 19:45:37 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/BAC"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 5584)
+
+
+Started GET "/trades?stock=BAC&portfolio=default" for ::1 at 2020-04-09 19:45:37 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:37 -0700
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"BAC", "portfolio"=>"default"}
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (1.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (1.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "BAC"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mStock Load (1.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Completed 200 OK in 14ms (Views: 2.1ms | ActiveRecord: 4.2ms | Allocations: 6551)
+
+
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Started GET "/trades?stock=BAC&portfolio=default" for ::1 at 2020-04-09 19:45:37 -0700
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 7.6ms | Allocations: 10000)
+
+
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"BAC", "portfolio"=>"default"}
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:45:37 -0700
+Started GET "/stocks/3?portfolio=default" for ::1 at 2020-04-09 19:45:37 -0700
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mPortfolio Load (5.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"3"}
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (2.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mTrade Load (10.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mPortfolio Load (10.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (13.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "BAC"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (2.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  [1m[36mTrade Load (1.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 37ms (Views: 1.3ms | ActiveRecord: 26.6ms | Allocations: 13620)
+
+
+  [1m[36mTrade Load (2.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 24ms (Views: 2.1ms | ActiveRecord: 17.2ms | Allocations: 8672)
+
+
+  [1m[36mTrade Load (3.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 32ms (Views: 8.0ms | ActiveRecord: 21.2ms | Allocations: 12667)
+
+
+Started GET "/stocks/3?portfolio=default" for ::1 at 2020-04-09 19:45:37 -0700
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 7ms (Views: 1.2ms | ActiveRecord: 1.3ms | Allocations: 3655)
+
+
+Started GET "/trades?stock=BAC&portfolio=default" for ::1 at 2020-04-09 19:46:21 -0700
+Processing by TradesController#index as HTML
+  Parameters: {"stock"=>"BAC", "portfolio"=>"default"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "BAC"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 1.2ms | Allocations: 3694)
+
+
+Started GET "/trades?stock=BA&portfolio=default" for ::1 at 2020-04-09 19:47:34 -0700
+Processing by TradesController#index as HTML
+  Parameters: {"stock"=>"BA", "portfolio"=>"default"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "BA"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms | Allocations: 3632)
+
+
+  
+NoMethodError (undefined method `trades' for nil:NilClass):
+  
+app/controllers/trades_controller.rb:13:in `index'
+Started GET "/portfolio" for ::1 at 2020-04-09 19:52:40 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"portfolio"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5273)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: f93831d1471424760c38
+Version: webpack 4.42.1
+Time: 2746ms
+Built at: 04/09/2020 7:52:44 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-53522345d399f644a00e.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-53522345d399f644a00e.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-ebd13c5b5ed43699463b.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-ebd13c5b5ed43699463b.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-53522345d399f644a00e.js js/application-53522345d399f644a00e.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-ebd13c5b5ed43699463b.js js/server_rendering-ebd13c5b5ed43699463b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 4176ms (Views: 4166.2ms | ActiveRecord: 8.7ms | Allocations: 11257)
+
+
+Started GET "/portfolio" for ::1 at 2020-04-09 19:52:44 -0700
+Started GET "/portfolios" for ::1 at 2020-04-09 19:52:44 -0700
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:52:44 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"portfolio"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 5555)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:52:44 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (1.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mStock Load (10.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (1.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Processing by PortfoliosController#index as */*
+  [1m[36mTrade Load (1.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (2.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 178ms (Views: 9.7ms | ActiveRecord: 148.7ms | Allocations: 31002)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mTrade Load (8.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 105ms (Views: 26.6ms | ActiveRecord: 33.2ms | Allocations: 27667)
+
+
+  [1m[36mStock Load (1.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:14:in `value'
+Started GET "/portfolios" for ::1 at 2020-04-09 19:52:44 -0700
+Completed 200 OK in 35ms (Views: 12.4ms | ActiveRecord: 13.9ms | Allocations: 15117)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:52:44 -0700
+Processing by PortfoliosController#index as */*
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (2.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (4.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 23ms (Views: 7.6ms | ActiveRecord: 9.7ms | Allocations: 8573)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:52:44 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mTrade Load (16.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 35ms (Views: 10.8ms | ActiveRecord: 20.9ms | Allocations: 13753)
+
+
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (1.1ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Started GET "/portfolios" for ::1 at 2020-04-09 19:52:44 -0700
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Processing by PortfoliosController#index as */*
+  [1m[36mTrade Load (1.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 18ms (Views: 6.9ms | ActiveRecord: 6.4ms | Allocations: 9080)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 2.9ms | Allocations: 6264)
+
+
+Started GET "/stock/AAPL" for ::1 at 2020-04-09 19:52:46 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AAPL"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.8ms | Allocations: 5553)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:52:46 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 2.2ms | Allocations: 5398)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:52:47 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:52:47 -0700
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:52:47 -0700
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mStock Load (3.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+Processing by StocksController#show as */*
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mTrade Load (2.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (5.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (10.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (10.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mStock Load (1.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mStock Load (1.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (2.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 42ms (Views: 15.8ms | ActiveRecord: 19.7ms | Allocations: 14535)
+
+
+Completed 200 OK in 31ms (Views: 2.1ms | ActiveRecord: 14.4ms | Allocations: 10727)
+
+
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 25ms (Views: 4.9ms | ActiveRecord: 13.5ms | Allocations: 9694)
+
+
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:52:47 -0700
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:52:47 -0700
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+Processing by StocksController#show as */*
+  [1m[36mPortfolio Load (1.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (1.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 12ms (Views: 1.5ms | ActiveRecord: 3.8ms | Allocations: 6570)
+
+
+  [1m[36mStock Load (10.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (4.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 24ms (Views: 1.5ms | ActiveRecord: 15.8ms | Allocations: 6118)
+
+
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:55:27 -0700
+Processing by TradesController#index as HTML
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 59ms (Views: 6.2ms | ActiveRecord: 24.6ms | Allocations: 21013)
+
+
+Started GET "/stock/AAPL" for ::1 at 2020-04-09 19:57:15 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AAPL"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 12.0ms | Allocations: 5060)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 67c77739d2af8c8ab7d7
+Version: webpack 4.42.1
+Time: 3485ms
+Built at: 04/09/2020 7:57:21 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-1ecdb088b2dbcc6337b1.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-1ecdb088b2dbcc6337b1.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-0f5ca1ce56f633181ae3.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-0f5ca1ce56f633181ae3.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-1ecdb088b2dbcc6337b1.js js/application-1ecdb088b2dbcc6337b1.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-0f5ca1ce56f633181ae3.js js/server_rendering-0f5ca1ce56f633181ae3.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 5581ms (Views: 5575.4ms | ActiveRecord: 4.9ms | Allocations: 11002)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:57:21 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 51ms (Views: 17.5ms | ActiveRecord: 16.6ms | Allocations: 19390)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:57:21 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:57:21 -0700
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:57:21 -0700
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+Processing by TradesController#index as */*
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mStock Load (1.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mTrade Load (2.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mPortfolio Load (0.5ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (2.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  [1m[36mPortfolio Load (1.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mStock Load (1.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  [1m[36mTrade Load (2.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+Completed 200 OK in 17ms (Views: 2.5ms | ActiveRecord: 6.1ms | Allocations: 9647)
+
+
+Completed 200 OK in 27ms (Views: 11.1ms | ActiveRecord: 8.0ms | Allocations: 13516)
+
+
+  [1m[36mTrade Load (1.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 6.0ms | Allocations: 10315)
+
+
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:57:21 -0700
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:57:21 -0700
+Processing by StocksController#show as */*
+Processing by TradesController#index as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mStock Load (1.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (1.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 3.7ms | Allocations: 6679)
+
+
+  [1m[36mTrade Load (1.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 13ms (Views: 2.2ms | ActiveRecord: 5.0ms | Allocations: 7469)
+
+
+Started GET "/stock/AAPL" for ::1 at 2020-04-09 19:58:24 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AAPL"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 13.5ms | Allocations: 5044)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 9abd60d7c8ff3f6116b3
+Version: webpack 4.42.1
+Time: 3407ms
+Built at: 04/09/2020 7:58:30 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-6ae440ec08874c5bf620.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-6ae440ec08874c5bf620.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-b63515cc17b17ecc6081.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-b63515cc17b17ecc6081.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-6ae440ec08874c5bf620.js js/application-6ae440ec08874c5bf620.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-b63515cc17b17ecc6081.js js/server_rendering-b63515cc17b17ecc6081.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 5543ms (Views: 5537.5ms | ActiveRecord: 5.0ms | Allocations: 10979)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:58:30 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (11.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (4.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 135ms (Views: 23.5ms | ActiveRecord: 92.0ms | Allocations: 19588)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:58:31 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:58:31 -0700
+  [1m[36mStock Load (1.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:58:31 -0700
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mTrade Load (1.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mTrade Load (4.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 25ms (Views: 11.4ms | ActiveRecord: 8.4ms | Allocations: 10829)
+
+
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  [1m[36mPortfolio Load (9.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 26ms (Views: 1.8ms | ActiveRecord: 14.5ms | Allocations: 8878)
+
+
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:58:31 -0700
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mStock Load (10.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 29ms (Views: 1.7ms | ActiveRecord: 21.0ms | Allocations: 11579)
+
+
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:58:31 -0700
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (10.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mStock Load (1.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 21ms (Views: 2.9ms | ActiveRecord: 11.5ms | Allocations: 10310)
+
+
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 2.7ms | Allocations: 6643)
+
+
+Started GET "/stock/AAPL" for ::1 at 2020-04-09 19:58:44 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AAPL"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 13.7ms | Allocations: 5044)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 2664a4346da2b6b5e37e
+Version: webpack 4.42.1
+Time: 3373ms
+Built at: 04/09/2020 7:58:49 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-5d0f643141f2f5ecec5a.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-5d0f643141f2f5ecec5a.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-712989e7f2b92e87ac89.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-712989e7f2b92e87ac89.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-5d0f643141f2f5ecec5a.js js/application-5d0f643141f2f5ecec5a.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-712989e7f2b92e87ac89.js js/server_rendering-712989e7f2b92e87ac89.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 5402ms (Views: 5396.8ms | ActiveRecord: 5.0ms | Allocations: 11019)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:58:50 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 96ms (Views: 20.8ms | ActiveRecord: 59.2ms | Allocations: 18732)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:58:50 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:58:50 -0700
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:58:50 -0700
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 2.1ms | Allocations: 7210)
+
+
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mStock Load (2.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (0.6ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (3.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+Completed 200 OK in 17ms (Views: 2.3ms | ActiveRecord: 8.1ms | Allocations: 6709)
+
+
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 13ms (Views: 2.0ms | ActiveRecord: 4.9ms | Allocations: 5889)
+
+
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:58:50 -0700
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:58:50 -0700
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (2.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+Processing by TradesController#index as */*
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 5.5ms | Allocations: 4705)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (1.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 11ms (Views: 2.1ms | ActiveRecord: 2.8ms | Allocations: 4561)
+
+
+Started GET "/stock/AAPL" for ::1 at 2020-04-09 19:59:08 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/AAPL"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 12.5ms | Allocations: 5044)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: bc2c77415a939827718f
+Version: webpack 4.42.1
+Time: 3494ms
+Built at: 04/09/2020 7:59:14 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-af5e04468482e572780a.js  2.25 MiB       application  [emitted] [immutable]  application
+                                 js/application-af5e04468482e572780a.js.map  2.45 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-f13d9e665ef0e2068a7d.js  2.13 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-f13d9e665ef0e2068a7d.js.map  2.32 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.31 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+Entrypoint application = js/application-af5e04468482e572780a.js js/application-af5e04468482e572780a.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-f13d9e665ef0e2068a7d.js js/server_rendering-f13d9e665ef0e2068a7d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 845 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 74 hidden modules
+
+Completed 200 OK in 5494ms (Views: 5488.9ms | ActiveRecord: 4.6ms | Allocations: 10997)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:59:14 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (6.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (13.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (2.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 109ms (Views: 19.4ms | ActiveRecord: 73.5ms | Allocations: 19175)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:59:14 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:59:14 -0700
+  [1m[36mPortfolio Load (1.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:59:14 -0700
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+Processing by StocksController#show as */*
+  [1m[36mTrade Load (4.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (3.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  [1m[36mTrade Load (5.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (0.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 29ms (Views: 10.4ms | ActiveRecord: 13.9ms | Allocations: 12520)
+
+
+  [1m[36mPortfolio Load (0.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (2.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mStock Load (2.2ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (2.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+Completed 200 OK in 22ms (Views: 1.9ms | ActiveRecord: 10.0ms | Allocations: 9003)
+
+
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 23ms (Views: 3.2ms | ActiveRecord: 10.5ms | Allocations: 9811)
+
+
+Started GET "/stocks/1?portfolio=default" for ::1 at 2020-04-09 19:59:14 -0700
+Started GET "/trades?stock=AAPL&portfolio=default" for ::1 at 2020-04-09 19:59:14 -0700
+Processing by StocksController#show as */*
+Processing by TradesController#index as */*
+  Parameters: {"portfolio"=>"default", "id"=>"1"}
+  Parameters: {"stock"=>"AAPL", "portfolio"=>"default"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "AAPL"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 1.1ms | Allocations: 3946)
+
+
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mTrade Load (6.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 25ms (Views: 1.8ms | ActiveRecord: 17.4ms | Allocations: 8097)
+
+
+Started GET "/portfolio" for ::1 at 2020-04-09 19:59:18 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"portfolio"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 5583)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:59:18 -0700
+Started GET "/portfolios" for ::1 at 2020-04-09 19:59:18 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Processing by PortfoliosController#index as */*
+  [1m[36mPortfolio Load (4.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mStock Load (3.0ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (1.6ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mPortfolio Load (2.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mTrade Load (2.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 28ms (Views: 8.4ms | ActiveRecord: 12.6ms | Allocations: 8717)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:59:18 -0700
+  [1m[36mStock Load (19.8ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (1.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (1.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (2.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 54ms (Views: 20.1ms | ActiveRecord: 29.2ms | Allocations: 14139)
+
+
+  [1m[36mTrade Load (1.7ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Started GET "/portfolios" for ::1 at 2020-04-09 19:59:18 -0700
+  [1m[36mTrade Load (4.0ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+Processing by PortfoliosController#index as */*
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 7.8ms | Allocations: 9062)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mPortfolio Load (8.8ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:10:in `index'
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (1.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 23ms (Views: 7.2ms | ActiveRecord: 13.6ms | Allocations: 5759)
+
+
+Started GET "/stock/BAC" for ::1 at 2020-04-09 19:59:20 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"stock/BAC"}
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.3ms | Allocations: 5576)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:59:21 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+  [1m[36mPortfolio Load (0.4ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+  [1m[36mStock Load (0.3ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 1.8ms | Allocations: 5411)
+
+
+Started GET "/stocks?portfolio=default" for ::1 at 2020-04-09 19:59:21 -0700
+Processing by StocksController#index as */*
+  Parameters: {"portfolio"=>"default"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:6:in `index'
+Started GET "/stocks/3?portfolio=default" for ::1 at 2020-04-09 19:59:21 -0700
+  [1m[36mPortfolio Load (0.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+Started GET "/trades?stock=BAC&portfolio=default" for ::1 at 2020-04-09 19:59:21 -0700
+  ↳ app/controllers/stocks_controller.rb:7:in `index'
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"3"}
+  [1m[36mStock Load (0.5ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 1]]
+  ↳ app/controllers/stocks_controller.rb:13:in `index'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"BAC", "portfolio"=>"default"}
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mPortfolio Load (9.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mTrade Load (13.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 1]]
+  [1m[36mStock Load (0.7ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 20ms (Views: 1.2ms | ActiveRecord: 12.6ms | Allocations: 6342)
+
+
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (3.7ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mTrade Load (6.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 2]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+  [1m[36mStock Load (0.9ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "BAC"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+Completed 200 OK in 37ms (Views: 9.4ms | ActiveRecord: 22.3ms | Allocations: 14607)
+
+
+  [1m[36mTrade Load (1.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 28ms (Views: 1.4ms | ActiveRecord: 17.7ms | Allocations: 9386)
+
+
+Started GET "/stocks/3?portfolio=default" for ::1 at 2020-04-09 19:59:21 -0700
+Started GET "/trades?stock=BAC&portfolio=default" for ::1 at 2020-04-09 19:59:21 -0700
+Processing by StocksController#show as */*
+  Parameters: {"portfolio"=>"default", "id"=>"3"}
+Processing by TradesController#index as */*
+  Parameters: {"stock"=>"BAC", "portfolio"=>"default"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:19:in `show'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:5:in `index'
+  [1m[36mPortfolio Load (2.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:20:in `show'
+  [1m[36mPortfolio Load (2.0ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1 AND "portfolios"."name" = $2 LIMIT $3[0m  [["user_id", 1], ["name", "default"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:6:in `index'
+  [1m[36mStock Load (0.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."id" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/stocks_controller.rb:25:in `show'
+  [1m[36mStock Load (1.4ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1 AND "stocks"."symbol" = $2 LIMIT $3[0m  [["portfolio_id", 1], ["symbol", "BAC"], ["LIMIT", 1]]
+  ↳ app/controllers/trades_controller.rb:12:in `index'
+  [1m[36mTrade Load (0.8ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/models/stock.rb:7:in `total_quantity'
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 4.2ms | Allocations: 6649)
+
+
+  [1m[36mTrade Load (0.9ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 3]]
+  ↳ app/controllers/trades_controller.rb:14:in `index'
+Completed 200 OK in 13ms (Views: 1.7ms | ActiveRecord: 5.1ms | Allocations: 7189)
+
+
