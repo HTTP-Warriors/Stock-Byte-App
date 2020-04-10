@@ -1,10 +1,10 @@
 import React from 'react'
-import image1 from './image1.png'
+import sbl from './sbl.png'
 
 const Header = () => {
     return (
-      <div  className="container">
-      <img src= { image1 } alt="Card Icon" style={{width: "100%", height:"100%"}} />
+      <div>
+      <img src= { sbl } alt="Card Icon" style={{width: "25%", height:"25%"}} />
       </div>
     );
   };

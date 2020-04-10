@@ -21,6 +21,7 @@ Bundler.require(*Rails.groups)
 
 module StockbyteApp
   class Application < Rails::Application
+    config.hosts << "9282e8f276c4443aa611cbcc01a5e05a.vfs.cloud9.us-east-2.amazonaws.com"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.hosts << "ae8ddaa97dd44ada9066707ca9cd980c.vfs.cloud9.us-east-2.amazonaws.com"

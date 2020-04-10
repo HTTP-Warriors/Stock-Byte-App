@@ -14,7 +14,6 @@ import ReactRailsUJS from 'react_ujs'
 
 
 
-
 class App extends React.Component {
 
 
@@ -46,7 +45,6 @@ class App extends React.Component {
           <Route component={ NotFound } />
         </Switch>
       </Router>
-
 
 
     </React.Fragment>
