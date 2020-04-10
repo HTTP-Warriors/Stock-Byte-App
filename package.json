@@ -25,6 +25,9 @@
     "eject": "react-scripts eject"
   },
   "version": "0.1.0",
+  "engines": {
+    "node": "13.8.0"
+  },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
   }
