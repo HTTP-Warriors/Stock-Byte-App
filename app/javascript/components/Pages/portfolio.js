@@ -21,7 +21,7 @@ class Portfolio extends React.Component {
         this.getStockList()
     }
     getPortfolio = () => {
-        fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`)
+        fetch(`http://localhost:3000/portfolios`)
         .then((response) => {
             if(response.status === 200){
                 return(response.json())
@@ -38,7 +38,7 @@ class Portfolio extends React.Component {
     }
 
     createPortfolio = () => {
-        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`, {
+        return fetch(`http://localhost:3000/portfolios`, {
             body: JSON.stringify({'name': 'default'}),
 
             headers: {
@@ -57,7 +57,7 @@ class Portfolio extends React.Component {
     }
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
-      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
+      fetch(`http://localhost:3000/stocks?portfolio=default`)
         .then((response)=>{
           if(response.status === 200){
             return(response.json())
@@ -65,7 +65,7 @@ class Portfolio extends React.Component {
         })
         .then((result)=>{
           this.setState({stockList:result})
-          result.map((stock)=>{ 
+          result.map((stock)=>{
             this.getCurrentPrice(stock.symbol)
           })
         })
@@ -102,7 +102,7 @@ class Portfolio extends React.Component {
         this.getCurrentPrice(form.symbol)
         const { currentPrices } = this.state
         if(currentPrices[`${form.symbol}`]){
-        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`, {
+        return fetch(`http://localhost:3000/stocks?portfolio=default`, {
             body: JSON.stringify(form),
             headers: {
                 "Content-Type": "application/json"
@@ -117,8 +117,22 @@ class Portfolio extends React.Component {
         }
     }
 
+    handleDelete = (id) => {
+      fetch(`http://localhost:3000/stocks/${id}?portfolio=default`, {
+        method: 'DELETE',
+         headers: {
+           'Content-Type': 'application/json'
+           }
+         }
+       ).then((response) => {
+         if(response.ok){
+           alert("this stock is deleted")
+           return this.getStockList()
+         }
+       })
+      }
+
     render () {
-      console.log(this.state.currentPrices);
     return (
         <React.Fragment>
             { this.state.hasPortfolio &&
@@ -156,7 +170,10 @@ class Portfolio extends React.Component {
                         <td>{ stock.total_quantity }</td>
                         <td>{ this.state.currentPrices[`${ stock.symbol }`]}</td>
                         <td>{ this.state.currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value }</td>
-
+                        <button type="button" class="btn btn-danger btn-sm"
+                          onClick={() => this.handleDelete(`${ stock.id }`)}
+                          style={{margin:"1em"}}>
+                          Delete</button>
                       </tr>)}
                     )
                   }

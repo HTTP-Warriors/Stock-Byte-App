@@ -5,7 +5,7 @@ class Stock < ApplicationRecord
     def total_quantity
         @sum = 0
         trades.each do |trade|
-          @sum += trade.quantity
+          @sum += trade.quantity * trade.action
         end
         @sum
     end

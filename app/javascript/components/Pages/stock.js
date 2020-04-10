@@ -10,7 +10,7 @@ class Stock extends React.Component {
       stockList:[],
       tradeList:[],
       form: {
-        action: "",
+        action: "1",
         quantity: "",
         price: ""
       }
@@ -39,7 +39,7 @@ class Stock extends React.Component {
   }
 
   getStockInfo = () => {
-    fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
+    fetch(`http://localhost:3000/stocks?portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -58,7 +58,7 @@ class Stock extends React.Component {
       }
     })
     if(id > 0){
-      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks/${id}?portfolio=default`)
+      fetch(`http://localhost:3000/stocks/${id}?portfolio=default`)
      .then((response)=>{
        if(response.status === 200){
          return(response.json())
@@ -72,7 +72,7 @@ class Stock extends React.Component {
      })
      }
      if(id > 0){
-       fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/trades?stock=${symbol}&portfolio=default`)
+       fetch(`http://localhost:3000/trades?stock=${symbol}&portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -93,12 +93,11 @@ class Stock extends React.Component {
   handleChange = (event) => {
     let { form } = this.state
     form[event.target.name] = event.target.value
-    this.setState({ form: form})
+    this.setState({ form: form })
   }
   createTrade = (form) => {
     const { symbol } = this.props.match.params
-    console.log(form)
-    return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/trades?portfolio=default&stock=${symbol}`, {
+    return fetch(`http://localhost:3000/trades?portfolio=default&stock=${symbol}`, {
         body: JSON.stringify(form),
         headers: {
           "Content-Type": "application/json"
@@ -111,6 +110,22 @@ class Stock extends React.Component {
       }
     })
   }
+
+  deleteTrade = (id) => {
+    const { symbol } = this.props.match.params
+    fetch(`http://localhost:3000/trades/${id}?portfolio=default&stock=${symbol}`, {
+      method: 'DELETE',
+       headers: {
+         'Content-Type': 'application/json'
+         }
+       }
+     ).then((response) => {
+       if(response.ok){
+         alert("this trade is deleted")
+         return this.getStockInfo()
+       }
+     })
+    }
   render () {
     const { tradeList } = this.state
     const { symbol } = this.props.match.params
@@ -121,22 +136,10 @@ class Stock extends React.Component {
           <p>{ symbol } average holding price is { this.state.average_price }</p>
           <p>{ symbol } quantity is { this.state.total_quantity }</p>
           <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
-          <form>
-           <div class="form-group">
-            <label >Buying or Selling</label>
-            <select class="form-control" name="action">
-              <option value="1">Buy</option>
-              <option value="-1">Sell</option>
-           </select>
-           <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
-            <input onChange={ this.handleChange } type="text" class="form-control" name="quantity"/>
-            <label class="col-form-label" for="inputDefault">Price per stock</label>
-            <input onChange={ this.handleChange } type="text" class="form-control" name="price"/>
-            <button type="submit" onClick= { this.handleSubmit }>Submit</button>
-          </div>
-          </form>
+
           {(tradeList.length>0) &&
-          <table class="table table-hover">
+            <div>
+            <table class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">Action</th>
@@ -148,14 +151,33 @@ class Stock extends React.Component {
           { tradeList.map((trade, index)=>{
             return(
               <tr class="table-light" key={ index }>
-                <td>{ (trade.action===1)?"Buy":"Sell" }</td>
+                <td>{ (trade.action===1)?"Bought":"Sold" }</td>
                 <td>{ trade.price }</td>
                 <td>{ trade.quantity }</td>
+                <button type="button" class="btn btn-danger btn-sm"
+                  onClick={() => this.deleteTrade(`${ trade.id }`)}
+                  style={{margin:"1em"}}>
+                  Delete</button>
               </tr>
             )
           })}
           </tbody>
-        </table>}
+        </table>
+        <form>
+         <div class="form-group">
+          <label >Buying or Selling</label>
+          <select onChange={ this.handleChange } type="text" value = { this.state.form.action } class="form-control" name="action">
+            <option value="1">Buy</option>
+            <option value="-1">Sell</option>
+         </select>
+         <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
+          <input onChange={ this.handleChange } type="text" class="form-control" name="quantity"/>
+          <label class="col-form-label" for="inputDefault">Price per stock</label>
+          <input onChange={ this.handleChange } type="text" class="form-control" name="price"/>
+          <button type="submit" onClick= { this.handleSubmit }>Submit</button>
+        </div>
+        </form>
+        </div>}
       </React.Fragment>
     );
   }

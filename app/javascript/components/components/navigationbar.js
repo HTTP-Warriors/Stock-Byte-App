@@ -1,7 +1,32 @@
 import React from "react"
-
+import  { Redirect } from 'react-router-dom'
 
 class NavBar extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      success: false,
+      form:{
+        symbol:""
+      }
+    }
+
+  }
+
+  handleSubmit = (event) => {
+      event.preventDefault()
+      let { form } = this.state
+      window.location.href = `/stock/${form.symbol}`
+  }
+
+  handleChange = (event) => {
+      let { form } = this.state
+      form[event.target.name] = event.target.value
+      this.setState({ form: form})
+  }
+
+
+
   render () {
 
     const {
@@ -45,21 +70,17 @@ class NavBar extends React.Component {
             <li class="nav-item">
               <a class href={sign_in_route}>Sign In</a>
             </li>}
-             
-          <form>   
+
+          <form>
           <li class="nav-item">
-            <input type="text" placeholder="Search" />
+            <input onChange = { this.handleChange } type="text" placeholder="Search" name="symbol" />
           </li>
-          </form>
-        
-          <form><li class="nav-item">
-            <button type="submit">Find</button>
+          <li class="nav-item">
+            <button type="submit" onClick = { this.handleSubmit }>Find</button>
           </li>
           </form>
         </ul>
       </nav>
-
-
 
 
 
