@@ -8,11 +8,16 @@ class Stock extends React.Component {
       average_price:null,
       total_quantity:null,
       stockList:[],
-      tradeList:[]
+      tradeList:[],
+      form: {
+        action: "",
+        quantity: "",
+        price: ""
       }
+    }
     this.getCurrentPrice()
     this.getStockInfo()
-    }
+  }
   componentDidMount(){
     this.getCurrentPrice()
     this.getStockInfo()
@@ -34,7 +39,7 @@ class Stock extends React.Component {
   }
 
   getStockInfo = () => {
-    fetch(`http://localhost:3000/stocks?portfolio=default`)
+    fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -53,7 +58,7 @@ class Stock extends React.Component {
       }
     })
     if(id > 0){
-      fetch(`http://localhost:3000/stocks/${id}?portfolio=default`)
+      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks/${id}?portfolio=default`)
      .then((response)=>{
        if(response.status === 200){
          return(response.json())
@@ -67,7 +72,7 @@ class Stock extends React.Component {
      })
      }
      if(id > 0){
-       fetch(`http://localhost:3000/trades?stock=${symbol}&portfolio=default`)
+       fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/trades?stock=${symbol}&portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -80,7 +85,32 @@ class Stock extends React.Component {
       })
       }
   }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.createTrade(this.state.form)
+  }
 
+  handleChange = (event) => {
+    let { form } = this.state
+    form[event.target.name] = event.target.value
+    this.setState({ form: form})
+  }
+  createTrade = (form) => {
+    const { symbol } = this.props.match.params
+    console.log(form)
+    return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/trades?portfolio=default&stock=${symbol}`, {
+        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "Post"
+    })
+    .then((response) => {
+      if(response.ok){
+        return this.getStockInfo()
+      }
+    })
+  }
   render () {
     const { tradeList } = this.state
     const { symbol } = this.props.match.params
@@ -91,6 +121,20 @@ class Stock extends React.Component {
           <p>{ symbol } average holding price is { this.state.average_price }</p>
           <p>{ symbol } quantity is { this.state.total_quantity }</p>
           <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
+          <form>
+           <div class="form-group">
+            <label >Buying or Selling</label>
+            <select class="form-control" name="action">
+              <option value="1">Buy</option>
+              <option value="-1">Sell</option>
+           </select>
+           <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
+            <input onChange={ this.handleChange } type="text" class="form-control" name="quantity"/>
+            <label class="col-form-label" for="inputDefault">Price per stock</label>
+            <input onChange={ this.handleChange } type="text" class="form-control" name="price"/>
+            <button type="submit" onClick= { this.handleSubmit }>Submit</button>
+          </div>
+          </form>
           {(tradeList.length>0) &&
           <table class="table table-hover">
             <thead>
