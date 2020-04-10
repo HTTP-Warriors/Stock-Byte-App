@@ -21,7 +21,7 @@ class Portfolio extends React.Component {
         this.getStockList()
     }
     getPortfolio = () => {
-        fetch(`http://localhost:3000/portfolios`)
+        fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`)
         .then((response) => {
             if(response.status === 200){
                 return(response.json())
@@ -38,7 +38,7 @@ class Portfolio extends React.Component {
     }
 
     createPortfolio = () => {
-        return fetch(`http://localhost:3000/portfolios`, {
+        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/portfolios`, {
             body: JSON.stringify({'name': 'default'}),
 
             headers: {
@@ -57,7 +57,7 @@ class Portfolio extends React.Component {
     }
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
-      fetch(`http://localhost:3000/stocks?portfolio=default`)
+      fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`)
         .then((response)=>{
           if(response.status === 200){
             return(response.json())
@@ -65,7 +65,7 @@ class Portfolio extends React.Component {
         })
         .then((result)=>{
           this.setState({stockList:result})
-          result.map((stock)=>{
+          result.map((stock)=>{ 
             this.getCurrentPrice(stock.symbol)
           })
         })
@@ -74,7 +74,7 @@ class Portfolio extends React.Component {
       getCurrentPrice = (symbol) => {
         fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
           .then((response)=>{
-         if(response.status === 200){
+        if(response.status === 200){
            return(response.json())
          }
        })
@@ -99,7 +99,10 @@ class Portfolio extends React.Component {
     }
 
     createStock = (form) => {
-        return fetch(`http://localhost:3000/stocks?portfolio=default`, {
+        this.getCurrentPrice(form.symbol)
+        const { currentPrices } = this.state
+        if(currentPrices[`${form.symbol}`]){
+        return fetch(`https://08894f96464f4cd596494a1683acc75d.vfs.cloud9.us-east-1.amazonaws.com/stocks?portfolio=default`, {
             body: JSON.stringify(form),
             headers: {
                 "Content-Type": "application/json"
@@ -111,6 +114,7 @@ class Portfolio extends React.Component {
                 return this.getStockList()
             }
         })
+        }
     }
 
     render () {
