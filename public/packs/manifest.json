@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
  heroku-testing
   "application.js": "/packs/js/application-451f4d2b579b0963a45f.js",
   "application.js.map": "/packs/js/application-451f4d2b579b0963a45f.js.map",
@@ -12,14 +13,22 @@
 
   "application.js": "/packs/js/application-cb69bfaaeaeb852e9839.js",
   "application.js.map": "/packs/js/application-cb69bfaaeaeb852e9839.js.map",
+=======
+  "application.js": "/packs/js/application-b34956ba5b621fa71f49.js",
+  "application.js.map": "/packs/js/application-b34956ba5b621fa71f49.js.map",
+>>>>>>> master
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-cb69bfaaeaeb852e9839.js"
+        "/packs/js/application-b34956ba5b621fa71f49.js"
       ],
       "js.map": [
+<<<<<<< HEAD
         "/packs/js/application-cb69bfaaeaeb852e9839.js.map"
  master
+=======
+        "/packs/js/application-b34956ba5b621fa71f49.js.map"
+>>>>>>> master
       ]
     },
     "hello_react": {
@@ -39,6 +48,7 @@
     },
     "server_rendering": {
       "js": [
+<<<<<<< HEAD
  heroku-testing
         "/packs/js/server_rendering-20ae0e6da057f848394b.js"
       ],
@@ -55,9 +65,12 @@
   "server_rendering.js.map": "/packs/js/server_rendering-20ae0e6da057f848394b.js.map"
 
         "/packs/js/server_rendering-74edcf3343c1e486ca68.js"
+=======
+        "/packs/js/server_rendering-2ac1b0851a16e2d9dcec.js"
+>>>>>>> master
       ],
       "js.map": [
-        "/packs/js/server_rendering-74edcf3343c1e486ca68.js.map"
+        "/packs/js/server_rendering-2ac1b0851a16e2d9dcec.js.map"
       ]
     }
   },
@@ -67,7 +80,12 @@
   "media/components/components/background.jpg": "/packs/media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg",
   "media/components/components/image1.png": "/packs/media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png",
   "media/components/components/sbl.png": "/packs/media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png",
+<<<<<<< HEAD
   "server_rendering.js": "/packs/js/server_rendering-74edcf3343c1e486ca68.js",
   "server_rendering.js.map": "/packs/js/server_rendering-74edcf3343c1e486ca68.js.map"
  master
+=======
+  "server_rendering.js": "/packs/js/server_rendering-2ac1b0851a16e2d9dcec.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-2ac1b0851a16e2d9dcec.js.map"
+>>>>>>> master
 }
