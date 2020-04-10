@@ -14,6 +14,11 @@ class NavBar extends React.Component {
     return(
       <React.Fragment>
 
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+
+        </div>
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="/">Home</a>
@@ -40,7 +45,23 @@ class NavBar extends React.Component {
             <li class="nav-item">
               <a class href={sign_in_route}>Sign In</a>
             </li>}
+             
+          <form>   
+          <li class="nav-item">
+            <input type="text" placeholder="Search" />
+          </li>
+          </form>
+        
+          <form><li class="nav-item">
+            <button type="submit">Find</button>
+          </li>
+          </form>
         </ul>
+      </nav>
+
+
+
+
 
       </React.Fragment>
     )
