@@ -5,12 +5,13 @@ class StocksController < ApplicationController
     #Assigns user if there is no current user
     if current_user
       @portfolio = current_user.portfolios.find_by(name: params[:portfolio])
+      @stocks=@portfolio.stocks.all
+      render json: @stocks
     else
-      @user = User.first
-      @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      # @user = User.first
+      # @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      render json:[]
     end
-    @stocks=@portfolio.stocks.all
-    render json: @stocks
   end
 
   # GET http://localhost:3000/stocks/${id}?portfolio=default
@@ -18,12 +19,13 @@ class StocksController < ApplicationController
     #Assigns user if there is no current user
     if current_user
       @portfolio = current_user.portfolios.find_by(name: params[:portfolio])
+      @stock=@portfolio.stocks.find(params[:id])
+      render json: @stock
     else
-      @user = User.first
-      @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      # @user = User.first
+      # @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      render json: []
     end
-    @stock=@portfolio.stocks.find(params[:id])
-    render json: @stock
   end
 
   # POST http://localhost:3000/stocks?portfolio=default, stock_params
@@ -31,23 +33,23 @@ class StocksController < ApplicationController
     #Assigns user if there is no current user
     if current_user
       @portfolio = current_user.portfolios.find_by(name: params[:portfolio])
+      @stock = @portfolio.stocks.create(stock_params)
+      render json: @stock
     else
-      @user = User.first
-      @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      # @user = User.first
+      # @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      render json: []
     end
-    @stock = @portfolio.stocks.create(stock_params)
-    render json: @stock
   end
   # DELETE http://localhost:3000/stocks/${id}?portfolio=default
   def destroy
     if current_user
       @portfolio = current_user.portfolios.find_by(name: params[:portfolio])
-    else
-      @user = User.first
-      @portfolio = @user.portfolios.find_by(name: params[:portfolio])
+      @stock=@portfolio.stocks.find(params[:id])
+      @stock.destroy
+      # @user = User.first
+      # @portfolio = @user.portfolios.find_by(name: params[:portfolio])
     end
-    @stock=@portfolio.stocks.find(params[:id])
-    @stock.destroy
   end
 
 private

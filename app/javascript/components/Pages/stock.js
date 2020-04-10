@@ -9,6 +9,7 @@ class Stock extends React.Component {
       total_quantity:null,
       stockList:[],
       tradeList:[],
+      inPortfolio:false,
       form: {
         action: "1",
         quantity: "",
@@ -58,6 +59,9 @@ class Stock extends React.Component {
       }
     })
     if(id > 0){
+      this.setState({
+        inPortfolio: true
+      })
       fetch(`http://localhost:3000/stocks/${id}?portfolio=default`)
      .then((response)=>{
        if(response.status === 200){
@@ -163,21 +167,23 @@ class Stock extends React.Component {
           })}
           </tbody>
         </table>
-        <form>
-         <div class="form-group">
-          <label >Buying or Selling</label>
-          <select onChange={ this.handleChange } type="text" value = { this.state.form.action } class="form-control" name="action">
+        </div>}
+        {this.state.inPortfolio &&
+          <form>
+          <div class="form-group">
+            <label >Buying or Selling</label>
+            <select onChange={ this.handleChange } type="text" value = { this.state.form.action } class="form-control" name="action">
             <option value="1">Buy</option>
             <option value="-1">Sell</option>
-         </select>
-         <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
-          <input onChange={ this.handleChange } type="text" class="form-control" name="quantity"/>
-          <label class="col-form-label" for="inputDefault">Price per stock</label>
-          <input onChange={ this.handleChange } type="text" class="form-control" name="price"/>
-          <button type="submit" onClick= { this.handleSubmit }>Submit</button>
-        </div>
+            </select>
+            <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
+            <input onChange={ this.handleChange } type="text" class="form-control" name="quantity"/>
+            <label class="col-form-label" for="inputDefault">Price per stock</label>
+            <input onChange={ this.handleChange } type="text" class="form-control" name="price"/>
+            <button type="submit" onClick= { this.handleSubmit }>Submit</button>
+          </div>
         </form>
-        </div>}
+      }
       </React.Fragment>
     );
   }

@@ -3,21 +3,23 @@ class PortfoliosController < ApplicationController
     def index
       if current_user
         @portfolio = current_user.portfolios.all
+        render json: @portfolio
       else
-        @user = User.first
-        @portfolio = @user.portfolios.all
+      #   @user = User.first
+      #   @portfolio = @user.portfolios.all
+      render json: []
       end
-      render json: @portfolio
     end
   # POST http://localhost:3000/portfolios, portfolio_params
     def create
       if current_user
         @portfolio = current_user.portfolios.create(portfolio_params)
+        render json: @portfolio
       else
-        @user = User.first
-        @portfolio = @user.portfolios.create(portfolio_params)
+        # @user = User.first
+        # @portfolio = @user.portfolios.create(portfolio_params)
+      render json: []
       end
-      render json: @portfolio
     end
 
 private
