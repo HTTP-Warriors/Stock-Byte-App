@@ -44476,3 +44476,211 @@ Processing by Rails::InfoController#routes as */*
 Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1011)
 
 
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (44.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (47.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stockbyte_app_development"[0m
+  [1m[35m (34.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stockbyte_app_test"[0m
+  [1m[35m (199.4ms)[0m  [1m[35mCREATE DATABASE "stockbyte_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (64.2ms)[0m  [1m[35mCREATE DATABASE "stockbyte_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (19.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4153204752575181135)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20200406182701)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (46.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406182701"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortfolios (20200406213429)
+  [1m[35m (39.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" bigserial primary key, "user_id" integer, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406213429"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStocks (20200406213719)
+  [1m[35m (24.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "stocks" ("id" bigserial primary key, "symbol" character varying, "portfolio_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406213719"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTrades (20200406213945)
+  [1m[35m (25.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "trades" ("id" bigserial primary key, "action" integer, "price" float, "quantity" integer, "stock_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200406213945"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-12 19:22:04.459304"], ["updated_at", "2020-04-12 19:22:04.459304"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4153204752575181135)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-04-12 12:22:17 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 7.4ms | Allocations: 659)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-04-12 12:22:21 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.7ms | Allocations: 278)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: b5808c8f8e65b2adfa6b
+Version: webpack 4.42.1
+Time: 10100ms
+Built at: 04/12/2020 12:22:30 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-4dd5b97cafd6b8e7fd50.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-4dd5b97cafd6b8e7fd50.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-d3c4e9296fa4d2e08ad7.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-d3c4e9296fa4d2e08ad7.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-4dd5b97cafd6b8e7fd50.js js/application-4dd5b97cafd6b8e7fd50.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-d3c4e9296fa4d2e08ad7.js js/server_rendering-d3c4e9296fa4d2e08ad7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 12271ms (Views: 12256.1ms | ActiveRecord: 0.0ms | Allocations: 37463)
+
+
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: b5808c8f8e65b2adfa6b
+Version: webpack 4.42.1
+Time: 7723ms
+Built at: 04/12/2020 12:22:31 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-4dd5b97cafd6b8e7fd50.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-4dd5b97cafd6b8e7fd50.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-d3c4e9296fa4d2e08ad7.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-d3c4e9296fa4d2e08ad7.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-4dd5b97cafd6b8e7fd50.js js/application-4dd5b97cafd6b8e7fd50.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-d3c4e9296fa4d2e08ad7.js js/server_rendering-d3c4e9296fa4d2e08ad7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 9454ms (Views: 9453.0ms | ActiveRecord: 0.0ms | Allocations: 8202)
+
+
+Started GET "/" for ::1 at 2020-04-12 12:23:12 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.4ms | Allocations: 289)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: 7db675d58c979d919567
+Version: webpack 4.42.1
+Time: 3114ms
+Built at: 04/12/2020 12:23:17 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-edf22c3f2440533c94f2.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-edf22c3f2440533c94f2.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-571310067495d5ebd7c0.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-571310067495d5ebd7c0.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-edf22c3f2440533c94f2.js js/application-edf22c3f2440533c94f2.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-571310067495d5ebd7c0.js js/server_rendering-571310067495d5ebd7c0.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 4564ms (Views: 4563.1ms | ActiveRecord: 0.0ms | Allocations: 6078)
+
+
+Started GET "/" for ::1 at 2020-04-12 12:26:30 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 3.1ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 9350)
+
+
+Started GET "/" for ::1 at 2020-04-12 12:27:06 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.8ms | Allocations: 290)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: 0e41f95a2443766b7642
+Version: webpack 4.42.1
+Time: 3370ms
+Built at: 04/12/2020 12:27:11 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-1600ec4fc3f3604d4815.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-1600ec4fc3f3604d4815.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-f75da7cdbf70e549a028.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-f75da7cdbf70e549a028.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-1600ec4fc3f3604d4815.js js/application-1600ec4fc3f3604d4815.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-f75da7cdbf70e549a028.js js/server_rendering-f75da7cdbf70e549a028.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 4893ms (Views: 4892.3ms | ActiveRecord: 0.0ms | Allocations: 6128)
+
+

@@ -14,10 +14,10 @@ class Home extends React.Component {
 
             <Flexbox flexGrow={1}>
             <div class="card mb-3">
-                  <h3 class="card-header">Let's learn things!</h3>
+                  <h3 class="card-header">Let's learn about stock market!</h3>
 
                   <div class="card-body">
-                    <h5 class="card-title">WHAT IS STOCK MARKET DO?</h5>
+                    <h5 class="card-title">WHAT DOES STOCK MARKET DO?</h5>
                     <img src={ background } style={{width:"75%"}} />
                     <h6 class="card-subtitle text-muted">The Bull and Bear market meet UP! who is next?</h6>
                   </div>
