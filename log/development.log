@@ -43856,3 +43856,623 @@ Entrypoint server_rendering = js/server_rendering-6a7f1b2d01445e2c05b6.js js/ser
 Completed 200 OK in 23209ms (Views: 23200.9ms | ActiveRecord: 0.0ms | Allocations: 10846)
 
 
+Started GET "/" for ::1 at 2020-04-12 11:11:34 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.7ms | Allocations: 289)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] One CLI for webpack must be installed. These are recommended choices, delivered as separate packages:
+ - webpack-cli (https://github.com/webpack/webpack-cli)
+   The original webpack full-featured CLI.
+We will use "yarn" to install the CLI via "yarn add -D".
+Do you want to install 'webpack-cli' (yes/no): 
+[Webpacker] 
+Completed 200 OK in 1365ms (Views: 1364.4ms | ActiveRecord: 0.0ms | Allocations: 6146)
+
+
+Started GET "/" for ::1 at 2020-04-12 11:12:11 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 4.1ms | Allocations: 545)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 9355)
+
+
+Started GET "/" for ::1 at 2020-04-12 11:13:04 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.7ms | Allocations: 290)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] One CLI for webpack must be installed. These are recommended choices, delivered as separate packages:
+ - webpack-cli (https://github.com/webpack/webpack-cli)
+   The original webpack full-featured CLI.
+We will use "yarn" to install the CLI via "yarn add -D".
+Do you want to install 'webpack-cli' (yes/no): 
+[Webpacker] 
+Completed 200 OK in 1072ms (Views: 1071.4ms | ActiveRecord: 0.0ms | Allocations: 6175)
+
+
+Started GET "/" for ::1 at 2020-04-12 11:15:06 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 5.1ms | Allocations: 545)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] One CLI for webpack must be installed. These are recommended choices, delivered as separate packages:
+ - webpack-cli (https://github.com/webpack/webpack-cli)
+   The original webpack full-featured CLI.
+We will use "yarn" to install the CLI via "yarn add -D".
+Do you want to install 'webpack-cli' (yes/no): 
+[Webpacker] 
+Completed 200 OK in 1529ms (Views: 1521.1ms | ActiveRecord: 0.0ms | Allocations: 10790)
+
+
+Started GET "/" for ::1 at 2020-04-12 11:17:54 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 7.5ms | Allocations: 545)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: b6c100ac7f7804b31fcf
+Version: webpack 4.42.1
+Time: 3020ms
+Built at: 04/12/2020 11:18:00 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-b61747cd7d42430ea52b.js  1.34 MiB       application  [emitted] [immutable]  application
+                                 js/application-b61747cd7d42430ea52b.js.map  1.49 MiB       application  [emitted] [dev]        application
+                                js/server_rendering-901f566ebffe017376ab.js  1.22 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-901f566ebffe017376ab.js.map  1.36 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.21 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-b61747cd7d42430ea52b.js js/application-b61747cd7d42430ea52b.js.map
+Entrypoint server_rendering = js/server_rendering-901f566ebffe017376ab.js js/server_rendering-901f566ebffe017376ab.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 43 hidden modules
+
+WARNING in ./app/javascript/components/App.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/App.js: Unexpected token (30:5)
+
+  28 |     return (
+  29 | 
+> 30 |      <React.Fragment>
+     |      ^
+  31 |       <Header />
+  32 |       <NavBar
+  33 |           logged_in = { logged_in }
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./App.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/Pages/about.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/about.js: Unexpected token (37:8)
+
+  35 | 
+  36 |     return (
+> 37 |         <React.Fragment>
+     |         ^
+  38 |             { chartShow }
+  39 |         </React.Fragment>
+  40 |         );
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/about.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/Pages/home.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/home.js: Unexpected token (9:8)
+
+   7 | 
+   8 |     return (
+>  9 |         <React.Fragment>
+     |         ^
+  10 |           <Flexbox flexDirection="column" minHeight="100vh">
+  11 |             <Flexbox element="header" height="60px">
+  12 | 
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/home.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/Pages/notfound.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/notfound.js: Unexpected token (8:6)
+
+   6 | 
+   7 |     return (
+>  8 |       <React.Fragment>
+     |       ^
+   9 |         <h2>Sorry, something went wrong.</h2>
+  10 |       </React.Fragment>
+  11 |     );
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/notfound.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/Pages/overview.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/overview.js: Unexpected token (7:8)
+
+   5 | 
+   6 |     return (
+>  7 |         <React.Fragment>
+     |         ^
+   8 |             <h2>Overview placeholder</h2>
+   9 |             <img src="https://finviz.com/image.ashx?dow&rev=637220341723647483"/>
+  10 |             <img src="https://finviz.com/image.ashx?nasdaq&rev=637220341723647483"/>
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/overview.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/Pages/portfolio.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/portfolio.js: Unexpected token (137:8)
+
+  135 |     render () {
+  136 |     return (
+> 137 |         <React.Fragment>
+      |         ^
+  138 |             { this.state.hasPortfolio &&
+  139 |               <div>
+  140 |                 <p>Do you want to create a portfolio?</p>
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/portfolio.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/Pages/stock.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/stock.js: Unexpected token (137:6)
+
+  135 |     const { symbol } = this.props.match.params
+  136 |     return (
+> 137 |       <React.Fragment>
+      |       ^
+  138 |           <h2>Stock Placeholder</h2>
+  139 |           <p>{ symbol } current price is { this.state.currentPrice }</p>
+  140 |           <p>{ symbol } average holding price is { this.state.average_price }</p>
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/stock.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/components/cards.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/components/cards.js: Unexpected token (8:6)
+
+   6 |   render () {
+   7 |     return(
+>  8 |       <React.Fragment>
+     |       ^
+   9 | 
+  10 |         <div>
+  11 | 
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./components/cards.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/components/header.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/components/header.js: Unexpected token (6:6)
+
+  4 | const Header = () => {
+  5 |     return (
+> 6 |       <div>
+    |       ^
+  7 |       <img src= { sbl } alt="Card Icon" style={{width: "25%", height:"25%"}} />
+  8 |       </div>
+  9 |     );
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseArrowExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10603:10)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10221:12)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+ @ ./app/javascript/components sync ^\.\/.*$ ./components/header.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./app/javascript/components/components/navigationbar.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/components/navigationbar.js: Unexpected token (40:6)
+
+  38 | 
+  39 |     return(
+> 40 |       <React.Fragment>
+     |       ^
+  41 | 
+  42 | 
+  43 |     <nav class="navbar navbar-inverse">
+    at Parser._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Parser.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Parser.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Parser.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10052:20)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10193:28)
+    at Parser.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Parser.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Parser.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Parser.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Parser.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Parser.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Parser.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Parser.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Parser.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Parser.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Parser.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Parser.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Parser.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Parser.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Parser.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Parser.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Parser.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Parser.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Parser.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+ @ ./app/javascript/components sync ^\.\/.*$ ./components/navigationbar.js
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 5856ms (Views: 5845.8ms | ActiveRecord: 0.0ms | Allocations: 10766)
+
+
+Started GET "/" for ::1 at 2020-04-12 11:19:14 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 6.3ms | Allocations: 545)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: b5808c8f8e65b2adfa6b
+Version: webpack 4.42.1
+Time: 6340ms
+Built at: 04/12/2020 11:19:23 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-4dd5b97cafd6b8e7fd50.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-4dd5b97cafd6b8e7fd50.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-d3c4e9296fa4d2e08ad7.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-d3c4e9296fa4d2e08ad7.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-4dd5b97cafd6b8e7fd50.js js/application-4dd5b97cafd6b8e7fd50.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-d3c4e9296fa4d2e08ad7.js js/server_rendering-d3c4e9296fa4d2e08ad7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 8953ms (Views: 8942.3ms | ActiveRecord: 0.0ms | Allocations: 10808)
+
+
+Started GET "/" for ::1 at 2020-04-12 11:19:44 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 1.4ms | Allocations: 290)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: b16240b49fc0f2b9211a
+Version: webpack 4.42.1
+Time: 5841ms
+Built at: 04/12/2020 11:19:52 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-4a9a8bd8f0f0b8709583.js  2.29 MiB       application  [emitted] [immutable]  application
+                                 js/application-4a9a8bd8f0f0b8709583.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-5a08d3cfc98dd9a864e4.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-5a08d3cfc98dd9a864e4.js.map  2.34 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-4a9a8bd8f0f0b8709583.js js/application-4a9a8bd8f0f0b8709583.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-5a08d3cfc98dd9a864e4.js js/server_rendering-5a08d3cfc98dd9a864e4.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+Completed 200 OK in 8165ms (Views: 8164.0ms | ActiveRecord: 0.0ms | Allocations: 6149)
+
+
+Started GET "/rails/info/routes?path=he" for ::1 at 2020-04-12 11:22:36 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"he"}
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 3291)
+
+
+Started GET "/rails/info/routes?path=her" for ::1 at 2020-04-12 11:22:37 -0700
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"her"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1011)
+
+
