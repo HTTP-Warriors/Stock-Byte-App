@@ -1,38 +1,38 @@
 {
-  "application.js": "/packs/js/application-feef8499375ee0afc757.js",
-  "application.js.map": "/packs/js/application-feef8499375ee0afc757.js.map",
+  "application.js": "/packs/js/application-979842a129f07970b0a4.js",
+  "application.js.map": "/packs/js/application-979842a129f07970b0a4.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-feef8499375ee0afc757.js"
+        "/packs/js/application-979842a129f07970b0a4.js"
       ],
       "js.map": [
-        "/packs/js/application-feef8499375ee0afc757.js.map"
+        "/packs/js/application-979842a129f07970b0a4.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-a08ae40d4f1f39bdfa4a.js"
+        "/packs/js/hello_react-40ee275fdc5ab111e7fe.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-a08ae40d4f1f39bdfa4a.js.map"
+        "/packs/js/hello_react-40ee275fdc5ab111e7fe.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-c7010bc4eedf263712cf.js"
+        "/packs/js/server_rendering-6a7f1b2d01445e2c05b6.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-c7010bc4eedf263712cf.js.map"
+        "/packs/js/server_rendering-6a7f1b2d01445e2c05b6.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-a08ae40d4f1f39bdfa4a.js",
-  "hello_react.js.map": "/packs/js/hello_react-a08ae40d4f1f39bdfa4a.js.map",
+  "hello_react.js": "/packs/js/hello_react-40ee275fdc5ab111e7fe.js",
+  "hello_react.js.map": "/packs/js/hello_react-40ee275fdc5ab111e7fe.js.map",
   "media/components/Pages/background.jpg": "/packs/media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg",
   "media/components/components/background.jpg": "/packs/media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg",
   "media/components/components/image1.png": "/packs/media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png",
   "media/components/components/sbl.png": "/packs/media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png",
-  "server_rendering.js": "/packs/js/server_rendering-c7010bc4eedf263712cf.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-c7010bc4eedf263712cf.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-6a7f1b2d01445e2c05b6.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-6a7f1b2d01445e2c05b6.js.map"
 }
