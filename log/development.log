@@ -42872,3 +42872,116 @@ Processing by HomeController#root as HTML
 Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 4552)
 
 
+Started GET "/" for ::1 at 2020-04-12 01:14:53 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 4.3ms | Allocations: 545)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-04-12 01:14:57 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.5ms | Allocations: 278)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 9e4da9ad7e969fdc4e95
+Version: webpack 4.42.1
+Time: 3309ms
+Built at: 04/12/2020 1:14:59 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-feef8499375ee0afc757.js  2.28 MiB       application  [emitted] [immutable]  application
+                                 js/application-feef8499375ee0afc757.js.map  2.47 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-c7010bc4eedf263712cf.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-c7010bc4eedf263712cf.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-feef8499375ee0afc757.js js/application-feef8499375ee0afc757.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-c7010bc4eedf263712cf.js js/server_rendering-c7010bc4eedf263712cf.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 76 hidden modules
+
+Completed 200 OK in 5588ms (Views: 5581.2ms | ActiveRecord: 0.0ms | Allocations: 18212)
+
+
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/capstone-git/Stock-Byte-App/public/packs
+[Webpacker] Hash: 9e4da9ad7e969fdc4e95
+Version: webpack 4.42.1
+Time: 2711ms
+Built at: 04/12/2020 1:15:01 AM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-feef8499375ee0afc757.js  2.28 MiB       application  [emitted] [immutable]  application
+                                 js/application-feef8499375ee0afc757.js.map  2.47 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-a08ae40d4f1f39bdfa4a.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-a08ae40d4f1f39bdfa4a.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-c7010bc4eedf263712cf.js  2.17 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-c7010bc4eedf263712cf.js.map  2.33 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-feef8499375ee0afc757.js js/application-feef8499375ee0afc757.js.map
+Entrypoint hello_react = js/hello_react-a08ae40d4f1f39bdfa4a.js js/hello_react-a08ae40d4f1f39bdfa4a.js.map
+Entrypoint server_rendering = js/server_rendering-c7010bc4eedf263712cf.js js/server_rendering-c7010bc4eedf263712cf.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 941 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.08 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 76 hidden modules
+
+Completed 200 OK in 4120ms (Views: 4119.1ms | ActiveRecord: 0.0ms | Allocations: 8094)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-04-12 01:15:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
