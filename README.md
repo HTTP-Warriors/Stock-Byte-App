@@ -1,29 +1,27 @@
 # README
 
+
+## Setup
+- $ bundle install
+- $ yarn
+- $ rails webpacker:install
+- $ rails webpacker:install:react
+- $ rails db:create
+- $ rails db:migrate
+- $ rails s
+
 ## Upgrade Ruby
 - $ \curl -sSL https://get.rvm.io | bash -s stable
 - $ rvm install 2.7.0
 - $ rvm --default use 2.7.0
 - $ ruby -v
 
-## Setup database
+## Reset database
 - $ rails db:drop
 - $ rails db:create
 - $ rails db:migrate
 - sign up a test user
 - $ rails db:seed
-
-## Setup
-- $ bundle install
-- $ rails db:create
-- $ rails db:migrate
-- $ rails webpacker:install
-- $ rails webpacker:install:react
-- $ rails generate react:install
-- $ yarn install
-- $ npm install bootswatch
-- $ yarn install --check-files
-- $ rails s
 
 ## Set Up Devise
 - $ rails new stockbyte_app -d postgresql -T
