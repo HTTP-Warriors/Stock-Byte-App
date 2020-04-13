@@ -72,10 +72,9 @@ class NavBar extends React.Component {
             </li>}
 
           <form>
-          <li class="nav-item">
-            <input onChange = { this.handleChange } type="text" placeholder="Search" name="symbol" />
-          </li>
-          <li class="nav-item">
+          <li>
+            <input onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
+
             <button type="submit" onClick = { this.handleSubmit }>Find</button>
           </li>
           </form>
