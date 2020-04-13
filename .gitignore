@@ -21,8 +21,14 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ingnore node_modules
+# Ignore node_modules
 /node_modules
 
-# Ingnore DS_Store
+# Ignore DS_Store
 .DS_Store
+
+/public/packs/js/
+
+/log/development.log
+
+/public/packs/manifest.json

@@ -5,56 +5,19 @@ class Portfolio extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            hasPortfolio: false,
-            success: false,
             stockList:[],
             form: {
                 symbol: ""
             },
             currentPrices:{}
         }
-        this.getPortfolio()
         this.getStockList()
     }
     componentDidMount(){
-        this.getPortfolio()
         this.getStockList()
     }
-    getPortfolio = () => {
-        fetch(`/portfolios`)
-        .then((response) => {
-            if(response.status === 200){
-                return(response.json())
-            }
-        }
-        )
-    .then((result) => {
-        if(result.length === 0){
-            this.setState({
-                hasPortfolio: true
-            })
-        }
-    })
-    }
 
-    createPortfolio = () => {
-        return fetch(`/portfolios`, {
-            body: JSON.stringify({'name': 'default'}),
 
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method: "POST"
-        })
-        .then((response) => {
-            if(response.ok){
-              this.setState({
-                success: true
-              })
-              return this.getPortfolio()
-            }
-        })
-    }
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
       fetch(`/stocks?portfolio=default`)
@@ -135,14 +98,7 @@ class Portfolio extends React.Component {
     render () {
     return (
         <React.Fragment>
-            { this.state.hasPortfolio &&
-              <div>
-                <p>Do you want to create a portfolio?</p>
-                <button onClick={() => this.createPortfolio()}>
-                  Create Portfolio
-                </button>
-              </div>}
-              { this.state.success && <Redirect to="./overview"/>}
+
             { !this.state.hasPortfolio &&
               <div>
                 <div class="form-group">
