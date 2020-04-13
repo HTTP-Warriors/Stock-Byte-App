@@ -15,6 +15,55 @@ import ReactRailsUJS from 'react_ujs'
 
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      defaultPortfolio: []
+    }
+  }
+  componentDidMount(){
+      this.getPortfolio()
+  }
+  // get current_user's portfolio list, if the user is not signed in, defaultPortfolio remains empty; if the user does not have a portfolio, then create a default portfolio.
+  getPortfolio = () => {
+    fetch(`/portfolios`)
+    .then((response) => {
+      if(response.status === 200){
+          return(response.json())
+        }
+      }
+    )
+    .then((result) => {
+      if(result.length === 0){
+        this.createDefaultPortfolio()
+      }else if(result === ["not signed in"]){
+        this.setState({
+          defaultPortfolio: []
+        })
+      }else{
+        this.setState({
+          defaultPortfolio: result
+        })
+      }
+    })
+  }
+// create the default portfolio
+  createDefaultPortfolio = () => {
+      return fetch(`/portfolios`, {
+          body: JSON.stringify({'name': 'default'}),
+
+          headers: {
+              "Content-Type": "application/json"
+          },
+          method: "POST"
+      })
+      .then((response) => {
+          if(response.ok){
+            return this.getPortfolio()
+          }
+      })
+  }
+
 
 
   render () {
