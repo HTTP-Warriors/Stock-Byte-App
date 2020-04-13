@@ -26,14 +26,14 @@ class App extends React.Component {
   }
   // get current_user's portfolio list, if the user is not signed in, defaultPortfolio remains empty; if the user does not have a portfolio, then create a default portfolio.
   getPortfolio = () => {
-      fetch(`/portfolios`)
-      .then((response) => {
-          if(response.status === 200){
-              return(response.json())
-          }
+    fetch(`/portfolios`)
+    .then((response) => {
+      if(response.status === 200){
+          return(response.json())
+        }
       }
-      )
-  .then((result) => {
+    )
+    .then((result) => {
       if(result.length === 0){
         this.createDefaultPortfolio()
       }else if(result === ["not signed in"]){
@@ -45,7 +45,7 @@ class App extends React.Component {
           defaultPortfolio: result
         })
       }
-  })
+    })
   }
 // create the default portfolio
   createDefaultPortfolio = () => {
@@ -63,11 +63,6 @@ class App extends React.Component {
           }
       })
   }
-
-
-
-
-
 
 
 
