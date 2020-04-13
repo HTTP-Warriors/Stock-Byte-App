@@ -21,7 +21,7 @@ class Portfolio extends React.Component {
         this.getStockList()
     }
     getPortfolio = () => {
-        fetch(`https://stockbyte.herokuapp.com/portfolios`)
+        fetch(`/portfolios`)
         .then((response) => {
             if(response.status === 200){
                 return(response.json())
@@ -38,7 +38,7 @@ class Portfolio extends React.Component {
     }
 
     createPortfolio = () => {
-        return fetch(`https://stockbyte.herokuapp.com/portfolios`, {
+        return fetch(`/portfolios`, {
             body: JSON.stringify({'name': 'default'}),
 
             headers: {
@@ -57,7 +57,7 @@ class Portfolio extends React.Component {
     }
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
-      fetch(`https://stockbyte.herokuapp.com/stocks?portfolio=default`)
+      fetch(`/stocks?portfolio=default`)
         .then((response)=>{
           if(response.status === 200){
             return(response.json())
@@ -102,7 +102,7 @@ class Portfolio extends React.Component {
         this.getCurrentPrice(form.symbol)
         const { currentPrices } = this.state
         if(currentPrices[`${form.symbol}`]){
-        return fetch(`https://stockbyte.herokuapp.com/stocks?portfolio=default`, {
+        return fetch(`/stocks?portfolio=default`, {
             body: JSON.stringify(form),
             headers: {
                 "Content-Type": "application/json"
@@ -118,7 +118,7 @@ class Portfolio extends React.Component {
     }
 
     handleDelete = (id) => {
-      fetch(`https://stockbyte.herokuapp.com/stocks/${id}?portfolio=default`, {
+      fetch(`/stocks/${id}?portfolio=default`, {
         method: 'DELETE',
          headers: {
            'Content-Type': 'application/json'

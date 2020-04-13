@@ -40,7 +40,7 @@ class Stock extends React.Component {
   }
 
   getStockInfo = () => {
-    fetch(`https://stockbyte.herokuapp.com/stocks?portfolio=default`)
+    fetch(`/stocks?portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -62,7 +62,7 @@ class Stock extends React.Component {
       this.setState({
         inPortfolio: true
       })
-      fetch(`https://stockbyte.herokuapp.com/stocks/${id}?portfolio=default`)
+      fetch(`/stocks/${id}?portfolio=default`)
      .then((response)=>{
        if(response.status === 200){
          return(response.json())
@@ -76,7 +76,7 @@ class Stock extends React.Component {
      })
      }
      if(id > 0){
-       fetch(`https://stockbyte.herokuapp.com/trades?stock=${symbol}&portfolio=default`)
+       fetch(`/trades?stock=${symbol}&portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -101,7 +101,7 @@ class Stock extends React.Component {
   }
   createTrade = (form) => {
     const { symbol } = this.props.match.params
-    return fetch(`https://stockbyte.herokuapp.com/trades?portfolio=default&stock=${symbol}`, {
+    return fetch(`/trades?portfolio=default&stock=${symbol}`, {
         body: JSON.stringify(form),
         headers: {
           "Content-Type": "application/json"
@@ -117,7 +117,7 @@ class Stock extends React.Component {
 
   deleteTrade = (id) => {
     const { symbol } = this.props.match.params
-    fetch(`https://stockbyte.herokuapp.com/trades/${id}?portfolio=default&stock=${symbol}`, {
+    fetch(`/trades/${id}?portfolio=default&stock=${symbol}`, {
       method: 'DELETE',
        headers: {
          'Content-Type': 'application/json'
