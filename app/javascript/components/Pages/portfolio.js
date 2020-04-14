@@ -56,10 +56,12 @@ class Portfolio extends React.Component {
         .then((response)=>{
       if(response.status === 200){
          return(response.json())
+       }else if(response.status === 404){
+         return(response.status)
        }
      })
      .then((result)=>{
-       if (result === "Unknown symbol"){
+       if (result === 404){
          this.setState({
            stockStatus : "INVALID"
          })
