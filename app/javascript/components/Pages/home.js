@@ -30,14 +30,13 @@ getArticles = () => {
     render () {
     return (
         <React.Fragment>
-       
 
-        
+
           <Flexbox flexDirection="column" minHeight="100vh">
             <Flexbox element="header" height="60px">
-            
 
-        
+
+
         <block class="blockquote">
           <h3 class="mb-0">
              <TextLoop interval={450} style={{color: 'darkblue'}}>
@@ -50,8 +49,8 @@ getArticles = () => {
           </h3>
           <h3>S T O C K   B Y T E  YOUR FINANCIAL EINSTEIN!!!!!!!!</h3>
         </block>
-        
-        
+
+
             </Flexbox>
 
             <Flexbox flexGrow={1}>
@@ -123,9 +122,9 @@ getArticles = () => {
                     <div>
                     <p className="box-footer" align="right" style={{color: 'green'}}>
                     <h1 class="card-title">Current News</h1>
-                    
+
                     </p>
-                    
+
                     { this.state.articles.map((article, index) => {
                       return(
                         <div>
@@ -133,22 +132,22 @@ getArticles = () => {
                         <h4 class="card-title"> { article.headline } </h4>
                         </p>
                         <h6 class="card-subtitle mb-2 text-muted"> Source: { article.source } </h6>
-                        
+
                         <p class="card-text"> {article.summary} </p>
-                        
+
                         <p className="box-footer" align="right">
                         <a href= {article.url} class="card-link" target="_blank"> Continue Reading Here </a>
                         </p>
-                        
-                        </div> 
-                      ) 
+
+                        </div>
+                      )
                     }) }
                     </div>
                   </div>
-                
+
                 <div>
                 <h1>Insert Line Chart Here</h1>
-                
+
                 </div>
 
                 </div>
@@ -166,7 +165,7 @@ getArticles = () => {
           </Flexbox>
 
 
-          <Chart />
+
         </React.Fragment>
         );
     }

@@ -5,45 +5,40 @@ class Chart extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            chartData1: [],
-            drawData: []
+            chartData: []
         }
-        }
-    
-        componentDidMount(){
-            this.getChart1()
         }
 
-        getChart1 = () => {
+        componentDidMount(){
+            this.getChartData()
+        }
+
+        getChartData = () => {
             fetch('https://cloud.iexapis.com/stable/stock/spy/chart/1m?token=pk_067eb8527ed4425a913836d41cd35052')
                 .then((response) => {
                     return response.json()
                 })
                 .then((payload) => {
-                    this.setState({drawData:payload})
-                    return payload
-                }) 
-                .then( (payload) => { 
-                    const {drawData, chartData1} = this.state
-                    drawData.map((chartData, index) => {
-                    let chartObject = {time:chartData.date, value:chartData.close }
-                    
-                        chartData1.push(chartObject)
-                        })
-                this.setState({ chartData1: chartData1 })
-            })
-        }
+                    this.setState({chartData:payload})
+                })
+            }
+
     render () {
-    
-    const chart = createChart(document.body, { width: 400, height: 300 });
-    const lineSeries = chart.addLineSeries();
-    let chartShow = lineSeries.setData(this.state.chartData1)
-    console.log(this.state.chartData1)
+      const { chartData } = this.state
+      console.log(chartData);
+      let lightChartData = []
+      chartData.map((element,index)=>{
+        let chartObject = { time: element.date, value: element.close }
+        lightChartData.push(chartObject)
+      })
+      const chart = createChart(document.body, { width: 400, height: 300 });
+      const lineSeries = chart.addLineSeries();
+      let chartShow = lineSeries.setData(lightChartData)
 
 
     return (
         <React.Fragment>
-            { this.state.chartData1.length > 15 && { chartShow } }
+            { chartShow }
         </React.Fragment>
         );
     }
