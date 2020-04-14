@@ -8,15 +8,18 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "bootstrap": "^4.4.1",
     "bootswatch": "^4.4.1",
     "flexbox-react": "^4.4.0",
     "lightweight-charts": "^2.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "react_ujs": "^2.6.1",
+    "reactstrap": "^8.4.1",
     "turbolinks": "^5.2.0"
   },
   "scripts": {
