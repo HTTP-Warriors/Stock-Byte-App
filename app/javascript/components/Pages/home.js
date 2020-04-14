@@ -1,6 +1,7 @@
 import React from "react"
 import Flexbox from 'flexbox-react';
 import background from "./background.jpg"
+import Chart from "./chart"
 
 class Home extends React.Component {
   constructor(){
@@ -84,7 +85,10 @@ getArticles = () => {
 
                   <div class="card-body">
 
-                    <a href="#" class="card-link">Another link</a>
+
+                    <a href="https://iexcloud.io" class="card-link" target="_blank"> Chart Data provided by IEX Cloud</a>
+                    <a href="https://www.tradingview.com/" class="card-link" target="_blank">Chart Graph provided by Trading View</a>
+
                   </div>
 
 
@@ -111,8 +115,13 @@ getArticles = () => {
                       ) 
                     }) }
                     </div>
-
                   </div>
+                
+                <div>
+                <h1>Insert Line Chart Here</h1>
+                
+                </div>
+
                 </div>
 
 
@@ -128,7 +137,7 @@ getArticles = () => {
           </Flexbox>
 
 
-
+          <Chart />
         </React.Fragment>
         );
     }
