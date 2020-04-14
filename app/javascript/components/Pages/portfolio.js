@@ -10,7 +10,8 @@ class Portfolio extends React.Component {
                 symbol: ""
             },
             currentPrices: {},
-            stockStatus: "HIDE"
+            stockStatus: "HIDE",
+            stockInfo: {}
         }
     }
     componentDidMount(){
@@ -49,29 +50,28 @@ class Portfolio extends React.Component {
        })
      })
     }
-    // use external api to check the symbol can have a current price when user enters one. If user entered a valid symbol, will get current price and create new property in currentPrices object, and set stockStatus to "NEW" so we can know it is ready to add into the portfolio. If user entered an invalid symbol, set stockStatus to "INVALID", so we can tell user to enter again.
+    // use iexapis api to check the symbol can have a current price when user enters one. If user entered a valid symbol, will get current stock info from iexapis and use getCurrentPrice, and set stockStatus to "NEW" so we can know it is ready to add into the portfolio. If user entered an invalid symbol, set stockStatus to "INVALID", so we can tell user to enter again.
     getStockInfo = (symbol) => {
-      fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
+      fetch(`https://cloud.iexapis.com/stable/stock/${symbol}/company?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
         .then((response)=>{
       if(response.status === 200){
          return(response.json())
        }
      })
      .then((result)=>{
-       if (result.price){
-         const { currentPrices } = this.state
-         currentPrices[`${symbol}`] = parseFloat(result.price).toFixed(2)
-         this.setState({
-           stockStatus: "NEW",
-           currentPrices: currentPrices
-         })
-       }else{
+       if (result === "Unknown symbol"){
          this.setState({
            stockStatus : "INVALID"
          })
+       }else{
+         this.getCurrentPrice(symbol)
+         this.setState({
+           stockStatus: "NEW",
+           stockInfo: result
+         })
        }
      })
-    }
+   }
 
     //check whether the entered symbol is in the portfolio. If it is already there, set stockStatus to "OLD", so we can let user know it is already in the list. If it is a new one, pass that symbol to getStockInfo
     handleSubmit = (event) => {
@@ -135,66 +135,94 @@ class Portfolio extends React.Component {
       }
 
     render () {
-
+    const { stockInfo, stockList, currentPrices } = this.state
+    let netWorth = 0
+    let totalCost = 0
+    stockList.map((stock) => {
+      netWorth += currentPrices[`${stock.symbol}`] * stock.total_quantity
+      totalCost += stock.value
+    })
     return (
         <React.Fragment>
+{/* find stock inputbox and button */}
+          <div class="form-group">
+              <label class="col-form-label" for="inputDefault">Find a stock</label>
+              <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
+              <button type="submit" onClick= { this.handleSubmit }>Find</button>
+          </div>
 
-              <div>
-                <div class="form-group">
-                    <label class="col-form-label" for="inputDefault">Find a stock</label>
-                    <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
-                    <button type="submit" onClick= { this.handleSubmit }>Find</button>
+{/* if the user enters a new valid stock, show stock info card */}
+          { this.state.stockStatus=="NEW" &&
+            <div>
+              <div class="card border-primary mb-3" style={{ maxWidth: "30rem" }}>
+                <div class="card-header">New Stock</div>
+                <div class="card-body">
+                  <h4 class="card-title">{ stockInfo.symbol } { currentPrices[`${ stockInfo.symbol }`] }
+                    <button type="button" class="btn btn-success pull-right"
+                      onClick={() => this.createStock()}>
+                      Add
+                    </button>
+                  </h4>
+                  <p class="card-text">{ stockInfo.companyName }</p>
+                  <p class="card-text">{ stockInfo.exchange }</p>
+                  <p class="card-text">{ stockInfo.industry }</p>
+                  <p class="card-text">{ stockInfo.description }</p>
                 </div>
-                { this.state.stockStatus=="NEW" &&
-                  <div>
-                  <p>{this.state.form.symbol}: {this.state.currentPrices[`${this.state.form.symbol}`]}</p>
-                  <button type="button" class="btn btn-success"
-                    onClick={() => this.createStock()}
-                    style={{margin:"1em"}}>
-                    Add that stock to your portfolio</button>
-                  </div>
-                }
-                { this.state.stockStatus=="INVALID" &&
-                  <div>
-                  <p>Sorry, Can't find that stock. Please enter the correct symbol.</p>
-                  </div>
-                }
-                { this.state.stockStatus=="OLD" &&
-                  <div>
-                  <p>This stock is already in your portfolio.</p>
-                  </div>
-                }
-
-                <h3>Portfolio List</h3>
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">Symbol</th>
-                      <th scope="col">Average Price</th>
-                      <th scope="col">Quantity</th>
-                      <th scope="col">Current Price</th>
-                      <th scope="col">Gain/Loss</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  { this.state.stockList.map((stock, index) => {
-                    return(
-                      <tr class="table-light" key={ index }>
-                        <th scope="row"><a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a></th>
-                        <td>{ stock.average_price }</td>
-                        <td>{ stock.total_quantity }</td>
-                        <td>{ this.state.currentPrices[`${ stock.symbol }`]}</td>
-                        <td>{ this.state.currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value }</td>
-                        <button type="button" class="btn btn-danger btn-sm"
-                          onClick={() => this.handleDelete(`${ stock.id }`)}
-                          style={{margin:"1em"}}>
-                          Delete</button>
-                      </tr>)}
-                    )
-                  }
-                  </tbody>
-                </table>
               </div>
+            </div>
+          }
+
+{/* if user enters a invalid symbol, show error message */}
+          { this.state.stockStatus=="INVALID" &&
+            <div>
+            <p>Sorry, Can't find that stock. Please enter the correct symbol.</p>
+            </div>
+          }
+
+{/* if user enters a symbol already in list, show error message */}
+          { this.state.stockStatus=="OLD" &&
+            <div>
+            <p>This stock is already in your portfolio.</p>
+            </div>
+          }
+
+{/* Portfolio table */}
+          <div>
+          <h3>Portfolio List</h3>
+          <p>Net Worth: $ { netWorth }</p>
+          <p>Total Gain/Loss: $ { (netWorth - totalCost).toFixed(2) }</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Average Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Gain/Loss</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+            { stockList.map((stock, index) => {
+              return(
+                <tr class="table-light" key={ index }>
+                  <th scope="row"><a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a></th>
+                  <td>{ stock.average_price.toFixed(2) }</td>
+                  <td>{ stock.total_quantity }</td>
+                  <td>{ currentPrices[`${ stock.symbol }`]}</td>
+                  <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
+                  <td>
+                  <button type="button" class="btn btn-danger btn-sm"
+                    onClick={() => this.handleDelete(`${ stock.id }`)}>
+                    Delete
+                  </button>
+                  </td>
+                </tr>)}
+              )
+            }
+            </tbody>
+          </table>
+          </div>
 
         </React.Fragment>
         );
