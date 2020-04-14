@@ -124,16 +124,16 @@ class Portfolio extends React.Component {
     handleDelete = (id) => {
       fetch(`/stocks/${id}?portfolio=default`, {
         method: 'DELETE',
-         headers: {
-           'Content-Type': 'application/json'
-           }
-         }
-       ).then((response) => {
-         if(response.ok){
-           alert("this stock is deleted")
-           return this.getStockList()
-         }
-       })
+        headers: {
+          'Content-Type': 'application/json'
+          }
+        }
+      ).then((response) => {
+        if(response.ok){
+          alert("this stock is deleted")
+          return this.getStockList()
+        }
+      })
       }
 
     render () {

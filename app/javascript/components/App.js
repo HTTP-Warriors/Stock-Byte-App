@@ -76,7 +76,7 @@ class App extends React.Component {
     } = this.props;
     return (
 
-     <React.Fragment>
+    <React.Fragment>
       <Header />
       <NavBar
           logged_in = { logged_in }
