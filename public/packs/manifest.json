@@ -1,19 +1,13 @@
 {
-<<<<<<< HEAD
-
-  "application.js": "/packs/js/application-5e2a59579400e3e8bf6f.js",
-  "application.js.map": "/packs/js/application-5e2a59579400e3e8bf6f.js.map",
-=======
-  "application.js": "/packs/js/application-ca108cdc8b0e9a0b26bd.js",
-  "application.js.map": "/packs/js/application-ca108cdc8b0e9a0b26bd.js.map",
->>>>>>> 9c4c95a3fefce29e4340a58f9d8fe17f6fb20d9a
+  "application.js": "/packs/js/application-3ae86d8f9f8f33d4fe9d.js",
+  "application.js.map": "/packs/js/application-3ae86d8f9f8f33d4fe9d.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-ca108cdc8b0e9a0b26bd.js"
+        "/packs/js/application-3ae86d8f9f8f33d4fe9d.js"
       ],
       "js.map": [
-        "/packs/js/application-ca108cdc8b0e9a0b26bd.js.map"
+        "/packs/js/application-3ae86d8f9f8f33d4fe9d.js.map"
       ]
     },
     "hello_react": {
@@ -26,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-232553e2a64bc4d556b0.js"
+        "/packs/js/server_rendering-332dd36b901e79d0e42e.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-232553e2a64bc4d556b0.js.map"
+        "/packs/js/server_rendering-332dd36b901e79d0e42e.js.map"
       ]
     }
   },
@@ -39,13 +33,6 @@
   "media/components/components/background.jpg": "/packs/media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg",
   "media/components/components/image1.png": "/packs/media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png",
   "media/components/components/sbl.png": "/packs/media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png",
-<<<<<<< HEAD
-  "server_rendering.js": "/packs/js/server_rendering-f89c2a815dddb71d6b14.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-f89c2a815dddb71d6b14.js.map"
-
+  "server_rendering.js": "/packs/js/server_rendering-332dd36b901e79d0e42e.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-332dd36b901e79d0e42e.js.map"
 }
-=======
-  "server_rendering.js": "/packs/js/server_rendering-232553e2a64bc4d556b0.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-232553e2a64bc4d556b0.js.map"
-}
->>>>>>> 9c4c95a3fefce29e4340a58f9d8fe17f6fb20d9a

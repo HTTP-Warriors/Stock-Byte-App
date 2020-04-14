@@ -51306,3 +51306,284 @@ Completed 200 OK in 51ms (Views: 19.1ms | ActiveRecord: 29.6ms | Allocations: 97
 
 
 >>>>>>> 9c4c95a3fefce29e4340a58f9d8fe17f6fb20d9a
+Started GET "/" for ::1 at 2020-04-13 17:01:31 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (82.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 149.8ms | Allocations: 6152)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-04-13 17:01:35 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/root.html.erb:3
+  Rendered home/root.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1271)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: 526a615cd6a2b57cfd2b
+Version: webpack 4.42.1
+Time: 4031ms
+Built at: 04/13/2020 5:01:38 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-3ae86d8f9f8f33d4fe9d.js   2.3 MiB       application  [emitted] [immutable]  application
+                                 js/application-3ae86d8f9f8f33d4fe9d.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-332dd36b901e79d0e42e.js  2.18 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-332dd36b901e79d0e42e.js.map  2.35 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-3ae86d8f9f8f33d4fe9d.js js/application-3ae86d8f9f8f33d4fe9d.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-332dd36b901e79d0e42e.js js/server_rendering-332dd36b901e79d0e42e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1010 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 79 hidden modules
+
+WARNING in ./app/javascript/components/Pages/signup.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/signup.js: Unexpected token (10:16)
+
+   8 |         
+   9 |         
+> 10 |                 );
+     |                 ^
+  11 |     }
+  12 | }
+  13 | 
+    at Object._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Object.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Object.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Object.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Object.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10229:12)
+    at Object.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Object.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:4614:20)
+    at Object.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Object.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Object.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Object.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Object.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Object.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Object.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Object.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Object.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Object.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Object.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Object.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Object.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Object.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Object.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Object.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Object.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Object.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+    at /Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11885:14
+    at Object.withTopicForbiddingContext (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10956:14)
+    at Object.parseClassBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11862:10)
+    at Object.parseClass (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11836:22)
+    at Object.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11123:21)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/signup.js
+ @ ./app/javascript/packs/server_rendering.js
+
+Completed 200 OK in 6195ms (Views: 6055.6ms | ActiveRecord: 132.4ms | Allocations: 25124)
+
+
+[Webpacker] Compiled all packs in /Users/haizhou/Desktop/Stock-Byte-App/public/packs
+[Webpacker] Hash: 526a615cd6a2b57cfd2b
+Version: webpack 4.42.1
+Time: 3431ms
+Built at: 04/13/2020 5:01:40 PM
+                                                                      Asset      Size            Chunks                         Chunk Names
+                                     js/application-3ae86d8f9f8f33d4fe9d.js   2.3 MiB       application  [emitted] [immutable]  application
+                                 js/application-3ae86d8f9f8f33d4fe9d.js.map  2.48 MiB       application  [emitted] [dev]        application
+                                     js/hello_react-40ee275fdc5ab111e7fe.js  1.05 MiB       hello_react  [emitted] [immutable]  hello_react
+                                 js/hello_react-40ee275fdc5ab111e7fe.js.map  1.21 MiB       hello_react  [emitted] [dev]        hello_react
+                                js/server_rendering-332dd36b901e79d0e42e.js  2.18 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                            js/server_rendering-332dd36b901e79d0e42e.js.map  2.35 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                              manifest.json  1.54 KiB                    [emitted]              
+     media/components/Pages/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg   380 KiB                    [emitted]              
+    media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png  30.6 KiB                    [emitted]              
+       media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png   108 KiB                    [emitted]              
+Entrypoint application = js/application-3ae86d8f9f8f33d4fe9d.js js/application-3ae86d8f9f8f33d4fe9d.js.map
+Entrypoint hello_react = js/hello_react-40ee275fdc5ab111e7fe.js js/hello_react-40ee275fdc5ab111e7fe.js.map
+Entrypoint server_rendering = js/server_rendering-332dd36b901e79d0e42e.js js/server_rendering-332dd36b901e79d0e42e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1010 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 968 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.07 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 301 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 79 hidden modules
+
+WARNING in ./app/javascript/components/Pages/signup.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/haizhou/Desktop/Stock-Byte-App/app/javascript/components/Pages/signup.js: Unexpected token (10:16)
+
+   8 |         
+   9 |         
+> 10 |                 );
+     |                 ^
+  11 |     }
+  12 | }
+  13 | 
+    at Object._raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:742:17)
+    at Object.raiseWithData (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:735:17)
+    at Object.raise (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:729:17)
+    at Object.unexpected (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:8757:16)
+    at Object.parseParenAndDistinguishExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10229:12)
+    at Object.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9947:21)
+    at Object.parseExprAtom (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:4614:20)
+    at Object.parseExprSubscripts (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9602:23)
+    at Object.parseMaybeUnary (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9582:21)
+    at Object.parseExprOps (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9452:23)
+    at Object.parseMaybeConditional (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9425:23)
+    at Object.parseMaybeAssign (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9380:21)
+    at Object.parseExpression (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:9332:23)
+    at Object.parseReturnStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11448:28)
+    at Object.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11129:21)
+    at Object.parseStatement (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11081:17)
+    at Object.parseBlockOrModuleBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11656:25)
+    at Object.parseBlockBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11642:10)
+    at Object.parseBlock (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11626:10)
+    at Object.parseFunctionBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10634:24)
+    at Object.parseFunctionBodyAndFinish (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10617:10)
+    at Object.parseMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10579:10)
+    at Object.pushClassMethod (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:12081:30)
+    at Object.parseClassMemberWithIsStatic (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11998:12)
+    at Object.parseClassMember (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11940:10)
+    at /Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11885:14
+    at Object.withTopicForbiddingContext (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:10956:14)
+    at Object.parseClassBody (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11862:10)
+    at Object.parseClass (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11836:22)
+    at Object.parseStatementContent (/Users/haizhou/Desktop/Stock-Byte-App/node_modules/@babel/parser/lib/index.js:11123:21)
+ @ ./app/javascript/components sync ^\.\/.*$ ./Pages/signup.js
+ @ ./app/javascript/packs/application.js
+
+Completed 200 OK in 4882ms (Views: 4880.5ms | ActiveRecord: 0.9ms | Allocations: 9403)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-13 17:01:40 -0700
+Processing by PortfoliosController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:4:in `index'
+  [1m[36mPortfolio Load (0.9ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/portfolios_controller.rb:6:in `index'
+  [1m[36mStock Load (0.6ms)[0m  [1m[34mSELECT "stocks".* FROM "stocks" WHERE "stocks"."portfolio_id" = $1[0m  [["portfolio_id", 2]]
+  ↳ app/models/portfolio.rb:7:in `total_cost'
+  [1m[36mTrade Load (3.4ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 17]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (12.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 18]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 19]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (6.1ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 21]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 22]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.3ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 23]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 24]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 25]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.5ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 26]]
+  ↳ app/models/stock.rb:14:in `value'
+  [1m[36mTrade Load (0.2ms)[0m  [1m[34mSELECT "trades".* FROM "trades" WHERE "trades"."stock_id" = $1[0m  [["stock_id", 27]]
+  ↳ app/models/stock.rb:14:in `value'
+Completed 200 OK in 226ms (Views: 51.7ms | ActiveRecord: 161.9ms | Allocations: 26173)
+
+
+Started GET "/users/sign_out" for ::1 at 2020-04-13 17:02:38 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms | Allocations: 4387)
+
+
+Started GET "/" for ::1 at 2020-04-13 17:02:38 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 1.9ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 4612)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-13 17:02:38 -0700
+Processing by PortfoliosController#index as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-13 17:02:39 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 601)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3254)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 9023)
+
+
+Started GET "/overview" for ::1 at 2020-04-13 17:02:41 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"overview"}
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.5ms | Allocations: 278)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4621)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-13 17:02:41 -0700
+Processing by PortfoliosController#index as */*
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 376)
+
+
+Started GET "/" for ::1 at 2020-04-13 17:02:43 -0700
+Processing by HomeController#root as HTML
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.5ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4554)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-13 17:02:43 -0700
+Processing by PortfoliosController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 376)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-04-13 17:02:44 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 5761)
+
+
+Started GET "/overview" for ::1 at 2020-04-13 17:02:46 -0700
+Processing by HomeController#root as HTML
+  Parameters: {"path"=>"overview"}
+  Rendering home/root.html.erb within layouts/application
+  Rendered home/root.html.erb within layouts/application (Duration: 0.5ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 4586)
+
+
+Started GET "/portfolios" for ::1 at 2020-04-13 17:02:46 -0700
+Processing by PortfoliosController#index as */*
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 374)
+
+

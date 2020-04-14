@@ -30,5 +30,3 @@
 /public/packs/js/*
 
 /log/development.log
-
-/public/packs/manifest.json
