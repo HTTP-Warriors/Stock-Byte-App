@@ -1,5 +1,9 @@
 import React from "react"
 import  { Redirect } from 'react-router-dom'
+import { LinkContainer } from "react-router-bootstrap";
+
+
+
 
 class NavBar extends React.Component {
   constructor(props){
@@ -40,7 +44,7 @@ class NavBar extends React.Component {
       <React.Fragment>
 
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" >
       <div class="container-fluid">
 
         </div>
@@ -62,10 +66,13 @@ class NavBar extends React.Component {
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href={ edit_user_route }>Account</a>
             </li>}
+          
           {logged_in &&
             <li class="nav-item">
               <a class href={sign_out_route}>Sign Out</a>
             </li>}
+            
+           
           {!logged_in &&
             <li class="nav-item">
               <a class href={sign_in_route}>Sign In</a>
@@ -78,8 +85,11 @@ class NavBar extends React.Component {
             <button type="submit" onClick = { this.handleSubmit }>Find</button>
           </li>
           </form>
+ 
         </ul>
       </nav>
+
+
 
 
 

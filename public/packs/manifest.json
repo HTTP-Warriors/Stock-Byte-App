@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-b2ee67d50acb6beb68ab.js",
-  "application.js.map": "/packs/js/application-b2ee67d50acb6beb68ab.js.map",
+  "application.js": "/packs/js/application-587c59f26b24a187bf73.js",
+  "application.js.map": "/packs/js/application-587c59f26b24a187bf73.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-b2ee67d50acb6beb68ab.js"
+        "/packs/js/application-587c59f26b24a187bf73.js"
       ],
       "js.map": [
-        "/packs/js/application-b2ee67d50acb6beb68ab.js.map"
+        "/packs/js/application-587c59f26b24a187bf73.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-bfc03a7cab3d9ba1f3d1.js"
+        "/packs/js/server_rendering-dfc6dcb839f5c614e915.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-bfc03a7cab3d9ba1f3d1.js.map"
+        "/packs/js/server_rendering-dfc6dcb839f5c614e915.js.map"
       ]
     }
   },
@@ -33,6 +33,6 @@
   "media/components/components/background.jpg": "/packs/media/components/components/background-9778abf5907332a0761a2a8f5c0e14ee.jpg",
   "media/components/components/image1.png": "/packs/media/components/components/image1-ed6025ed1420d4239ed3716a6e945054.png",
   "media/components/components/sbl.png": "/packs/media/components/components/sbl-ae42fd87125cd86ff99bda2665b1e142.png",
-  "server_rendering.js": "/packs/js/server_rendering-bfc03a7cab3d9ba1f3d1.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-bfc03a7cab3d9ba1f3d1.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-dfc6dcb839f5c614e915.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-dfc6dcb839f5c614e915.js.map"
 }

@@ -11,7 +11,8 @@ import Home from "./Pages/home"
 import NotFound from "./Pages/notfound"
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
 import ReactRailsUJS from 'react_ujs'
-
+// import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap-theme.css';
 
 
 class App extends React.Component {
@@ -29,7 +30,7 @@ class App extends React.Component {
 
      <React.Fragment>
       <Header />
-      <NavBar
+      <NavBar fixed="top" 
           logged_in = { logged_in }
           sign_in_route = { sign_in_route }
           sign_out_route = { sign_out_route }
