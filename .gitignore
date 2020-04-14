@@ -12,17 +12,36 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore uploaded files in development.
+# Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+/public/uploads
 
+# Ignore Byebug command history file.
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ingnore node_modules
+# Ignore node_modules
 /node_modules
 
-# Ingnore DS_Store
+# Ignore DS_Store
 .DS_Store
+
+# Ignore precompiled javascript packs
+/public/packs
+/public/packs-test
+/public/assets
+
+# Ignore yarn files
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

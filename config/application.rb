@@ -24,6 +24,8 @@ module StockbyteApp
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.hosts << "stockbyte.herokuapp.com"
+    config.hosts << "9282e8f276c4443aa611cbcc01a5e05a.vfs.cloud9.us-east-2.amazonaws.com"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

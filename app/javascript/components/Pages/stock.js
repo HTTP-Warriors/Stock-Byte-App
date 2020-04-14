@@ -28,15 +28,15 @@ class Stock extends React.Component {
     const { symbol } = this.props.match.params
     fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
     .then((response)=>{
-    if(response.status === 200){
-      return(response.json())
-    }
-  })
-  .then((result)=>{
-    this.setState({
-      currentPrice: result.price
-    })
-  })
+     if(response.status === 200){
+       return(response.json())
+     }
+   })
+   .then((result)=>{
+     this.setState({
+       currentPrice: parseFloat(result.price).toFixed(2)
+     })
+   })
   }
 
   getStockInfo = () => {
@@ -135,10 +135,8 @@ class Stock extends React.Component {
     const { symbol } = this.props.match.params
     return (
       <React.Fragment>
-          <h2>Stock Placeholder</h2>
-          <p>{ symbol } current price is { this.state.currentPrice }</p>
-          <p>{ symbol } average holding price is { this.state.average_price }</p>
-          <p>{ symbol } quantity is { this.state.total_quantity }</p>
+          <h2>{ symbol.toUpperCase() }</h2>
+          <p>current price is { this.state.currentPrice }</p>
           <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
 
           {(tradeList.length>0) &&
