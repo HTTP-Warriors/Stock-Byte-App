@@ -44,7 +44,7 @@ class NavBar extends React.Component {
       <React.Fragment>
 
 
-    <nav class="navbar navbar-inverse" >
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
 
         </div>
