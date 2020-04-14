@@ -207,7 +207,7 @@ class Portfolio extends React.Component {
             <tbody>
             { stockList.map((stock, index) => {
               return(
-                <tr class="table-light" key={ index }>
+                <tr class="table-dark" key={ index }>
                   <th scope="row"><a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a></th>
                   <td>{ stock.average_price.toFixed(2) }</td>
                   <td>{ stock.total_quantity }</td>
