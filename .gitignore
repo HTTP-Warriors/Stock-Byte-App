@@ -26,7 +26,3 @@
 
 # Ignore DS_Store
 .DS_Store
-
-/public/packs/js/*
-
-/log/development.log
