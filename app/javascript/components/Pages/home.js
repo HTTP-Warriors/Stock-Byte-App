@@ -3,8 +3,29 @@ import Flexbox from 'flexbox-react';
 import background from "./background.jpg"
 
 class Home extends React.Component {
-    render () {
+  constructor(){
+    super()
+    this.state = {
+      articles: []
+    }
+  }
 
+  componentDidMount(){
+      this.getArticles()
+  }
+
+getArticles = () => {
+  fetch('https://finnhub.io/api/v1/news?category=general&token=bqaa48nrh5r8t7qn85ig')
+    .then((response) => {
+      return response.json()
+    })
+    .then((payload) => {
+      let topThree = payload.filter((value, index) => index < 3 )
+      this.setState({ articles: topThree })
+    })
+  }
+
+    render () {
     return (
         <React.Fragment>
           <Flexbox flexDirection="column" minHeight="100vh">
@@ -73,33 +94,24 @@ class Home extends React.Component {
 
 
 
-
-
                 <div class="card">
                   <div class="card-body">
                     <div>
-                    <h4 class="card-title">Current News</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">News refresh for you to see what is going on the the world as seen by NY TIMES</h6>
-                    <p class="card-text">Fresh news that have anything to do with the financial sector go in here. They will refresh as the world changes and effects out world. This is where all the hot and fresh news will show.</p>
-                    <a href="https://www.nytimes.com/" class="card-link">NYNews</a>
-                    <a href="https://developer.nytimes.com/" class="card-link">NYN API</a>
+                    <h3 class="card-title">Current News</h3>
+                    
+                    { this.state.articles.map((article, index) => {
+                      return(
+                        <div>
+                        <h4 class="card-title"> { article.headline } </h4>
+                        <h6 class="card-subtitle mb-2 text-muted"> Source: { article.source } </h6>
+                        <p class="card-text"> {article.summary} </p>
+                        <a href= {article.url} class="card-link" target="_blank"> Continue Reading Here </a>
+                        
+                        </div> 
+                      ) 
+                    }) }
                     </div>
 
-                    <div>
-                    <h4 class="card-title">What's up with Heroku?</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">It has been a hard week for all. And Heroku is not making it any easier!</h6>
-                    <p class="card-text">Heroku is very hard to master and deploy.</p>
-                    <a href="https://dashboard.heroku.com/apps" class="card-link">Heroku link</a>
-                    <a href="https://github.com/learn-academy-2020-alpha/Syllabus/blob/master/heroku/README.md" class="card-link">Heroku Deploy Steps</a>
-                    </div>
-
-                    <div>
-                    <h4 class="card-title">Merging has not been a friend!!!?</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">As you know!!! it conflicts!</h6>
-                    <p class="card-text">What is going on with this thing. it merges and than it is not. we should take that think into our hands and make it work!.</p>
-                    <a href="https://help.github.com" class="card-link">GitHub</a>
-                    <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/merging-a-pull-request" class="card-link">GitHub Merge Steps</a>
-                    </div>
                   </div>
                 </div>
 

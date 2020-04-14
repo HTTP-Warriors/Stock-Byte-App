@@ -28,15 +28,15 @@ class Stock extends React.Component {
     const { symbol } = this.props.match.params
     fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
     .then((response)=>{
-     if(response.status === 200){
-       return(response.json())
-     }
-   })
-   .then((result)=>{
-     this.setState({
-       currentPrice: result.price
-     })
-   })
+    if(response.status === 200){
+      return(response.json())
+    }
+  })
+  .then((result)=>{
+    this.setState({
+      currentPrice: result.price
+    })
+  })
   }
 
   getStockInfo = () => {
@@ -49,7 +49,7 @@ class Stock extends React.Component {
       .then((result)=>{
         this.getStock(result)
       })
- }
+  }
   getStock = (stockList) => {
     const { symbol } = this.props.match.params
     let id = 0
@@ -63,20 +63,20 @@ class Stock extends React.Component {
         inPortfolio: true
       })
       fetch(`/stocks/${id}?portfolio=default`)
-     .then((response)=>{
-       if(response.status === 200){
-         return(response.json())
-       }
-     })
-     .then((result)=>{
-       this.setState({
-         average_price: result.average_price,
-         total_quantity: result.total_quantity
+    .then((response)=>{
+      if(response.status === 200){
+        return(response.json())
+      }
+    })
+    .then((result)=>{
+      this.setState({
+        average_price: result.average_price,
+        total_quantity: result.total_quantity
         })
-     })
-     }
-     if(id > 0){
-       fetch(`/trades?stock=${symbol}&portfolio=default`)
+    })
+    }
+    if(id > 0){
+      fetch(`/trades?stock=${symbol}&portfolio=default`)
       .then((response)=>{
         if(response.status === 200){
           return(response.json())
@@ -85,7 +85,7 @@ class Stock extends React.Component {
       .then((result)=>{
         this.setState({
           tradeList:result
-         })
+          })
       })
       }
   }
@@ -119,16 +119,16 @@ class Stock extends React.Component {
     const { symbol } = this.props.match.params
     fetch(`/trades/${id}?portfolio=default&stock=${symbol}`, {
       method: 'DELETE',
-       headers: {
-         'Content-Type': 'application/json'
-         }
-       }
-     ).then((response) => {
-       if(response.ok){
-         alert("this trade is deleted")
-         return this.getStockInfo()
-       }
-     })
+      headers: {
+        'Content-Type': 'application/json'
+        }
+      }
+    ).then((response) => {
+      if(response.ok){
+        alert("this trade is deleted")
+        return this.getStockInfo()
+      }
+    })
     }
   render () {
     const { tradeList } = this.state

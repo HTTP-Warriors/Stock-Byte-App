@@ -75,16 +75,16 @@ class Portfolio extends React.Component {
         fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
           .then((response)=>{
         if(response.status === 200){
-           return(response.json())
-         }
-       })
-       .then((result)=>{
-         const { currentPrices } = this.state
-         currentPrices[`${symbol}`] = result.price
-         this.setState({
-           currentPrices: currentPrices
-         })
-       })
+          return(response.json())
+        }
+      })
+      .then((result)=>{
+        const { currentPrices } = this.state
+        currentPrices[`${symbol}`] = result.price
+        this.setState({
+          currentPrices: currentPrices
+        })
+      })
       }
 
     handleSubmit = (event) => {
@@ -120,16 +120,16 @@ class Portfolio extends React.Component {
     handleDelete = (id) => {
       fetch(`/stocks/${id}?portfolio=default`, {
         method: 'DELETE',
-         headers: {
-           'Content-Type': 'application/json'
-           }
-         }
-       ).then((response) => {
-         if(response.ok){
-           alert("this stock is deleted")
-           return this.getStockList()
-         }
-       })
+        headers: {
+          'Content-Type': 'application/json'
+          }
+        }
+      ).then((response) => {
+        if(response.ok){
+          alert("this stock is deleted")
+          return this.getStockList()
+        }
+      })
       }
 
     render () {
