@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'bootswatch/dist/litera/bootstrap.min.css'
+import 'bootswatch/dist/united/bootstrap.min.css'
 import Header from "./components/header"
 import NavBar from './components/navigationbar'
 import Overview from "./Pages/overview"
