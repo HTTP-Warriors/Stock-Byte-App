@@ -1,6 +1,8 @@
 import React from "react"
 import { Redirect } from "react-router-dom"
 
+import 'bootswatch/dist/united/bootstrap.min.css'
+
 class Portfolio extends React.Component {
     constructor(props){
         super(props)
