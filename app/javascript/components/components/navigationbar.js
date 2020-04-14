@@ -20,7 +20,17 @@ class NavBar extends React.Component {
   handleSubmit = (event) => {
       event.preventDefault()
       let { form } = this.state
-      window.location.href = `/stock/${form.symbol}`
+      fetch(`https://api.twelvedata.com/price?symbol=${ form.symbol }&apikey=bc07ae0baa6241d79c88764a862a7dba`)
+        .then((response)=>{
+      if(response.status === 200){
+         return(response.json())
+       }
+     })
+     .then((result)=>{
+       if(result.price){
+         window.location.href = `/stock/${form.symbol}`
+       }
+     })
   }
 
   handleChange = (event) => {
@@ -66,13 +76,13 @@ class NavBar extends React.Component {
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href={ edit_user_route }>Account</a>
             </li>}
-          
+
           {logged_in &&
             <li class="nav-item">
               <a class href={sign_out_route}>Sign Out</a>
             </li>}
-            
-           
+
+
           {!logged_in &&
             <li class="nav-item">
               <a class href={sign_in_route}>Sign In</a>
@@ -85,7 +95,7 @@ class NavBar extends React.Component {
             <button type="submit" onClick = { this.handleSubmit }>Find</button>
           </li>
           </form>
- 
+
         </ul>
       </nav>
 
