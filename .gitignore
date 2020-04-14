@@ -39,6 +39,9 @@
 yarn-debug.log*
 .yarn-integrity
 
+# Ignore package-lock.json
+package-lock.json
+
 /public/packs
 /public/packs-test
 /node_modules

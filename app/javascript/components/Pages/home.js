@@ -2,6 +2,7 @@ import React from "react"
 import Flexbox from 'flexbox-react';
 import background from "./background.jpg"
 import Chart from "./chart"
+import TextLoop from "react-text-loop";
 
 class Home extends React.Component {
   constructor(){
@@ -29,9 +30,28 @@ getArticles = () => {
     render () {
     return (
         <React.Fragment>
+       
+
+        
           <Flexbox flexDirection="column" minHeight="100vh">
             <Flexbox element="header" height="60px">
+            
 
+        
+        <block class="blockquote">
+          <h3 class="mb-0">
+             <TextLoop interval={450} style={{color: 'darkblue'}}>
+                <div>Trade faster</div>
+                <div>Increase sales</div>
+                <div>Stock winners</div>
+                <div>Price perfectly</div>
+                <div>Be on Top</div>
+              </TextLoop>
+          </h3>
+          <h3>S T O C K   B Y T E  YOUR FINANCIAL EINSTEIN!!!!!!!!</h3>
+        </block>
+        
+        
             </Flexbox>
 
             <Flexbox flexGrow={1}>
@@ -101,15 +121,24 @@ getArticles = () => {
                 <div class="card">
                   <div class="card-body">
                     <div>
-                    <h3 class="card-title">Current News</h3>
+                    <p className="box-footer" align="right" style={{color: 'green'}}>
+                    <h1 class="card-title">Current News</h1>
+                    
+                    </p>
                     
                     { this.state.articles.map((article, index) => {
                       return(
                         <div>
+                        <p style={{color: 'darkblue'}}>
                         <h4 class="card-title"> { article.headline } </h4>
+                        </p>
                         <h6 class="card-subtitle mb-2 text-muted"> Source: { article.source } </h6>
+                        
                         <p class="card-text"> {article.summary} </p>
+                        
+                        <p className="box-footer" align="right">
                         <a href= {article.url} class="card-link" target="_blank"> Continue Reading Here </a>
+                        </p>
                         
                         </div> 
                       ) 
