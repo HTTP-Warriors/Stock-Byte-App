@@ -11,13 +11,13 @@ class Portfolio extends React.Component {
             },
             currentPrices: {},
             stockStatus: "HIDE",
-            stockInfo: {}
+            stockInfo: {},
+            stockQuotes: {}
         }
     }
     componentDidMount(){
         this.getStockList()
     }
-
 
     // this method retrieve stock list of current_user's default portfolio
     getStockList = () => {
@@ -31,10 +31,12 @@ class Portfolio extends React.Component {
           this.setState({stockList:result})
           result.map((stock)=>{
             this.getCurrentPrice(stock.symbol)
+            this.getStockQuote(stock.symbol)
           })
         })
       }
-      //this method retrieve current price by given symbol, then create one property in currentPrices object
+
+    // this method retrieve current price by given symbol, then create one property in currentPrices object
     getCurrentPrice = (symbol) => {
       fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
         .then((response)=>{
@@ -50,6 +52,24 @@ class Portfolio extends React.Component {
        })
      })
     }
+
+    // method to get stock quote information, then store in stockQuotes object
+    getStockQuote = (symbol) => {
+      fetch(`https://api.twelvedata.com/quote?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
+        .then((response)=>{
+         if(response.status === 200){
+           return(response.json())
+         }
+        })
+        .then((result)=>{
+          const { stockQuotes } = this.state
+          stockQuotes[`${symbol}`] = result
+          this.setState({
+           stockQuote: stockQuotes
+          })
+        })
+    }
+
     // use iexapis api to check the symbol can have a current price when user enters one. If user entered a valid symbol, will get current stock info from iexapis and use getCurrentPrice, and set stockStatus to "NEW" so we can know it is ready to add into the portfolio. If user entered an invalid symbol, set stockStatus to "INVALID", so we can tell user to enter again.
     getStockInfo = (symbol) => {
       fetch(`https://cloud.iexapis.com/stable/stock/${symbol}/company?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
@@ -67,6 +87,7 @@ class Portfolio extends React.Component {
          })
        }else{
          this.getCurrentPrice(symbol)
+         this.getStockQuote(symbol)
          this.setState({
            stockStatus: "NEW",
            stockInfo: result
@@ -75,7 +96,7 @@ class Portfolio extends React.Component {
      })
    }
 
-    //check whether the entered symbol is in the portfolio. If it is already there, set stockStatus to "OLD", so we can let user know it is already in the list. If it is a new one, pass that symbol to getStockInfo
+    // check whether the entered symbol is in the portfolio. If it is already there, set stockStatus to "OLD", so we can let user know it is already in the list. If it is a new one, pass that symbol to getStockInfo
     handleSubmit = (event) => {
       event.preventDefault()
       const { form, stockList } = this.state
@@ -120,6 +141,7 @@ class Portfolio extends React.Component {
           }
       })
     }
+
     // method to delete a stock by id
     handleDelete = (id) => {
       fetch(`/stocks/${id}?portfolio=default`, {
@@ -137,7 +159,8 @@ class Portfolio extends React.Component {
       }
 
     render () {
-    const { stockInfo, stockList, currentPrices } = this.state
+    const { stockInfo, stockList, currentPrices, stockQuotes } = this.state
+    console.log(stockQuotes);
     let netWorth = 0
     let totalCost = 0
     stockList.map((stock) => {
@@ -191,7 +214,7 @@ class Portfolio extends React.Component {
 {/* Portfolio table */}
           <div>
           <h3>Portfolio List</h3>
-          <p>Net Worth: $ { netWorth }</p>
+          <p>Net Worth: $ { netWorth.toFixed(2) }</p>
           <p>Total Gain/Loss: $ { (netWorth - totalCost).toFixed(2) }</p>
           <table class="table table-hover">
             <thead>
@@ -208,7 +231,11 @@ class Portfolio extends React.Component {
             { stockList.map((stock, index) => {
               return(
                 <tr class="table-light" key={ index }>
-                  <th scope="row"><a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a></th>
+                  <th scope="row">
+                    <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
+                    <br />
+                    <small>{ stockQuotes[`${ stock.symbol }`]?stockQuotes[`${ stock.symbol }`].name: null }</small>
+                  </th>
                   <td>{ stock.average_price.toFixed(2) }</td>
                   <td>{ stock.total_quantity }</td>
                   <td>{ currentPrices[`${ stock.symbol }`]}</td>
