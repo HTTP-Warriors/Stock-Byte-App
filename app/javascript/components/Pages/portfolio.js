@@ -160,7 +160,6 @@ class Portfolio extends React.Component {
 
     render () {
     const { stockInfo, stockList, currentPrices, stockQuotes } = this.state
-    console.log(stockQuotes);
     let netWorth = 0
     let totalCost = 0
     stockList.map((stock) => {

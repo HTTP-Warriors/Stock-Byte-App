@@ -170,8 +170,6 @@ class Stock extends React.Component {
   render () {
     const { tradeList, stockQuote, stockNews } = this.state
     const { symbol } = this.props.match.params
-    console.log(stockQuote);
-    console.log(stockNews);
     return (
       <React.Fragment>
 
