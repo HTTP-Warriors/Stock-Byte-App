@@ -7,7 +7,7 @@ class PortfoliosController < ApplicationController
       else
       #   @user = User.first
       #   @portfolio = @user.portfolios.all
-      render json: []
+      render json: ["not signed in"]
       end
     end
   # POST http://localhost:3000/portfolios, portfolio_params
