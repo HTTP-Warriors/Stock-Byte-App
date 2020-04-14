@@ -31,31 +31,69 @@ getArticles = () => {
     return (
         <React.Fragment>
 
-
-          <Flexbox flexDirection="column" minHeight="100vh">
+          <Flexbox flexDirection="column" minHeight="100%">
+            
             <Flexbox element="header" height="60px">
 
+                  <block class="blockquote">
+                          
+                        <div>
+                          
+                          <table class="table table-hover">
+                              <thead>
+                                
+                                <tr class="table-warning">
+                                      <th scope="row">
+                                      <button type="button" class="btn btn-outline-warning btn-lg">
+                                      L E A R N to 
+                                      </button>
+                                      </th>
+                                  
+                                      <td>
+                                          <button type="button" class="btn btn-outline-warning btn-lg">
+                                          <TextLoop interval={550}>
+                                            <span>Trade faster</span>
+                                            <span>Increase sales</span>
+                                            <span>Spot Stock winners</span>
+                                            <span>Price perfectly</span>
+                                            <span>Be on Top</span>
+                                          </TextLoop>
+                                          </button>
+                                          
+                                      </td>
+                                  
+                                      <td>
+                                      <button type="button" class="btn btn-outline-warning btn-lg">
+                                      on S T O C K  B Y T E  by
+                                      </button>
+                                      </td>
+                                  
+                                      <td>
+                                      <button type="button" class="btn btn-outline-warning btn-lg">
+                                          <TextLoop  interval={450} style>
+                                            <span>Joe</span>
+                                            <span>Jeremy</span>
+                                            <span>Richie</span>
+                                            <span>Xena</span>
+                                          </TextLoop>{" "}
+                                          !!!
+                                      </button>
+                                      </td>
+                                </tr>
+                                
+                              </thead>            
+                          </table>
+                        </div>
+                 
+                  </block>
+              </Flexbox>
 
-
-        <block class="blockquote">
-          <h3 class="mb-0">
-             <TextLoop interval={450} style={{color: 'darkblue'}}>
-                <div>Trade faster</div>
-                <div>Increase sales</div>
-                <div>Stock winners</div>
-                <div>Price perfectly</div>
-                <div>Be on Top</div>
-              </TextLoop>
-          </h3>
-          <h3>S T O C K   B Y T E  YOUR FINANCIAL EINSTEIN!!!!!!!!</h3>
-        </block>
-
-
-            </Flexbox>
 
             <Flexbox flexGrow={1}>
             <div class="card mb-3">
-                  <h3 class="card-header">Let's learn about stock market!</h3>
+              <h3 class="card-header">
+                Let us learn about Stock Market!
+              </h3>
 
                   <div class="card-body">
                     <h5 class="card-title">WHAT DOES STOCK MARKET DO?</h5>
