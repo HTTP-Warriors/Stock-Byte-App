@@ -7,15 +7,17 @@
 
 
 # Ignore all logfiles and tempfiles.
-*.log
+/log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 
-# Ignore uploaded files in development.
+# Ignore uploaded files in development
 /storage/*
 !/storage/.keep
+/public/uploads
 
+# Ignore Byebug command history file.
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
@@ -26,3 +28,13 @@
 
 # Ignore DS_Store
 .DS_Store
+
+# Ignore precompiled javascript packs
+/public/packs
+/public/packs-test
+/public/assets
+
+# Ignore yarn files
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
