@@ -1,42 +1,85 @@
-// import React from "react"
-//
-// class About extends React.Component {
-//     render () {
-//
-//     return (
-//         <React.Fragment>
-//             <h2>About Placeholder</h2>
-//         </React.Fragment>
-//         );
-//     }
-// }
-//
-// export default About
 import React from "react"
-import { createChart } from 'lightweight-charts';
+import jeremy from './images/jeremy_photo.jpg'
+import linkedin from './images/linkedin.png'
+import github from './images/github.png'
 
 class About extends React.Component {
     render () {
-    const chart = createChart(document.body, { width: 400, height: 300 });
-    const lineSeries = chart.addLineSeries();
-    let chartShow = lineSeries.setData([
-        { time: '2019-04-11', value: 80.01 },
-        { time: '2019-04-12', value: 96.63 },
-        { time: '2019-04-13', value: 76.64 },
-        { time: '2019-04-14', value: 81.89 },
-        { time: '2019-04-15', value: 74.43 },
-        { time: '2019-04-16', value: 80.01 },
-        { time: '2019-04-17', value: 96.63 },
-        { time: '2019-04-18', value: 76.64 },
-        { time: '2019-04-19', value: 81.89 },
-        { time: '2019-04-20', value: 74.43 },
-    ]);
-
-
     return (
-        <React.Fragment>
-            { chartShow }
-        </React.Fragment>
+      <div class="container" style={{textAlign: "center"}}>
+            <h1 style={{paddingBottom: "20px", textAlign: "center"}}> Meet the Devs </h1>
+            <div class="row" style={{marginLeft: "auto", marginRight: "auto"}}>
+              <div class="col-sm-6">
+                <div class="card mb-5">
+                  <h3 class="card-header">Richie Edquid</h3>
+                  <div class="card-body">
+                    <h5 class="card-title">Position</h5>
+                  </div>
+                  <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={jeremy} alt="Jeremy's photo for bio" />
+                  <div class="card-body">
+                    <p class="card-text">Quick Description</p>
+                  </div>
+                  <div class="card-body">
+                    <a href="https://www.linkedin.com/in/richandcreamy/" class="card-link" > <img style={{height: "20px", width: "20px"}} src={linkedin} alt= "Linkedin" /> </a>
+                    <a href="https://github.com/richandcreamy" class="card-link"> <img style={{height: "20px", width: "20px"}} src={github} alt= "Linkedin" /> </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-sm-6">
+              <div class="card mb-5">
+                <h3 class="card-header">Haizhou Guo</h3>
+                <div class="card-body">
+                  <h5 class="card-title">Position</h5>
+                </div>
+                <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={jeremy} alt="Jeremy's photo for bio" />
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                  <div class="card-body">
+                    <a href="https://www.linkedin.com/in/haizhou-guo/" class="card-link" > <img style={{height: "20px", width: "20px"}} src={linkedin} alt= "Linkedin" /> </a>
+                    <a href="https://github.com/haizhou85" class="card-link"> <img style={{height: "20px", width: "20px"}} src={github} alt= "Linkedin" /> </a>
+                  </div>
+              </div>
+              </div>
+            </div>
+            
+            <div class="row" style={{marginLeft: "auto", marginRight: "auto"}}>
+              <div class="col-sm-6" >
+              <div class="card mb-5">
+                <h3 class="card-header">Jeremy Lleva</h3>
+                <div class="card-body">
+                  <h5 class="card-title">Backend Developer</h5>
+                </div>
+                <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={jeremy} alt="Jeremy's photo for bio" />
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                  <div class="card-body">
+                    <a href="https://www.linkedin.com/in/jeremy-lleva/" class="card-link" > <img style={{height: "20px", width: "20px"}} src={linkedin} alt= "Linkedin" /> </a>
+                    <a href="https://github.com/JeremyLleva" class="card-link"> <img style={{height: "20px", width: "20px"}} src={github} alt= "Linkedin" /> </a>
+                  </div>
+              </div>
+              </div>
+              
+              <div class="col-sm-6">
+              <div class="card mb-5">
+                <h3 class="card-header">Xena Sitnikova</h3>
+                <div class="card-body">
+                  <h5 class="card-title">Position</h5>
+                </div>
+                <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={jeremy} alt="Jeremy's photo for bio" />
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                  <div class="card-body">
+                    <a href="https://www.linkedin.com/in/sxena/" class="card-link" > <img style={{height: "20px", width: "20px"}} src={linkedin} alt= "Linkedin" /> </a>
+                    <a href="https://github.com/sxena" class="card-link"> <img style={{height: "20px", width: "20px"}} src={github} alt= "Linkedin" /> </a>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
         );
     }
 }
