@@ -1,6 +1,7 @@
 import React from "react"
 import Flexbox from 'flexbox-react';
 import background from "./background.jpg"
+import Chart from "./chart"
 import TextLoop from "react-text-loop";
 
 class Home extends React.Component {
@@ -29,6 +30,7 @@ getArticles = () => {
     render () {
     return (
         <React.Fragment>
+
           <Flexbox flexDirection="column" minHeight="100%">
             
             <Flexbox element="header" height="60px">
@@ -86,6 +88,7 @@ getArticles = () => {
                   </block>
               </Flexbox>
 
+
             <Flexbox flexGrow={1}>
             <div class="card mb-3">
               <h3 class="card-header">
@@ -139,7 +142,10 @@ getArticles = () => {
 
                   <div class="card-body">
 
-                    <a href="#" class="card-link">Another link</a>
+
+                    <a href="https://iexcloud.io" class="card-link" target="_blank"> Chart Data provided by IEX Cloud</a>
+                    <a href="https://www.tradingview.com/" class="card-link" target="_blank">Chart Graph provided by Trading View</a>
+
                   </div>
 
 
@@ -154,9 +160,9 @@ getArticles = () => {
                     <div>
                     <p className="box-footer" align="right" style={{color: 'green'}}>
                     <h1 class="card-title">Current News</h1>
-                    
+
                     </p>
-                    
+
                     { this.state.articles.map((article, index) => {
                       return(
                         <div>
@@ -164,19 +170,24 @@ getArticles = () => {
                         <h4 class="card-title"> { article.headline } </h4>
                         </p>
                         <h6 class="card-subtitle mb-2 text-muted"> Source: { article.source } </h6>
-                        
+
                         <p class="card-text"> {article.summary} </p>
-                        
+
                         <p className="box-footer" align="right">
                         <a href= {article.url} class="card-link" target="_blank"> Continue Reading Here </a>
                         </p>
-                        
-                        </div> 
-                      ) 
+
+                        </div>
+                      )
                     }) }
                     </div>
-
                   </div>
+
+                <div>
+                <h1>Insert Line Chart Here</h1>
+
+                </div>
+
                 </div>
 
 
