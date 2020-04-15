@@ -168,10 +168,18 @@ class Playground extends React.Component {
   updatePortfolio = (value) => {
     const { playgroundAccountData } = this.state
     let cash = playgroundAccountData.cash
-    fetch(`/portfolios?name=playground`,
+    let name = playgroundAccountData.name
+    let portfolioParams = {
+      name: name,
+      cash: cash - value
+    } 
+    console.log(portfolioParams)
+    fetch(`/portfolios/2`,
     {
       method: 'PUT',
-      body: JSON.stringify({cash: cash - value}),
+      body: JSON.stringify({ portfolio:{
+        cash: 5000
+      } }),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -184,7 +192,6 @@ class Playground extends React.Component {
 
   render(){
     const { playgroundAccountData, stockList, currentPrices } = this.state
-    console.log(playgroundAccountData);
     return(
       <>
         <h1>Playground</h1>
