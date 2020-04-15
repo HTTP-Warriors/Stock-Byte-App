@@ -21,6 +21,7 @@ class PortfoliosController < ApplicationController
       render json: []
     end
   end
+  
 
   #Defining portfolio params
   private
