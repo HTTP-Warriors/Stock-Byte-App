@@ -5,6 +5,7 @@ import Header from "./components/header"
 import NavBar from './components/navigationbar'
 import Overview from "./Pages/overview"
 import Portfolio from "./Pages/portfolio"
+import Playground from "./Pages/playground"
 import Stock from "./Pages/stock"
 import About from "./Pages/about"
 import StockNotFound from "./Pages/stocknotfound"
@@ -80,7 +81,7 @@ class App extends React.Component {
 
     <React.Fragment>
       <Header />
-      <NavBar fixed="top" 
+      <NavBar fixed="top"
           logged_in = { logged_in }
           sign_in_route = { sign_in_route }
           sign_out_route = { sign_out_route }
@@ -92,6 +93,7 @@ class App extends React.Component {
           <Route exact path="/stocknotfound/" component={ StockNotFound } />
           <Route exact path="/stock/:symbol" render={ (props) => <Stock {...props}/> } />
           <Route exact path="/portfolio/" render={ (props) => <Portfolio /> } />
+          <Route exact path="/playground/" render={ (props) => <Playground /> } />
           <Route exact path="/overview/" render={ (props) => <Overview /> } />
           <Route exact path="/"  component={ Home } />
           <Route component={ NotFound } />

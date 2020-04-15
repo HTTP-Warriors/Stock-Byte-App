@@ -72,6 +72,11 @@ class NavBar extends React.Component {
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="/portfolio">Portfolio</a>
             </li>}
+          {logged_in &&
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="/playground">Playground</a>
+            </li>}
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="/about">About</a>
           </li>
