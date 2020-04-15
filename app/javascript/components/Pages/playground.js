@@ -139,6 +139,7 @@ class Playground extends React.Component {
     this.getStockList()
     let price = this.state.currentPrices[`${ symbol }`]
     tradeForm.price = price
+    let value = price * tradeForm.quantity * tradeForm.action
     return fetch(`/trades?portfolio=playground&stock=${symbol}`, {
       body: JSON.stringify(tradeForm),
       headers: {
@@ -148,6 +149,7 @@ class Playground extends React.Component {
       })
       .then((response) => {
         if(response.ok){
+          this.updatePortfolio(value)
           return this.getStockList()
         }
       })
@@ -162,14 +164,27 @@ class Playground extends React.Component {
     tradeForm[event.target.name] = event.target.value
     this.setState({ tradeForm: tradeForm })
   }
-
-
+  
+  updatePortfolio = (value) => {
+    const { playgroundAccountData } = this.state
+    let cash = playgroundAccountData.cash
+    fetch(`/portfolios?name=playground`,
+    {
+      method: 'PUT',
+      body: JSON.stringify({cash: cash - value}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then((response) => {
+        return this.getPortfolio()
+      })
+  }
 
 
 
   render(){
     const { playgroundAccountData, stockList, currentPrices } = this.state
-    console.log(this.state.stockInFocus);
+    console.log(playgroundAccountData);
     return(
       <>
         <h1>Playground</h1>
