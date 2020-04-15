@@ -9,6 +9,7 @@ class Stock < ApplicationRecord
         end
         @sum
     end
+    
     def value
         @sum = 0
         trades.each do |trade|
@@ -16,6 +17,7 @@ class Stock < ApplicationRecord
         end
         @sum.round(2)
     end
+    
     def average_price
         if total_quantity == 0
             return 0
@@ -23,6 +25,8 @@ class Stock < ApplicationRecord
             (value / total_quantity).round(2)
         end
     end
+    
+    # Redfine json method to also include cost, value, and average price in json render
     def as_json(options = {})
       super options.merge(methods: [:total_quantity, :value, :average_price])
     end

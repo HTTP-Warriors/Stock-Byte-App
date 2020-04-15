@@ -9,6 +9,8 @@ class Portfolio < ApplicationRecord
       end
       @sum
     end
+    
+    # Redfine json method to also include total cost in json render
     def as_json(options = {})
       super options.merge(methods: [:total_cost])
     end

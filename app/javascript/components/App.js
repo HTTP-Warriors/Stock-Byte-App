@@ -7,6 +7,7 @@ import Overview from "./Pages/overview"
 import Portfolio from "./Pages/portfolio"
 import Stock from "./Pages/stock"
 import About from "./Pages/about"
+import StockNotFound from "./Pages/stocknotfound"
 import Home from "./Pages/home"
 import NotFound from "./Pages/notfound"
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
@@ -88,6 +89,7 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/about/" component={ About } />
+          <Route exact path="/stocknotfound/" component={ StockNotFound } />
           <Route exact path="/stock/:symbol" render={ (props) => <Stock {...props}/> } />
           <Route exact path="/portfolio/" render={ (props) => <Portfolio /> } />
           <Route exact path="/overview/" render={ (props) => <Overview /> } />
