@@ -4,9 +4,11 @@ class Playground extends React.Component {
   constructor(props){
     super(props)
     this.state = {
+      networth: 0,
+      unrealizedGain: 0,
       hasPlaygroundAccount: false,
       playgroundAccountData: [],
-      stockList: [],
+      stockList:[],
       currentPrices:{},
       stockInFocus:"",
       form: {
@@ -21,6 +23,7 @@ class Playground extends React.Component {
   componentDidMount(){
       this.getPortfolio()
       this.getStockList()
+      this.updatePortfolioValue()
   }
 
   getPortfolio = () => {
@@ -33,6 +36,7 @@ class Playground extends React.Component {
     )
     .then((result) => {
         if(result.length > 1){
+          console.log(result)
           this.setState({
             playgroundAccountData: result[1],
             hasPlaygroundAccount: true
@@ -146,7 +150,6 @@ class Playground extends React.Component {
     }else if(action == -1 && quantity <= position){
       return { value: value, tradeForm: { action: -1, quantity: quantity, price: currentPrice } }
     }else{
-      console.log("wrong");
       return {}
     }
   }
@@ -174,7 +177,8 @@ class Playground extends React.Component {
           .then((response) => {
             if(response.ok){
               this.updatePortfolio(validForm.value)
-              return this.getStockList()
+              this.updatePortfolioValue()
+              this.getStockList()
             }
           })
       }else{
@@ -214,11 +218,19 @@ class Playground extends React.Component {
         return this.getPortfolio()
       })
   }
+  updatePortfolioValue = () => {
+    let { playgroundAccountData ,networth, unrealizedGain, stockList, currentPrices} =this.state
+    networth = playgroundAccountData.cash
+    stockList.map(value => networth += value.total_quantity * currentPrices[`${ value.symbol }`])
+    unrealizedGain = networth - (playgroundAccountData.total_cost + playgroundAccountData.cash)
+    console.log(networth, unrealizedGain, playgroundAccountData.cash)
+    this.setState({networth: networth, unrealizedGain: unrealizedGain})
+  }
 
 
 
   render(){
-    const { playgroundAccountData, stockList, currentPrices } = this.state
+    let { playgroundAccountData, stockList, currentPrices, networth, unrealizedGain } = this.state
     return(
       <>
         <h1>Playground</h1>
@@ -233,8 +245,10 @@ class Playground extends React.Component {
         }
         { this.state.hasPlaygroundAccount &&
           <div>
-            <h4>Account Net Worth: ${ playgroundAccountData.cash }</h4>
-
+            <h4>Cash: ${ playgroundAccountData.cash }</h4>
+            <h4>Networth: ${ networth }</h4>
+            <h4>Unrealized Gain/Loss : ${ unrealizedGain }</h4>
+            
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Find a stock</label>
                 <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
@@ -252,7 +266,7 @@ class Playground extends React.Component {
                 </tr>
               </thead>
               <tbody>
-              { stockList.filter(stock => stock.total_quantity>0).map((stock, index) => {
+              { (stockList?stockList.filter(stock => stock.total_quantity>0):[]).map((stock, index) => {
                 return(
                   <tr class="table-dark" key={ index }>
                     <th scope="row">
