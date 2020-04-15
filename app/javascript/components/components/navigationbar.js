@@ -1,7 +1,7 @@
 import React from "react"
 import  { Redirect } from 'react-router-dom'
 import { LinkContainer } from "react-router-bootstrap";
-
+import sbl from './sbl.png'
 
 
 
@@ -57,52 +57,64 @@ class NavBar extends React.Component {
       <React.Fragment>
 
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
 
         </div>
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="/overview">Overview</a>
-          </li>
-          {logged_in &&
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="/portfolio">Portfolio</a>
-            </li>}
-          {logged_in &&
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="/playground">Playground</a>
-            </li>}
-
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="/about">About</a>
-          </li>
-          {logged_in &&
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href={ edit_user_route }>Account</a>
-            </li>}
-
-          {logged_in &&
-            <li class="nav-item">
-              <a class href={sign_out_route}>Sign Out</a>
-            </li>}
+        <ul class="nav nav-pills">
+               <li>
+                 <a>
+                    <img src= {sbl}  style={{width: "25%", height:"25%"}} alt="Stock Byte Rules!!!"/>
+                 </a>
+               </li>
+                 <li class="nav-item  btn-lg">
+                   <a class="nav-link" data-toggle="pill" href="/">Home</a>
+                 </li>
+                 <li class="nav-item btn-lg">
+                   <a class="nav-link" data-toggle="pill" href="/overview">Overview</a>
+                 </li>
 
 
-          {!logged_in &&
-            <li class="nav-item">
-              <a class href={sign_in_route}>Sign In</a>
-            </li>}
+                  {logged_in &&
+                   <li class="nav-item btn-lg">
+                     <a class="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
+                   </li>}
 
-          <form>
-          <li>
-            <input onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
+                   {logged_in &&
+                    <li class="nav-item btn-lg">
+                      <a class="nav-link" data-toggle="tab" href="/playground">Playground</a>
+                    </li>}
 
-            <button type="submit" onClick = { this.handleSubmit }>Find</button>
-          </li>
-          </form>
+
+
+                    {!logged_in &&
+                    <li class="nav-item btn-lg">
+                    <a class="nav-link" data-toggle="tab" href="/about">About</a>
+                    </li>}
+
+                    {!logged_in &&
+                      <li class="nav-item btn-lg">
+                        <a class="nav-link" data-toggle="pill" href={ edit_user_route }>Account</a>
+                      </li>}
+
+                    {logged_in &&
+                      <li class="nav-item btn-lg">
+                        <a class href={sign_out_route}>Sign Out</a>
+                      </li>}
+
+
+                    {!logged_in &&
+                      <li class="btn-lg">
+                        <a class href={sign_in_route}>Sign In</a>
+                      </li>}
+
+                      <form class="form-inline my-2 my-lg-0">
+                      <li>
+                        <input class="form-control mr-sm-2" onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
+
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick = { this.handleSubmit }>Find</button>
+                      </li>
+                      </form>
 
         </ul>
       </nav>

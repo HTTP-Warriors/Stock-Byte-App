@@ -80,13 +80,15 @@ class App extends React.Component {
     return (
 
     <React.Fragment>
-      <Header />
-      <NavBar fixed="top"
+      <NavBar
           logged_in = { logged_in }
           sign_in_route = { sign_in_route }
           sign_out_route = { sign_out_route }
           edit_user_route = { edit_user_route }
           />
+
+      
+
       <Router>
         <Switch>
           <Route exact path="/about/" component={ About } />
