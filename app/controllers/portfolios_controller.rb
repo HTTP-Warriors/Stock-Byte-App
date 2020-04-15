@@ -22,9 +22,20 @@ class PortfoliosController < ApplicationController
     end
   end
 
+  # Updates information of current users portfolio based on params
+  # PUT http://localhost:3000/portfolios/id
+  def update
+    if current_user
+      @portfolio = current_user.portfolios.find(params[:id])
+      @portfolio.update_attributes(portfolio_params)
+      render json: @portfolio
+    end
+  end
+
   #Defining portfolio params
   private
     def portfolio_params
       params.require(:portfolio).permit(:name, :cash)
     end
+
 end

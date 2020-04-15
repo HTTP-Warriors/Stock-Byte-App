@@ -168,6 +168,7 @@ class Portfolio extends React.Component {
       netWorth += currentPrices[`${stock.symbol}`] * stock.total_quantity
       totalCost += stock.value
     })
+    console.log(stockQuotes);
     return (
         <React.Fragment>
 {/* find stock inputbox and button */}
