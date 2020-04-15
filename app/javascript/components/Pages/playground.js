@@ -6,10 +6,9 @@ class Playground extends React.Component {
     this.state = {
       hasPlaygroundAccount: false,
       playgroundAccountData: [],
-      stockList:[],
+      stockList: [],
       currentPrices:{},
       stockInFocus:"",
-      stockStatus:"",
       form: {
           symbol: ""
       },
@@ -112,8 +111,7 @@ class Playground extends React.Component {
     })
     if(inPortfolio){
       this.setState({
-        stockInFocus: form.symbol,
-        stockStatus: "OLD"
+        stockInFocus: form.symbol
       })
     }else{
       this.createStock(form.symbol)
@@ -128,32 +126,63 @@ class Playground extends React.Component {
       let { form } = this.state
       form[event.target.name] = event.target.value.toUpperCase()
       this.setState({
-        stockStatus: "HIDE",
         form: form
       })
   }
 
-  createTrade = (tradeForm) => {
-    const { stockInFocus } = this.state
-    let symbol = stockInFocus
+  validTrade = (tradeForm) => {
+    let action = tradeForm.action
+    let quantity = tradeForm.quantity
     this.getStockList()
-    let price = this.state.currentPrices[`${ symbol }`]
-    tradeForm.price = price
-    let value = price * tradeForm.quantity * tradeForm.action
-    return fetch(`/trades?portfolio=playground&stock=${symbol}`, {
-      body: JSON.stringify(tradeForm),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "Post"
-      })
-      .then((response) => {
-        if(response.ok){
-          this.updatePortfolio(value)
-          return this.getStockList()
-        }
-      })
+    const { playgroundAccountData, stockList } = this.state
+    let symbol = this.state.stockInFocus
+    let currentPrice = this.state.currentPrices[`${ symbol }`]
+    let cash = playgroundAccountData.cash
+    let value = currentPrice * quantity * action
+    let position = stockList.find(value => value.symbol === symbol).total_quantity
+    console.log(cash,value);
+    if(action == 1 && cash >= value){
+      return { value: value, tradeForm: { action: 1, quantity: quantity, price: currentPrice } }
+    }else if(action == -1 && quantity <= position){
+      return { value: value, tradeForm: { action: -1, quantity: quantity, price: currentPrice } }
+    }else{
+      console.log("wrong");
+      return {}
+    }
   }
+
+
+  createTrade = (request) => {
+    // let action = tradeForm.action
+    // this.getStockList()
+    // const { stockInFocus, playgroundAccountData } = this.state
+    let symbol = this.state.stockInFocus
+    // let price = this.state.currentPrices[`${ symbol }`]
+    // tradeForm.price = price
+    // let value = price * tradeForm.quantity * tradeForm.action
+    // let cash = playgroundAccountData.cash
+    let validForm = this.validTrade(request)
+    console.log(validForm);
+    if(validForm.tradeForm){
+        return fetch(`/trades?portfolio=playground&stock=${symbol}`, {
+          body: JSON.stringify(validForm.tradeForm),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          method: "Post"
+          })
+          .then((response) => {
+            if(response.ok){
+              this.updatePortfolio(validForm.value)
+              return this.getStockList()
+            }
+          })
+      }else{
+        alert("something is wrong, cannot place the trade")
+      }
+  }
+
+
   handleTradeSubmit = (event) => {
     event.preventDefault()
     this.createTrade(this.state.tradeForm)
@@ -164,22 +193,20 @@ class Playground extends React.Component {
     tradeForm[event.target.name] = event.target.value
     this.setState({ tradeForm: tradeForm })
   }
-  
+
   updatePortfolio = (value) => {
     const { playgroundAccountData } = this.state
     let cash = playgroundAccountData.cash
-    let name = playgroundAccountData.name
+    // let name = playgroundAccountData.name
+    let id = playgroundAccountData.id
     let portfolioParams = {
-      name: name,
       cash: cash - value
-    } 
+    }
     console.log(portfolioParams)
-    fetch(`/portfolios/2`,
+    fetch(`/portfolios/${id}`,
     {
       method: 'PUT',
-      body: JSON.stringify({ portfolio:{
-        cash: 5000
-      } }),
+      body: JSON.stringify({ portfolio: portfolioParams }),
       headers: {
         'Content-Type': 'application/json'
       }
