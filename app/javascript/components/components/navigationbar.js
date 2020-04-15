@@ -30,6 +30,9 @@ class NavBar extends React.Component {
        if(result.price){
          window.location.href = `/stock/${form.symbol}`
        }
+       else{
+         window.location.href = "/stocknotfound"
+       }
      })
   }
 
