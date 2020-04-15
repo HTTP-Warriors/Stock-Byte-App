@@ -30,16 +30,15 @@ getArticles = () => {
     render () {
     return (
         <React.Fragment>
-
           <Flexbox flexDirection="column" minHeight="100%">
             
             <Flexbox element="header" height="60px">
 
-                  <block class="blockquote">
+                  <blockquote className="blockquote">
                           
                         <div>
                           
-                          <table class="table table-hover">
+                          <table className="table table-hover">
                               <thead>
                                 
                                 <tr class="table-warning">
@@ -84,8 +83,7 @@ getArticles = () => {
                               </thead>            
                           </table>
                         </div>
-                 
-                  </block>
+                  </blockquote>
               </Flexbox>
 
 
@@ -159,7 +157,7 @@ getArticles = () => {
                   <div class="card-body">
                     <div>
                     <p className="box-footer" align="right" style={{color: 'green'}}>
-                    <h1 class="card-title">Current News</h1>
+                    <h2 className="card-title">Current News</h2>
 
                     </p>
 
@@ -183,12 +181,14 @@ getArticles = () => {
                     </div>
                   </div>
 
-                <div>
-                <h1>Insert Line Chart Here</h1>
+                  <div class="card">
+                  <div class="card-body">
+                    
+                    <Chart />
 
-                </div>
-
-                </div>
+                  </div>
+                  </div>
+                  </div>
 
 
 
@@ -202,7 +202,7 @@ getArticles = () => {
             </Flexbox>
           </Flexbox>
 
-
+          
 
         </React.Fragment>
         );
