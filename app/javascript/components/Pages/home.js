@@ -34,61 +34,8 @@ getArticles = () => {
         <React.Fragment>
 
           <Flexbox flexDirection="column" minHeight="100%">
-            
-            <Flexbox element="header" height="60px">
 
-                  <blockquote className="blockquote">
-                          
-                        <div>
-                          
-                          <table className="table table-hover">
-                              <thead>
-                                
-                                <tr class="table-warning">
-                                      <th scope="row">
-                                      <button type="button" class="btn btn-outline-warning btn-lg">
-                                      L E A R N to 
-                                      </button>
-                                      </th>
-                                  
-                                      <td>
-                                          <button type="button" class="btn btn-outline-warning btn-lg">
-                                          <TextLoop interval={550}>
-                                            <span>Trade faster</span>
-                                            <span>Increase sales</span>
-                                            <span>Spot Stock winners</span>
-                                            <span>Price perfectly</span>
-                                            <span>Be on Top</span>
-                                          </TextLoop>
-                                          </button>
-                                          
-                                      </td>
-                                  
-                                      <td>
-                                      <button type="button" class="btn btn-outline-warning btn-lg">
-                                      on S T O C K  B Y T E  by
-                                      </button>
-                                      </td>
-                                  
-                                      <td>
-                                      <button type="button" class="btn btn-outline-warning btn-lg">
-                                          <TextLoop  interval={450} style>
-                                            <span>Joe</span>
-                                            <span>Jeremy</span>
-                                            <span>Richie</span>
-                                            <span>Xena</span>
-                                          </TextLoop>{" "}
-                                          !!!
-                                      </button>
-                                      </td>
-                                </tr>
-                                
-                              </thead>            
-                          </table>
-                        </div>
-                  </blockquote>
-              </Flexbox>
-
+        
 
 
             <Flexbox flexGrow={1}>
@@ -219,7 +166,7 @@ getArticles = () => {
 
                   <div class="card">
                   <div class="card-body">
-                    
+
                     <Chart />
 
                   </div>
