@@ -16,6 +16,7 @@ class Stock extends React.Component {
       },
       stockQuote: {},
       stockNews: [],
+      showPage: false
       // logoUrl:""
     }
   }
@@ -38,7 +39,8 @@ class Stock extends React.Component {
       })
       .then((result)=>{
         this.setState({
-         stockQuote: result
+         stockQuote: result,
+         showPage: true
         })
       })
   }
@@ -168,19 +170,19 @@ class Stock extends React.Component {
   }
 
   render () {
-    const { tradeList, stockQuote, stockNews } = this.state
+    const { tradeList, stockQuote, stockNews, showPage } = this.state
     const { symbol } = this.props.match.params
     return (
       <React.Fragment>
-
+{showPage && <div>
 {/* stock information */}
         <div>
           <h2>{ symbol.toUpperCase() }</h2>
           <h4>{ stockQuote.name }</h4>
           {/*}<img src={this.state.logoUrl}/>*/}
-          <p>current price is ${ stockQuote.close }</p>
-          <p>${ stockQuote.change } { stockQuote.percent_change }%</p>
-          <p>open: ${ stockQuote.open }</p>
+          <p>current price is ${ Math.round(stockQuote.close*100)/100 }</p>
+          <p>${ Math.round(stockQuote.change*100)/100 } { Math.round(stockQuote.percent_change*100)/100 }%</p>
+          <p>open: ${ Math.round(stockQuote.open*100)/100 }</p>
           <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
         </div>
 {/* stock news */}
@@ -250,6 +252,7 @@ class Stock extends React.Component {
             </div>
           </form>
         }
+      </div>}
       </React.Fragment>
     );
   }

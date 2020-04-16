@@ -30,7 +30,9 @@ class Portfolio extends React.Component {
           }
         })
         .then((result)=>{
-          this.setState({stockList:result})
+          this.setState({
+            stockList:result
+          })
           result.map((stock)=>{
             this.getCurrentPrice(stock.symbol)
             this.getStockQuote(stock.symbol)
@@ -170,7 +172,9 @@ class Portfolio extends React.Component {
     })
     console.log(stockQuotes);
     return (
-        <div className="page-wrap">
+
+        <React.Fragment>
+
 {/* find stock inputbox and button */}
           <div class="form-group">
               <label class="col-form-label" for="inputDefault">Find a stock</label>
