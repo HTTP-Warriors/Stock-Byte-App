@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'bootswatch/dist/united/bootstrap.min.css'
 import Header from "./components/header"
 import NavBar from './components/navigationbar'
 import Overview from "./Pages/overview"
@@ -14,6 +13,7 @@ import NotFound from "./Pages/notfound"
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
 import ReactRailsUJS from 'react_ujs'
 // import 'bootstrap/dist/css/bootstrap.css';
+import 'bootswatch/dist/united/bootstrap.min.css'
 // import 'bootstrap/dist/css/bootstrap-theme.css';
 
 
@@ -87,7 +87,7 @@ class App extends React.Component {
           edit_user_route = { edit_user_route }
           />
 
-      
+
 
       <Router>
         <Switch>

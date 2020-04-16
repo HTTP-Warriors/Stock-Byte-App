@@ -10,12 +10,19 @@ class Stock < ApplicationRecord
         @sum
     end
 
+# track trade.quantity, if sum of trade.quantity is 0, reset, for example, trade.quantity: (100,-100,200,150), trade.price(100,105,102,101), value = 200*102+150*101
     def value
-        @sum = 0
-        trades.each do |trade|
-            @sum += trade.cost
-        end
-        @sum
+      @quantity_sum = 0
+      @value_sum = 0
+      trades.each do |trade|
+          @quantity_sum += trade.quantity * trade.action
+          if @quantity_sum == 0
+            @value_sum = 0
+          else
+            @value_sum += trade.price * trade.quantity * trade.action
+          end
+      end
+      @value_sum
     end
 
     def average_price
