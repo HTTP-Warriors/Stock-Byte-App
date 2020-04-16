@@ -3,6 +3,7 @@ import jeremy from './images/jeremy_photo.jpg'
 import linkedin from './images/linkedin.png'
 import richie from './images/richie_photo.png'
 import joe from './images/joe_photo.jpg'
+import xena from './images/xena_photo.jpeg'
 import github from './images/github.png'
 
 class About extends React.Component {
@@ -65,7 +66,7 @@ class About extends React.Component {
                   <div class="card-body">
                     <h5 class="card-title">Position</h5>
                   </div>
-                  <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={jeremy} alt="Xena's photo for bio" />
+                  <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={xena} alt="Xena's photo for bio" />
                   
                     <div class="card-body">
                       <a href="https://www.linkedin.com/in/sxena/" class="card-link" > <img style={{height: "20px", width: "20px"}} src={linkedin} alt= "Linkedin" /> </a>
