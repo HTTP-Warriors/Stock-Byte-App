@@ -36,7 +36,7 @@ class Playground extends React.Component {
     .then((result) => {
         if(result.length > 1){
           this.setState({
-            playgroundAccountData: result[1],
+            playgroundAccountData: result.find(value => value.name === "playground"),
             hasPlaygroundAccount: true
           })
           this.getStockList()
@@ -233,7 +233,6 @@ class Playground extends React.Component {
 
   render(){
     const { playgroundAccountData, stockList, currentPrices } = this.state
-    console.log(playgroundAccountData);
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
     if(stockList.length > 0){
