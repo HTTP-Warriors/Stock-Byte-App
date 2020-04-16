@@ -39,7 +39,7 @@ class Stock < ApplicationRecord
     end
 
 
-    validates :symbol, presence: true
+    #validates :symbol, presence: true
     validates_uniqueness_of :symbol, scope: :portfolio_id
 
 end

@@ -50,4 +50,11 @@ gem "devise", "~> 4.7"
 gem "react-rails", "~> 2.6"
 gem 'rspec-rails', groups: [:development, :test]
 
+#Lets us login with users
 gem 'rails-controller-testing'
+
+
+#Lets us have more testing functionality
+group :test do
+  gem 'shoulda-matchers'
+end
