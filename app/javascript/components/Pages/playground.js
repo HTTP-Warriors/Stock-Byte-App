@@ -9,15 +9,18 @@ class Playground extends React.Component {
       unrealizedGain: 0,
       hasPlaygroundAccount: false,
       playgroundAccountData: [],
-      stockList:[],
-      currentPrices:{},
-      stockInFocus:"",
+      stockList: [],
+      currentPrices: {},
+      stockInFocus: "",
       form: {
           symbol: ""
       },
       tradeForm: {
-        quantity:""
-      }
+        quantity: ""
+      },
+      watchList: [],
+      feedbackForm: {}
+
     }
 
   }
@@ -71,6 +74,18 @@ class Playground extends React.Component {
         this.getCurrentPrice(stock.symbol)
         })
       })
+    fetch(`/stocks?portfolio=default`)
+      .then((response)=>{
+        if(response.status === 200){
+          return(response.json())
+        }
+      })
+      .then((result)=>{
+        this.setState({ watchList: result })
+        result.map((stock)=>{
+        this.getCurrentPrice(stock.symbol)
+        })
+      })
     }
 
   getCurrentPrice = (symbol) => {
@@ -82,7 +97,7 @@ class Playground extends React.Component {
    })
    .then((result)=>{
      const { currentPrices } = this.state
-     currentPrices[`${symbol}`] = parseFloat(result.price).toFixed(2)
+     currentPrices[`${symbol}`] = result.price
      this.setState({
        currentPrices: currentPrices
      })
@@ -185,6 +200,9 @@ class Playground extends React.Component {
             if(response.ok){
               this.updatePortfolio(validForm.value)
               this.getStockList()
+              this.setState({
+                feedbackForm: validForm.tradeForm
+              })
             }
           })
         }else{
@@ -231,17 +249,33 @@ class Playground extends React.Component {
       })
   }
 
+  setStockInFocus = (symbol) => {
+    this.setState({
+      stockInFocus: symbol
+    })
+    this.getStockList()
+  }
+
+  resetFeedback = () => {
+    this.setState({
+      feedbackForm:{}
+    })
+  }
+
   render(){
-    const { playgroundAccountData, stockList, currentPrices } = this.state
+    console.log(this.state.feedbackForm);
+    const { playgroundAccountData, stockList, currentPrices, watchList } = this.state
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
     if(stockList.length > 0){
       stockList.map(stock => netWorth += stock.total_quantity * currentPrices[`${ stock.symbol }`])
       unrealizedGain = netWorth - (playgroundAccountData.total_cost + playgroundAccountData.cash)
     }
+    const roundToTwo = (number) =>{
+      return Math.round((number)*100)/100
+    }
     return(
       <>
-        <h1>Playground</h1>
         { !this.state.hasPlaygroundAccount &&
           <div>
             <h4>Are you ready to enter the playground? You will be given $100,000 Virtual Money to start.</h4>
@@ -255,16 +289,29 @@ class Playground extends React.Component {
           <div>
           <div class="row">
             <div class="col-sm-3">
-              <div>
-                <h4>Cash: ${ playgroundAccountData.cash }</h4>
-                <h4>Net Worth: ${ netWorth }</h4>
-                <h4>Total Gain/Loss: ${ (netWorth-100000) }</h4>
-                <h4>Unrealized Gain/Loss : ${ unrealizedGain }</h4>
-              </div>
+            <div>
+              <table>
+                <tr >
+                  <th scope="row">Cash: </th>
+                  <td>${ Math.round(playgroundAccountData.cash*100)/100 }</td>
+                </tr>
+                <tr >
+                  <th scope="row">Net Worth: </th>
+                  <td>${ Math.round(netWorth*100)/100 }</td>
+                </tr>
+                <tr >
+                  <th scope="row">Total Gain/Loss: </th>
+                  <td>${ Math.round((netWorth-100000)*100)/100 }</td>
+                </tr>
+                <tr >
+                  <th scope="row">Unrealized Gain/Loss: </th>
+                  <td>${ Math.round(unrealizedGain*100)/100 }</td>
+                </tr>
+              </table>
 
               <table class="table table-hover">
                 <thead>
-                  <tr>
+                  <tr class="table-primary">
                     <th scope="col">Symbol</th>
                     <th scope="col">Average Price</th>
                     <th scope="col">Position</th>
@@ -275,50 +322,92 @@ class Playground extends React.Component {
                 <tbody>
                 { (stockList?stockList.filter(stock => stock.total_quantity>0):[]).map((stock, index) => {
                   return(
-                    <tr class="table-dark" key={ index }>
+                    <tr  key={ index } onClick={() => this.setStockInFocus(stock.symbol)}>
                       <th scope="row">
-                        <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
-                        <br />
+                        { stock.symbol }
                       </th>
-                      <td>{ stock.average_price }</td>
+                      <td>{ roundToTwo(stock.average_price) }</td>
                       <td>{ stock.total_quantity }</td>
-                      <td>{ currentPrices[`${ stock.symbol }`]}</td>
-                      <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
+                      <td>{ roundToTwo(currentPrices[`${ stock.symbol }`])}</td>
+                      <td>{ roundToTwo((currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value))}</td>
                     </tr>)}
                   )
                 }
                 </tbody>
               </table>
-
+              </div>
             </div>
             <div class="col-sm-6">
-              <h1>{ this.state.stockInFocus }</h1>
-              <h4>{ currentPrices[`${ this.state.stockInFocus }`] }</h4>
-              <h4>{ playgroundAccountData.cash/currentPrices[`${ this.state.stockInFocus }`] }</h4>
+            {this.state.stockInFocus &&
+              <div>
+                <h1>{ this.state.stockInFocus }</h1>
+                <img src={`https://finviz.com/chart.ashx?t=${this.state.stockInFocus}&ty=c&ta=0&p=d`} style={{width:"70%"}}/>
+                <h4>Current Price: { roundToTwo(currentPrices[`${ this.state.stockInFocus }`]) }</h4>
+                <h4>Average Price: { roundToTwo(stockList.find(value => value.symbol === this.state.stockInFocus).average_price) }</h4>
+                <h4>Current Position: { stockList.find(value => value.symbol === this.state.stockInFocus).total_quantity }</h4>
+                <h4>Maximum shares can buy: { Math.floor(playgroundAccountData.cash/currentPrices[`${ this.state.stockInFocus }`]) }</h4>
+
+              </div>
+            }
+            </div>
+            <div class="col-sm-3">
+            <h3>Watch List</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr class="table-info">
+                  <th scope="col">Symbol</th>
+                  <th scope="col">Current Price</th>
+                </tr>
+              </thead>
+              <tbody>
+              { watchList.map((stock, index) => {
+                return(
+                  <tr key={ index } onClick={() => this.setStockInFocus(stock.symbol)}>
+                    <th scope="row">
+                      { stock.symbol }
+                    </th>
+                    <td>{ roundToTwo(currentPrices[`${ stock.symbol }`])}</td>
+                  </tr>)}
+                )
+              }
+              </tbody>
+            </table>
+
+
 
             </div>
-            <div class="col-sm-3">.col-sm-3</div>
           </div>
 
 
+          <div>
+            { this.state.feedbackForm.action &&
+              <div class="alert alert-dismissible alert-info">
+              <button type="button" class="close" data-dismiss="alert" onClick={() => this.resetFeedback()}>&times;</button>
+              <strong>Your order is placed! </strong>
+              {(this.state.feedbackForm.action == 1)?'Bought':'Sold'} { this.state.stockInFocus } { this.state.feedbackForm.quantity } shares at { roundToTwo(this.state.feedbackForm.price) }.
+            </div>
+            }
+          </div>
 
-
-
+          <div class="row">
+            <div class="col-sm-3">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Find a stock</label>
-                <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
-                <button type="submit" onClick= { this.handleSubmit }>Find</button>
+                <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here" style={{width:"70%"}}/>
+                <button type="submit" onClick= { this.handleSubmit } class="btn btn-info">Find</button>
             </div>
-
-
+          </div>
+            <div class="col-sm-9">
             <form>
               <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
-                <input onChange={ this.handleTradeChange } type="text" class="form-control" name="quantity"/>
-                <button type="submit" onClick= { this.handleBuySubmit } >Buy</button>
-                <button type="submit" onClick= { this.handleSellSubmit } >Sell</button>
+                <input style={{width:"20%"}} onChange={ this.handleTradeChange } type="text" class="form-control" name="quantity"/>
+                <button type="submit" onClick= { this.handleBuySubmit } class="btn btn-success" >Buy</button>
+                <button type="submit" onClick= { this.handleSellSubmit } class="btn btn-danger">Sell</button>
               </div>
             </form>
+            </div>
+          </div>
 
 
 
