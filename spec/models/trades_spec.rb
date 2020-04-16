@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Trade do 
-    it 'has to be real' do
+     it 'has to be real' do
         expect{ Trade.new }.to_not raise_error
     end
     
@@ -31,5 +31,4 @@ describe Trade do
         is_expected.to allow_values(1, 35, 100).for(:quantity)
         is_expected.to_not allow_values(-2, -30, -500).for(:quantity) 
     end
- 
 end
