@@ -233,6 +233,7 @@ class Playground extends React.Component {
 
   render(){
     const { playgroundAccountData, stockList, currentPrices } = this.state
+    console.log(playgroundAccountData);
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
     if(stockList.length > 0){
@@ -256,10 +257,10 @@ class Playground extends React.Component {
           <div class="row">
             <div class="col-sm-3">
               <div>
-                <h4>Cash: ${ playgroundAccountData.cash.toFixed(2) }</h4>
-                <h4>Net Worth: ${ netWorth.toFixed(2) }</h4>
-                <h4>Total Gain/Loss: ${ (netWorth-100000).toFixed(2) }</h4>
-                <h4>Unrealized Gain/Loss : ${ unrealizedGain.toFixed(2) }</h4>
+                <h4>Cash: ${ playgroundAccountData.cash }</h4>
+                <h4>Net Worth: ${ netWorth }</h4>
+                <h4>Total Gain/Loss: ${ (netWorth-100000) }</h4>
+                <h4>Unrealized Gain/Loss : ${ unrealizedGain }</h4>
               </div>
 
               <table class="table table-hover">
@@ -280,7 +281,7 @@ class Playground extends React.Component {
                         <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
                         <br />
                       </th>
-                      <td>{ stock.average_price.toFixed(2) }</td>
+                      <td>{ stock.average_price }</td>
                       <td>{ stock.total_quantity }</td>
                       <td>{ currentPrices[`${ stock.symbol }`]}</td>
                       <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
@@ -293,6 +294,9 @@ class Playground extends React.Component {
             </div>
             <div class="col-sm-6">
               <h1>{ this.state.stockInFocus }</h1>
+              <h4>{ currentPrices[`${ this.state.stockInFocus }`] }</h4>
+              <h4>{ playgroundAccountData.cash/currentPrices[`${ this.state.stockInFocus }`] }</h4>
+
             </div>
             <div class="col-sm-3">.col-sm-3</div>
           </div>
