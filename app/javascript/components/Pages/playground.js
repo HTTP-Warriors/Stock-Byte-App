@@ -232,7 +232,7 @@ class Playground extends React.Component {
   render(){
     let { playgroundAccountData, stockList, currentPrices, networth, unrealizedGain } = this.state
     return(
-      <>
+      <div className="page-wrap">
         <h1>Playground</h1>
         { !this.state.hasPlaygroundAccount &&
           <div>
@@ -248,7 +248,7 @@ class Playground extends React.Component {
             <h4>Cash: ${ playgroundAccountData.cash }</h4>
             <h4>Networth: ${ networth }</h4>
             <h4>Unrealized Gain/Loss : ${ unrealizedGain }</h4>
-            
+
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Find a stock</label>
                 <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
@@ -298,7 +298,7 @@ class Playground extends React.Component {
 
           </div>
         }
-      </>
+      </div>
     )
   }
 }

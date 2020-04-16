@@ -170,7 +170,7 @@ class Portfolio extends React.Component {
     })
     console.log(stockQuotes);
     return (
-        <React.Fragment>
+        <div className="page-wrap">
 {/* find stock inputbox and button */}
           <div class="form-group">
               <label class="col-form-label" for="inputDefault">Find a stock</label>
@@ -255,7 +255,7 @@ class Portfolio extends React.Component {
           </table>
           </div>
 
-        </React.Fragment>
+        </div>
         );
     }
 }
