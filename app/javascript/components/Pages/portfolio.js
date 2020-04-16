@@ -172,6 +172,7 @@ class Portfolio extends React.Component {
     })
     console.log(stockQuotes);
     return (
+
         <React.Fragment>
 
 {/* find stock inputbox and button */}
@@ -258,7 +259,7 @@ class Portfolio extends React.Component {
           </table>
           </div>
 
-        </React.Fragment>
+        </div>
         );
     }
 }

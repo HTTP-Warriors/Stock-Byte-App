@@ -413,7 +413,7 @@ class Playground extends React.Component {
 
           </div>
         }
-      </>
+      </div>
     )
   }
 }

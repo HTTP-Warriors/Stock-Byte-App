@@ -4,7 +4,6 @@ import background from "./background.jpg"
 import Chart from "./chart"
 import TextLoop from "react-text-loop";
 
-
 class Home extends React.Component {
   constructor(){
     super()
@@ -31,12 +30,9 @@ getArticles = () => {
     render () {
     return (
 
-        <React.Fragment>
+        <div className="page-wrap">
 
           <Flexbox flexDirection="column" minHeight="100%">
-
-        
-
 
             <Flexbox flexGrow={1}>
             <div class="card mb-3">
@@ -173,13 +169,6 @@ getArticles = () => {
                   </div>
                   </div>
 
-
-
-
-
-
-
-
                  </Flexbox>
 
             <Flexbox element="footer" height="60px">
@@ -237,7 +226,7 @@ getArticles = () => {
             </Flexbox>
           </Flexbox>
 
-        </React.Fragment>
+        </div>
         );
     }
 }

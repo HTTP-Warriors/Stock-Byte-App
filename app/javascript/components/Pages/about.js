@@ -9,10 +9,11 @@ import github from './images/github.png'
 class About extends React.Component {
     render () {
     return (
+      <div className="page-wrap">
       <div class="container" style={{textAlign: "center"}}>
             <h1 style={{paddingBottom: "20px", textAlign: "center"}}> Meet the Devs </h1>
             <div class="row" style={{marginLeft: "auto", marginRight: "auto"}}>
-            
+
               {/* About us card Richie */}
               <div class="col-sm-6">
                 <div class="card mb-5" >
@@ -27,7 +28,7 @@ class About extends React.Component {
                   </div>
                 </div>
               </div>
-              
+
               {/* About us card Joe */}
               <div class="col-sm-6">
                 <div class="card mb-5" >
@@ -43,7 +44,7 @@ class About extends React.Component {
                 </div>
               </div>
             </div>
-            
+
             {/* About us card Jeremy */}
               <div class="col-sm-6" >
                 <div class="card mb-5">
@@ -58,7 +59,7 @@ class About extends React.Component {
                     </div>
                 </div>
               </div>
-              
+
               {/* About us card Xena */}
               <div class="col-sm-6">
                 <div class="card mb-5">
@@ -75,6 +76,7 @@ class About extends React.Component {
                 </div>
               </div>
           </div>
+        </div>
         );
     }
 }

@@ -4,7 +4,7 @@ import sbl from './sbl.png'
 const Header = () => {
     return (
       <div>
-    ß
+    
       </div>
     );
   };

@@ -12,10 +12,8 @@ import Home from "./Pages/home"
 import NotFound from "./Pages/notfound"
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
 import ReactRailsUJS from 'react_ujs'
-// import 'bootstrap/dist/css/bootstrap.css';
 import 'bootswatch/dist/united/bootstrap.min.css'
-// import 'bootstrap/dist/css/bootstrap-theme.css';
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends React.Component {
   constructor(props){
