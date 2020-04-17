@@ -409,11 +409,10 @@ class Playground extends React.Component {
             </div>
           </div>
 
-
-
           </div>
         }
-      </div>
+      </>
+
     )
   }
 }

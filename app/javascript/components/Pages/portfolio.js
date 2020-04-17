@@ -259,7 +259,8 @@ class Portfolio extends React.Component {
           </table>
           </div>
 
-        </div>
+        </React.Fragment>
+
         );
     }
 }
