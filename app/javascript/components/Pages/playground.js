@@ -79,6 +79,7 @@ class Playground extends React.Component {
 
 
 
+
   getPortfolio = () => {
     fetch(`/portfolios`)
     .then((response) => {
@@ -342,7 +343,6 @@ class Playground extends React.Component {
   }
 
 
-
   resetFeedback = () => {
     this.setState({
       feedbackForm:{}
@@ -350,8 +350,6 @@ class Playground extends React.Component {
   }
 
   render(){
-    console.log(this.state.stockList);
-    console.log(this.state.stockInFocus);
     const { playgroundAccountData, stockList, currentPrices, watchList } = this.state
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
@@ -529,6 +527,8 @@ class Playground extends React.Component {
             }
 
 
+            </div>
+          </div>
 
             </div>
           </div>
@@ -563,6 +563,7 @@ class Playground extends React.Component {
             </form>
             </div>
           </div>
+
           </div>
         }
       </>

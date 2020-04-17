@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
           devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:nick_name, :email, :password, :current_password)}
       end
     skip_before_action :verify_authenticity_token # <- Add this line
+
 end

@@ -23,17 +23,17 @@ class NavBar extends React.Component {
       fetch(`https://api.twelvedata.com/price?symbol=${ form.symbol }&apikey=bc07ae0baa6241d79c88764a862a7dba`)
         .then((response)=>{
       if(response.status === 200){
-         return(response.json())
-       }
-     })
-     .then((result)=>{
-       if(result.price){
-         window.location.href = `/stock/${form.symbol}`
-       }
-       else{
-         window.location.href = "/stocknotfound"
-       }
-     })
+        return(response.json())
+      }
+    })
+      .then((result)=>{
+        if(result.price){
+          window.location.href = `/stock/${form.symbol}`
+        }
+        else{
+        window.location.href = "/stocknotfound"
+      }
+    })
   }
 
   handleChange = (event) => {
@@ -63,15 +63,11 @@ class NavBar extends React.Component {
 
 
 
-    <nav class="navbar sticky-top navbar-light bg-light">
-      <div class="container-fluid">
+    <nav className="navbar sticky-top navbar-light bg-light">
+      <div className="container-fluid">
 
         </div>
-
         <ul class="nav nav-pills">
-
-
-
 
                <li class="nav-item  btn-lg">
                    <a class="nav-link" data-toggle="pill" href="/">Home</a>
@@ -119,16 +115,11 @@ class NavBar extends React.Component {
 
 
 
-
-
-
-
-
-                      <form class="form-inline my-2 my-lg-0">
+                      <form className="form-inline my-2 my-lg-0">
                       <li>
-                        <input class="form-control mr-sm-2" onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
+                        <input className="form-control mr-sm-2" onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
 
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick = { this.handleSubmit }>Find</button>
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick = { this.handleSubmit }>Find</button>
                       </li>
                       </form>
 

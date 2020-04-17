@@ -14,7 +14,9 @@ describe "Stock API", type: :request do
     #end
 
     it "gets list of stocks from portfolio default" do
+
         user = User.create(:email => 'test@email.com', :password => 'pw1234', :nick_name => "test")
+
         sign_in user
 
         portfolio = user.portfolios.create(name: "test_portfolio", user_id: user.id)
@@ -34,7 +36,9 @@ describe "Stock API", type: :request do
     it "creates a Stock" do
 
         #Create User, Portfolio, and Stock to test Trades
+
         user = User.create(:email => 'test@email.com', :password => 'pw1234', :nick_name => "test")
+
         sign_in user
 
         user.portfolios.create(name: "test_portfolio", user_id: user.id)
