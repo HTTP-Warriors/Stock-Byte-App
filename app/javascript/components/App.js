@@ -14,7 +14,6 @@ import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
 import ReactRailsUJS from 'react_ujs'
 import 'bootswatch/dist/united/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
-// import 'bootstrap/dist/css/bootstrap-theme.css';
 
 class App extends React.Component {
   constructor(props){
