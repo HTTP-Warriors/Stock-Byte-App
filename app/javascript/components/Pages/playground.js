@@ -20,9 +20,11 @@ class Playground extends React.Component {
       },
       watchList: [],
       feedbackForm: {},
-      playgrounds:[],
-      leaderboardData:[]
-
+      playgrounds: [],
+      leaderboardData: [],
+      userInFocus: {},
+      rightSideShow: "watchlist",
+      tabWatchListStatus: true
     }
 
   }
@@ -68,7 +70,7 @@ class Playground extends React.Component {
       leaderboardData.push(playerInfo)
       })
       this.setState({
-        leaderboardData : leaderboardData
+        leaderboardData : leaderboardData.sort((a, b) => (a.netWorth < b.netWorth) ? 1 : -1).slice(0,10)
       })
     }
 
@@ -236,6 +238,7 @@ class Playground extends React.Component {
   createTrade = (request) => {
     let symbol = this.state.stockInFocus
     let validForm = this.validTrade(request)
+    console.log(validForm);
     if(validForm.tradeForm){
         return fetch(`/trades?portfolio=playground&stock=${symbol}`, {
           body: JSON.stringify(validForm.tradeForm),
@@ -301,8 +304,44 @@ class Playground extends React.Component {
     this.setState({
       stockInFocus: symbol
     })
-    this.getStockList()
+    let form = { symbol: symbol}
+    return fetch(`/stocks?portfolio=playground`, {
+        body: JSON.stringify(form),
+        headers: {
+            "Content-Type": "application/json"
+        },
+        method: "POST"
+    })
+    .then((response) => {
+        if(response.ok){
+          return this.getStockList()
+        }
+    })
   }
+
+  showUserPortfolio = (user) => {
+    this.setState({
+      userInFocus: user,
+      rightSideShow: "userstock"
+    })
+  }
+
+  showLeaderBoard = () => {
+    this.getLeaderboard()
+    this.setState({
+      rightSideShow: "leaderboard",
+      tabWatchListStatus: false
+    })
+  }
+
+  showWatchList = () => {
+    this.setState({
+      rightSideShow: "watchlist",
+      tabWatchListStatus: true
+    })
+  }
+
+
 
   resetFeedback = () => {
     this.setState({
@@ -311,7 +350,8 @@ class Playground extends React.Component {
   }
 
   render(){
-    console.log(this.state.leaderboardData);
+    console.log(this.state.stockList);
+    console.log(this.state.stockInFocus);
     const { playgroundAccountData, stockList, currentPrices, watchList } = this.state
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
@@ -399,27 +439,94 @@ class Playground extends React.Component {
             }
             </div>
             <div class="col-sm-3">
-            <h3>Watch List</h3>
-            <table class="table table-hover">
-              <thead>
-                <tr class="table-info">
-                  <th scope="col">Symbol</th>
-                  <th scope="col">Current Price</th>
-                </tr>
-              </thead>
-              <tbody>
-              { watchList.map((stock, index) => {
-                return(
-                  <tr key={ index } onClick={() => this.setStockInFocus(stock.symbol)}>
-                    <th scope="row">
-                      { stock.symbol }
-                    </th>
-                    <td>{ roundToTwo(currentPrices[`${ stock.symbol }`])}</td>
-                  </tr>)}
-                )
-              }
-              </tbody>
-            </table>
+              <ul class="nav nav-tabs">
+                <li class={this.state.tabWatchListStatus?"nav-item active":"nav-item"} >
+                  <a class="nav-link" data-toggle="tab" onClick = {() => this.showWatchList() }>Watch List</a>
+                </li>
+                <li class={this.state.tabWatchListStatus?"nav-item":"nav-item active"}>
+                  <a class="nav-link" data-toggle="tab" onClick = {() => this.showLeaderBoard() } >Leader Board</a>
+                </li>
+              </ul>
+              {this.state.rightSideShow === "watchlist" &&
+              <div id="watchlist">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-info">
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Current Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    { watchList.map((stock, index) => {
+                      return(
+                        <tr key={ index } onClick={() => this.setStockInFocus(stock.symbol)}>
+                        <th scope="row">
+                        { stock.symbol }
+                        </th>
+                        <td>{ roundToTwo(currentPrices[`${ stock.symbol }`])}</td>
+                        </tr>)}
+                      )
+                    }
+                  </tbody>
+                </table>
+              </div>
+            }
+
+            {this.state.rightSideShow === "leaderboard" &&
+              <div id="leaderboard">
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-info">
+                    <th scope="col">Users</th>
+                    <th scope="col">Net Worth</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    { this.state.leaderboardData.map((user, index) => {
+                      return(
+                        <tr key={ index } onClick = {() => this.showUserPortfolio(user) }>
+                        <th scope="row">
+                        { user.nickName }
+                        </th>
+                        <td>{ roundToTwo(user.netWorth)}</td>
+                        </tr>)}
+                      )
+                    }
+                  </tbody>
+                </table>
+              </div>
+            }
+            {this.state.rightSideShow === "userstock" &&
+                <div id="playerPortfolio">
+                {this.state.userInFocus.nickName &&
+                <table class="table table-hover">
+                  <thead>
+                    <tr class="table-info">
+                    <th scope="col">{this.state.userInFocus.nickName}'s Stock</th>
+                    <th scope="col">Position</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    { this.state.userInFocus.stockList.map((stock, index) => {
+                      return(
+                        <tr key={ index } onClick={() => this.setStockInFocus(stock.symbol)}>
+                        <th scope="row">
+                        { stock.symbol }
+                        </th>
+                        <td>{ stock.total_quantity}</td>
+                        </tr>)}
+                      )
+                    }
+                  </tbody>
+                  <tfoot>
+                    <tr class="table-success">
+                    <th scope="col">Cash</th>
+                    <th scope="col">${roundToTwo(this.state.userInFocus.cash)}</th>
+                    </tr>
+                  </tfoot>
+                </table>}
+              </div>
+            }
 
 
 
@@ -456,7 +563,6 @@ class Playground extends React.Component {
             </form>
             </div>
           </div>
-          <button onClick={() => this.getLeaderboard()} class="btn btn-danger">get leaderboard</button>
           </div>
         }
       </>
