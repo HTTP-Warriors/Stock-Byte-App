@@ -4,8 +4,8 @@ class PortfoliosController < ApplicationController
   # GET http://localhost:3000/portfolios
   def index
     if current_user
-      @portfolio = current_user.portfolios.all
-      render json: @portfolio
+      @portfolios = current_user.portfolios.all
+      render json: @portfolios
     else
       render json: ["not signed in"]
     end
@@ -30,6 +30,20 @@ class PortfoliosController < ApplicationController
       @portfolio.update_attributes(portfolio_params)
       render json: @portfolio
     end
+  end
+
+  def leaderboard
+    @all_playgrounds = Portfolio.where(name: "playground")
+    @playgroundBoard = []
+    @all_playgrounds.each do |account|
+      @nick_name = User.find(account.user_id).nick_name
+      @cash = account.cash
+      @stock_list = account.stocks.all.select do |stock|
+        stock.total_quantity > 0
+      end
+      @playgroundBoard<<{ nick_name: @nick_name, cash: @cash, stock_list: @stock_list}
+    end
+    render json: @playgroundBoard
   end
 
   #Defining portfolio params

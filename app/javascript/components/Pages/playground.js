@@ -19,15 +19,33 @@ class Playground extends React.Component {
         quantity: ""
       },
       watchList: [],
-      feedbackForm: {}
+      feedbackForm: {},
+      leaderboard:[]
 
     }
 
   }
   componentDidMount(){
       this.getPortfolio()
+      this.getLeaderboard()
   }
-  
+  getLeaderboard = () => {
+    fetch(`/leaderboard`)
+    .then((response) => {
+      if(response.status === 200){
+          return(response.json())
+        }
+      }
+    )
+    .then((result) => {
+      this.setState({
+        leaderboard: result
+      })
+
+    })
+  }
+
+
   getPortfolio = () => {
     fetch(`/portfolios`)
     .then((response) => {
@@ -263,7 +281,7 @@ class Playground extends React.Component {
   }
 
   render(){
-    console.log(this.state.feedbackForm);
+    console.log(this.state.leaderboard);
     const { playgroundAccountData, stockList, currentPrices, watchList } = this.state
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
