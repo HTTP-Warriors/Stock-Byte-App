@@ -27,7 +27,7 @@ class Playground extends React.Component {
   componentDidMount(){
       this.getPortfolio()
   }
-
+  
   getPortfolio = () => {
     fetch(`/portfolios`)
     .then((response) => {
@@ -343,8 +343,8 @@ class Playground extends React.Component {
                 <h1>{ this.state.stockInFocus }</h1>
                 <img src={`https://finviz.com/chart.ashx?t=${this.state.stockInFocus}&ty=c&ta=0&p=d`} style={{width:"70%"}}/>
                 <h4>Current Price: { roundToTwo(currentPrices[`${ this.state.stockInFocus }`]) }</h4>
-                <h4>Average Price: { roundToTwo(stockList.find(value => value.symbol === this.state.stockInFocus).average_price) }</h4>
-                <h4>Current Position: { stockList.find(value => value.symbol === this.state.stockInFocus).total_quantity }</h4>
+                <h4>Average Price: { stockList.find(value => value.symbol === this.state.stockInFocus)?roundToTwo(stockList.find(value => value.symbol === this.state.stockInFocus).average_price):0 }</h4>
+                <h4>Current Position: { stockList.find(value => value.symbol === this.state.stockInFocus)?stockList.find(value => value.symbol === this.state.stockInFocus).total_quantity:0 }</h4>
                 <h4>Maximum shares can buy: { Math.floor(playgroundAccountData.cash/currentPrices[`${ this.state.stockInFocus }`]) }</h4>
 
               </div>
