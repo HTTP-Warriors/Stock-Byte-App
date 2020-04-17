@@ -96,10 +96,14 @@ class NavBar extends React.Component {
                    <a class="nav-link" data-toggle="pill" href="/about">About</a>
                </li>}
 
+               {logged_in &&
+               <li class="nav-item btn-lg">
+                   <a class="nav-link" data-toggle="pill" href= "users/edit">Account</a>
+               </li>}
 
                {!logged_in &&
                <li class="nav-item btn-lg">
-                   <a class="nav-link" data-toggle="pill" href={ edit_user_route }>Account</a>
+                   <a class="nav-link" data-toggle="pill" href= "/users/sign_up" >Sign Up</a>
                </li>}
 
                {logged_in &&
@@ -107,10 +111,9 @@ class NavBar extends React.Component {
                  <a class href={sign_out_route}>Sign Out</a>
                  </li>}
 
-
                {!logged_in &&
                <li class="btn-lg">
-                   <a class href={sign_in_route}>Sign In</a>
+                   <a class href= "/users/sign_in">Sign In</a>
                </li>}
 
 
