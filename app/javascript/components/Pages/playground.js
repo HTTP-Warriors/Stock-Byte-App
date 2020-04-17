@@ -20,16 +20,17 @@ class Playground extends React.Component {
       },
       watchList: [],
       feedbackForm: {},
-      leaderboard:[]
+      playgrounds:[],
+      leaderboardData:[]
 
     }
 
   }
   componentDidMount(){
       this.getPortfolio()
-      this.getLeaderboard()
+      this.getPlaygrounds()
   }
-  getLeaderboard = () => {
+  getPlaygrounds = () => {
     fetch(`/leaderboard`)
     .then((response) => {
       if(response.status === 200){
@@ -38,12 +39,42 @@ class Playground extends React.Component {
       }
     )
     .then((result) => {
-      this.setState({
-        leaderboard: result
+      result.map((playground, index) => {
+        if(playground.stock_list.length > 1){
+          playground.stock_list.map((stock, i) => {
+            this.getCurrentPrice(stock.symbol)
+          })
+        }
       })
-
+      this.setState({
+        playgrounds : result
+      })
     })
   }
+
+  getLeaderboard = () => {
+    const{ playgrounds } = this.state
+    let leaderboardData = []
+    playgrounds.map((playground, index) => {
+      let nickName = playground.nick_name
+      let netWorth = playground.cash
+      if(playground.stock_list.length > 0){
+        playground.stock_list.map((stock, i) => {
+          let price = this.state.currentPrices[`${stock.symbol}`]
+          netWorth += price * stock.total_quantity
+        })
+      }
+      let playerInfo = { nickName: nickName, netWorth: netWorth, cash: playground.cash, stockList: playground.stock_list }
+      leaderboardData.push(playerInfo)
+      })
+      this.setState({
+        leaderboardData : leaderboardData
+      })
+    }
+
+
+
+
 
 
   getPortfolio = () => {
@@ -145,7 +176,6 @@ class Playground extends React.Component {
          }
       })
       .then((result)=>{
-        console.log(result);
         if(result.price){
           return true
         }else{
@@ -281,7 +311,7 @@ class Playground extends React.Component {
   }
 
   render(){
-    console.log(this.state.leaderboard);
+    console.log(this.state.leaderboardData);
     const { playgroundAccountData, stockList, currentPrices, watchList } = this.state
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
@@ -426,7 +456,7 @@ class Playground extends React.Component {
             </form>
             </div>
           </div>
-
+          <button onClick={() => this.getLeaderboard()} class="btn btn-danger">get leaderboard</button>
           </div>
         }
       </>
