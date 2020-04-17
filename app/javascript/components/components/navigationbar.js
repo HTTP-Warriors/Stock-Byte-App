@@ -97,8 +97,6 @@ class NavBar extends React.Component {
                </li>}
 
 
-
-
                {!logged_in &&
                <li class="nav-item btn-lg">
                    <a class="nav-link" data-toggle="pill" href={ edit_user_route }>Account</a>
