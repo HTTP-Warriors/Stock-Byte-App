@@ -55,6 +55,11 @@ class NavBar extends React.Component {
 
     return(
       <React.Fragment>
+      <li>
+      <a>
+      <img src= {sbl}  style={{width: "25%", height:"25%"}} alt="Stock Byte Rules!!!"/>
+      </a>
+      </li>
 
 
 
@@ -65,11 +70,6 @@ class NavBar extends React.Component {
 
         <ul class="nav nav-pills">
 
-               <li>
-                 <a>
-                    <img src= {sbl}  style={{width: "25%", height:"25%"}} alt="Stock Byte Rules!!!"/>
-                 </a>
-               </li>
 
 
 
