@@ -4,26 +4,17 @@ import background from "./background.jpg"
 import Chart from "./chart"
 import TextLoop from "react-text-loop";
 
-
 class Home extends React.Component {
   constructor(){
     super()
     this.state = {
       articles: [],
-      chartData: []
+      chartData: [],
+      chartLoading: false
     }
+    this.getArticles()
+    this.getChart()
   }
-
-  componentDidMount(){
-      this.getArticles()
-      fetch('https://sandbox.iexapis.com/stable/stock/IBM/chart/1m?token=Tsk_8d3ccc170f2b4e59940c7906f2d4c32f')
-                .then((response) => {
-                    return response.json()
-                })
-                .then((payload) => {
-                    this.setState({chartData:payload})
-                })
-            }
 
 getArticles = () => {
   fetch('https://finnhub.io/api/v1/news?category=general&token=bqaa48nrh5r8t7qn85ig')
@@ -36,56 +27,23 @@ getArticles = () => {
     })
   }
 
-    render () {
-    return (
+getChart = () => {
+  fetch('https://sandbox.iexapis.com/stable/stock/IBM/chart/1m?token=Tsk_8d3ccc170f2b4e59940c7906f2d4c32f')
+  .then((response) => {
+    return response.json()
+  })
+  .then((payload) => {
+      this.setState({chartData:payload, chartLoading:true})
+  })
+}
 
-        <React.Fragment>
+    render () {
+      console.log(this.state.chartLoading && this.state.chartData)
+      return (
+
+        <div className="page-wrap">
 
           <Flexbox flexDirection="column" minHeight="100%">
-            <Flexbox element="header" height="60px">
-                  <blockquote className="blockquote">
-                    <div>
-                        <table className="table table-hover">
-                            <thead>
-                                <tr className="table-warning">
-                                    <th scope="row">
-                                    <button type="button" className="btn btn-outline-warning btn-lg">
-                                    L E A R N to 
-                                    </button>
-                                    </th>
-                                    <td>
-                                        <button type="button" className="btn btn-outline-warning btn-lg">
-                                        <TextLoop interval={550}>
-                                          <span>Trade faster</span>
-                                          <span>Increase sales</span>
-                                          <span>Spot Stock winners</span>
-                                          <span>Price perfectly</span>
-                                          <span>Be on Top</span>
-                                        </TextLoop>
-                                        </button>
-                                    </td>
-                                    <td>
-                                    <button type="button" className="btn btn-outline-warning btn-lg">
-                                    on S T O C K  B Y T E  by
-                                    </button>
-                                    </td>
-                                    <td>
-                                    <button type="button" className="btn btn-outline-warning btn-lg">
-                                        <TextLoop  interval={450} style>
-                                          <span>Joe</span>
-                                          <span>Jeremy</span>
-                                          <span>Richie</span>
-                                          <span>Xena</span>
-                                        </TextLoop>{" "}
-                                        !!!
-                                    </button>
-                                    </td>
-                              </tr>
-                            </thead>            
-                        </table>
-                      </div>
-                  </blockquote>
-              </Flexbox>
             <Flexbox flexGrow={1}>
             <div className="card mb-3">
               <h3 className="card-header">
@@ -165,7 +123,7 @@ getArticles = () => {
                     </h3>
                     { this.state.articles.map((article, index) => {
                       return(
-                        <div>
+                        <div key={index}>
                         <div className="card mb-3">
                         <div className="card-header">{ article.source }</div>
                           <div className="card-body">
@@ -181,15 +139,16 @@ getArticles = () => {
                     </div>
                         <div className="card-body">
                         <div id="homeChart">
-                          <Chart chartData = {this.state.chartData} />
+                        { this.state.chartLoading ? <Chart chartData = {this.state.chartData}  /> : "Oh well" }
                         </div>
                           <a href="https://iexcloud.io" className="card-link" target="_blank"> Chart Data provided by IEX Cloud</a> <br />
                           <a href="https://www.tradingview.com/" className="card-link" target="_blank">Chart Graph provided by Trading View</a>
                         </div>
-                        
                   </div>
-                </div>
-              </Flexbox>
+                  </div>
+
+                </Flexbox>
+
             <Flexbox element="footer" height="60px">
               <div className="blockquote">
                 <div>
@@ -235,7 +194,8 @@ getArticles = () => {
               </div>
             </Flexbox>
           </Flexbox>
-        </React.Fragment>
+
+        </div>
         );
     }
 }

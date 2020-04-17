@@ -74,6 +74,10 @@ class NavBar extends React.Component {
                   <a className="nav-link" data-toggle="pill" href="/overview">Overview</a>
                 </li>
 
+              {logged_in &&
+                <li class="nav-item btn-lg">
+                <a class="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
+                </li>}
 
                   {logged_in &&
                     <li className="nav-item btn-lg">
@@ -118,8 +122,6 @@ class NavBar extends React.Component {
 
         </ul>
       </nav>
-
-
 
 
 

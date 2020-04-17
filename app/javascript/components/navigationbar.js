@@ -2,9 +2,7 @@ import React from 'react'
 import Navbar from './components/navigationbar'
 const Nav = () => {
 return (
-<Navbar fixed="top" />
+<Navbar />
 )
 }
 export default Nav
-
-

@@ -11,6 +11,7 @@
     "bootstrap": "^4.4.1",
     "bootswatch": "^4.4.1",
     "flexbox-react": "^4.4.0",
+    "kaktana-react-lightweight-charts": "^1.0.0",
     "lightweight-charts": "^2.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

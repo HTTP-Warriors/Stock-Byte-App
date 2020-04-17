@@ -6818,6 +6818,14 @@ jsx-ast-utils@^2.2.1, jsx-ast-utils@^2.2.3:
     array-includes "^3.0.3"
     object.assign "^4.1.0"
 
+kaktana-react-lightweight-charts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/kaktana-react-lightweight-charts/-/kaktana-react-lightweight-charts-1.0.0.tgz#0513c1df36573d71f23f227f8159a9e0884bb79b"
+  integrity sha512-dqZLy+MlQUIYOi1esSgdS0ZZIkJUwefEF+05Q/lvRKHKyPTFPcHamgOibxIRgqDGnYLQmX/otTWG4f/kmrKUeQ==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    lightweight-charts "^2.0.0"
+
 killable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.1.tgz#4c8ce441187a061c7474fb87ca08e2a638194892"
