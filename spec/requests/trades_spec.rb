@@ -4,7 +4,9 @@ describe "Trades API", type: :request do
     it "gets a list of Trades" do
         
         #Create User, Portfolio, and Stock to test Trades
-        user = User.create(:email => 'test@email.com', :password => 'pw1234')
+
+        user = User.create(:email => 'test@email.com', :password => 'pw1234', :nick_name => "test")
+
         sign_in user
 
         portfolio = user.portfolios.create(name: "test_portfolio", user_id: user.id)
@@ -22,7 +24,9 @@ describe "Trades API", type: :request do
     it "creates a Trade" do
         
         #Create User, Portfolio, and Stock to test Trades
-        user = User.create(:email => 'test@email.com', :password => 'pw1234')
+
+        user = User.create(:email => 'test@email.com', :password => 'pw1234', :nick_name => "test")
+
         sign_in user
 
         portfolio = user.portfolios.create(name: "test_portfolio", user_id: user.id)

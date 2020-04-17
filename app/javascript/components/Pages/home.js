@@ -44,6 +44,7 @@ getChart = () => {
         <div className="page-wrap">
 
           <Flexbox flexDirection="column" minHeight="100%">
+
             <Flexbox flexGrow={1}>
             <div className="card mb-3">
               <h3 className="card-header">
@@ -145,9 +146,14 @@ getChart = () => {
                           <a href="https://www.tradingview.com/" className="card-link" target="_blank">Chart Graph provided by Trading View</a>
                         </div>
                   </div>
+
+
+
+                  
                   </div>
 
-                </Flexbox>
+                 </Flexbox>
+
 
             <Flexbox element="footer" height="60px">
               <div className="blockquote">

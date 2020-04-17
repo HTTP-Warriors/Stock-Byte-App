@@ -55,62 +55,65 @@ class NavBar extends React.Component {
 
     return(
       <React.Fragment>
+      <li>
+      <a>
+      <img src= {sbl}  style={{width: "25%", height:"25%"}} alt="Stock Byte Rules!!!"/>
+      </a>
+      </li>
+
 
 
     <nav className="navbar sticky-top navbar-light bg-light">
       <div className="container-fluid">
 
         </div>
-        <ul className="nav nav-pills">
-              <li>
-                <a>
-                    <img src= {sbl}  style={{width: "25%", height:"25%"}} alt="Stock Byte Rules!!!"/>
-                </a>
-              </li>
-                <li className="nav-item  btn-lg">
-                  <a className="nav-link" data-toggle="pill" href="/">Home</a>
-                </li>
-                <li className="nav-item btn-lg">
-                  <a className="nav-link" data-toggle="pill" href="/overview">Overview</a>
-                </li>
+        <ul class="nav nav-pills">
 
-              {logged_in &&
-                <li class="nav-item btn-lg">
-                <a class="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
-                </li>}
+               <li class="nav-item  btn-lg">
+                   <a class="nav-link" data-toggle="pill" href="/">Home</a>
+               </li>
 
-                  {logged_in &&
-                    <li className="nav-item btn-lg">
-                    <a className="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
-                  </li>}
+               <li class="nav-item btn-lg">
+                  <a class="nav-link" data-toggle="pill" href="/about">About</a>
+               </li>
 
-                  {logged_in &&
-                    <li className="nav-item btn-lg">
-                      <a className="nav-link" data-toggle="tab" href="/playground">Playground</a>
-                    </li>}
+               <li class="nav-item btn-lg">
+                   <a class="nav-link" data-toggle="pill" href="/overview">Overview</a>
+               </li>
+
+               {logged_in &&
+                 <li class="nav-item btn-lg">
+                 <a class="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
+                 </li>}
+
+                 {logged_in &&
+                   <li class="nav-item btn-lg">
+                   <a class="nav-link" data-toggle="pill" href="/playground">Playground</a>
+                   </li>}
 
 
 
-                    {!logged_in &&
-                    <li className="nav-item btn-lg">
-                    <a className="nav-link" data-toggle="tab" href="/about">About</a>
-                    </li>}
+               {logged_in &&
+               <li class="nav-item btn-lg">
+                   <a class="nav-link" data-toggle="pill" href= "users/edit">Account</a>
+               </li>}
 
-                    {!logged_in &&
-                      <li className="nav-item btn-lg">
-                        <a className="nav-link" data-toggle="pill" href={ edit_user_route }>Account</a>
-                      </li>}
+               {!logged_in &&
+               <li class="nav-item btn-lg">
+                   <a class="nav-link" data-toggle="pill" href= "/users/sign_up" >Sign Up</a>
+               </li>}
 
-                    {logged_in &&
-                      <li className="nav-item btn-lg">
-                        <a href={sign_out_route}>Sign Out</a>
-                      </li>}
+               {logged_in &&
+                 <li class="nav-item btn-lg">
+                 <a class href={sign_out_route}>Sign Out</a>
+                 </li>}
+
+               {!logged_in &&
+               <li class="btn-lg">
+                   <a class href= "/users/sign_in">Sign In</a>
+               </li>}
 
 
-                    {!logged_in &&
-                      <li className="btn-lg">
-                        <a href={sign_in_route}>Sign In</a>
-                      </li>}
 
                       <form className="form-inline my-2 my-lg-0">
                       <li>
