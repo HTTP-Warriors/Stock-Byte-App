@@ -2,4 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
+.tv-lightweight-charts {
+    display:none;
+}
+.tv-lightweight-charts:nth-child(3) {
+    visibility: hidden;
+}
+.tv-lightweight-charts:nth-child(5) {
+    display:block;
+}
