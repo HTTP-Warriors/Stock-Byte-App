@@ -12,7 +12,7 @@ import Home from "./Pages/home"
 import NotFound from "./Pages/notfound"
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
 import ReactRailsUJS from 'react_ujs'
-
+import KaktanaChart from 'kaktana-react-lightweight-charts'
 
 class App extends React.Component {
   constructor(props){
