@@ -341,7 +341,6 @@ class Playground extends React.Component {
       return response.json()
     })
     .then((payload) => {
-      console.log(payload);
         this.setState({
           chartData: payload,
           chartLoading: true})
