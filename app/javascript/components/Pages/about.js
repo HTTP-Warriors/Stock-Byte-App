@@ -65,10 +65,10 @@ class About extends React.Component {
                 <div class="card mb-5">
                   <h3 class="card-header">Xena Sitnikova</h3>
                   <div class="card-body">
-                    <h5 class="card-title">Position</h5>
+                    <h5 class="card-title">Full stack Developer</h5>
                   </div>
                   <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={xena} alt="Xena's photo for bio" />
-                  
+
                     <div class="card-body">
                       <a href="https://www.linkedin.com/in/sxena/" class="card-link" > <img style={{height: "20px", width: "20px"}} src={linkedin} alt= "Linkedin" /> </a>
                       <a href="https://github.com/sxena" class="card-link"> <img style={{height: "20px", width: "20px"}} src={github} alt= "Linkedin" /> </a>
