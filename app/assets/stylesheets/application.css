@@ -25,7 +25,24 @@
 
  }
 
+ .page-wrap-other {
+
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+ }
+
+thead {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
 .bodyB {
   background-image: url("think.jpg");
 }
-

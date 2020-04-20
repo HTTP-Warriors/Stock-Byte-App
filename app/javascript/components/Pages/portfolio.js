@@ -174,12 +174,14 @@ class Portfolio extends React.Component {
     return (
 
         <React.Fragment>
-
+<div  className="page-wrap-other">
 {/* find stock inputbox and button */}
-          <div class="form-group">
+
+
+          <div class="form-inline my-2 my-lg-0" >
               <label class="col-form-label" for="inputDefault">Find a stock</label>
-              <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
-              <button type="submit" onClick= { this.handleSubmit }>Find</button>
+              <input className="form-control mr-sm-2" onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
+              <button className="btn btn-outline-warning my-2 my-sm-0" type="submit" onClick= { this.handleSubmit }>Find</button>
           </div>
 
 {/* if the user enters a new valid stock, show stock info card */}
@@ -258,7 +260,7 @@ class Portfolio extends React.Component {
             </tbody>
           </table>
           </div>
-
+</div>
         </React.Fragment>
 
         );

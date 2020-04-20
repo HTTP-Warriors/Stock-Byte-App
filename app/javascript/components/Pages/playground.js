@@ -365,7 +365,7 @@ class Playground extends React.Component {
     return(
       <>
         { !this.state.hasPlaygroundAccount &&
-          <div>
+          <div className = "page-wrap-other">
             <h4>Are you ready to enter the playground? You will be given $100,000 Virtual Money to start.</h4>
             <button type="button" class="btn btn-primary btn-lg"
               onClick={() => this.createPlaygroundAccount()}>
@@ -374,7 +374,7 @@ class Playground extends React.Component {
           </div>
         }
         { this.state.hasPlaygroundAccount &&
-          <div>
+          <div >
           <div class="row">
             <div class="col-sm-3">
             <div>
