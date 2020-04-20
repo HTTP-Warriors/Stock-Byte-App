@@ -178,7 +178,7 @@ class Portfolio extends React.Component {
         <React.Fragment>
 
 <div className="page-wrap">
-        <div class="grid-container">
+        <div class="grid-container" style={{ width: "70%" }}>
             <div>
                   <h1>Portfolio List</h1>
                   <p><h2>Net Worth: $ { netWorth.toFixed(2) }</h2></p>
