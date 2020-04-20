@@ -178,6 +178,7 @@ class Portfolio extends React.Component {
         <React.Fragment>
 
 <div className="page-wrap">
+
         <div class="grid-container" style={{ maxWidth: "70%" }}>
 
 
@@ -224,6 +225,7 @@ class Portfolio extends React.Component {
                                       </tbody>
                             </table>
                         </div>
+
 
 
 
