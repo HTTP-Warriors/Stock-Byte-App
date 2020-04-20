@@ -1,5 +1,5 @@
 import React from "react"
-import Chart from "./chart"
+import IntradayChart from "./intraday_chart"
 
 class Playground extends React.Component {
   constructor(props){
@@ -223,7 +223,6 @@ class Playground extends React.Component {
   createTrade = (request) => {
     let symbol = this.state.stockInFocus
     let validForm = this.validTrade(request)
-    console.log(validForm);
     if(validForm.tradeForm){
         return fetch(`/trades?portfolio=playground&stock=${symbol}`, {
           body: JSON.stringify(validForm.tradeForm),
@@ -342,6 +341,7 @@ class Playground extends React.Component {
       return response.json()
     })
     .then((payload) => {
+      console.log(payload);
         this.setState({
           chartData: payload,
           chartLoading: true})
@@ -435,7 +435,7 @@ class Playground extends React.Component {
               {/* stock show section */}
                 <h1>{ this.state.stockInFocus }</h1>
                 <div id = "chart">
-                  { this.state.chartLoading ? <Chart chartData = {this.state.chartData}  /> : "Oh well" }
+                  { this.state.chartLoading ? <IntradayChart chartData = {this.state.chartData}  /> : "Oh well" }
                 </div>
                 <h4>Current Price: { roundToTwo(currentPrices[`${ this.state.stockInFocus }`]) }</h4>
                 <h4>Average Price: { stockList.find(value => value.symbol === this.state.stockInFocus)?roundToTwo(stockList.find(value => value.symbol === this.state.stockInFocus).average_price):0 }</h4>
