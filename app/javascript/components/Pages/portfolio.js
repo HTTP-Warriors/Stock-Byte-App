@@ -178,7 +178,58 @@ class Portfolio extends React.Component {
         <React.Fragment>
 
 <div className="page-wrap">
-        <div class="grid-container" style={{ width: "70%" }}>
+
+        <div class="grid-container" style={{ maxWidth: "70%" }}>
+
+
+
+        {/* Portfolio table */}
+                      <div className="containerStuff">
+                            <table class="table table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Symbol</th>
+                                          <th scope="col">Average Price</th>
+                                          <th scope="col">Quantity</th>
+                                          <th scope="col">Current Price</th>
+                                          <th scope="col">Gain/Loss</th>
+                                          <th scope="col">Delete</th>
+                                        </tr>
+                                      </thead>
+
+
+                                      <tbody>
+
+                                      { stockList.map((stock, index) => {
+                                        return(
+
+                                              <tr class="table-dark" key={ index }>
+
+                                                    <td scope="row">
+                                                      <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
+                                                      <br />
+                                                      <small>{ stockQuotes[`${ stock.symbol }`]?stockQuotes[`${ stock.symbol }`].name: null }</small>
+                                                    </td>
+
+
+                                                    <td>{ stock.average_price.toFixed(2) }</td>
+                                                    <td>{ stock.total_quantity }</td>
+                                                    <td>{ currentPrices[`${ stock.symbol }`]}</td>
+                                                    <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
+                                                    <td><button type="button" class="btn btn-danger btn-sm" onClick={() => this.handleDelete(`${ stock.id }`)}>Delete</button></td>
+                                                    </tr>
+                                            )
+                                          }
+                                        )
+                                      }
+                                      </tbody>
+                            </table>
+                        </div>
+
+
+
+
+
             <div>
                   <h1>Portfolio List</h1>
                   <p><h2>Net Worth: $ { netWorth.toFixed(2) }</h2></p>
@@ -208,7 +259,7 @@ class Portfolio extends React.Component {
               {/* if the user enters a new valid stock, show stock info card */}
 
               <div>
-                              <div className="container">
+                              <div className="container" >
 
                                         { this.state.stockStatus=="NEW" &&
                                             <div>
@@ -245,48 +296,7 @@ class Portfolio extends React.Component {
                           </div>
                     </div>
                 </div>
-                {/* Portfolio table */}
-                              <div className="containerStuff">
-                                    <table class="table table-hover">
-                                              <thead>
-                                                <tr>
-                                                  <th scope="col">Symbol</th>
-                                                  <th scope="col">Average Price</th>
-                                                  <th scope="col">Quantity</th>
-                                                  <th scope="col">Current Price</th>
-                                                  <th scope="col">Gain/Loss</th>
-                                                  <th scope="col">Delete</th>
-                                                </tr>
-                                              </thead>
 
-
-                                              <tbody>
-
-                                              { stockList.map((stock, index) => {
-                                                return(
-
-                                                      <tr class="table-dark" key={ index }>
-
-                                                            <td scope="row">
-                                                              <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
-                                                              <br />
-                                                              <small>{ stockQuotes[`${ stock.symbol }`]?stockQuotes[`${ stock.symbol }`].name: null }</small>
-                                                            </td>
-
-
-                                                            <td>{ stock.average_price.toFixed(2) }</td>
-                                                            <td>{ stock.total_quantity }</td>
-                                                            <td>{ currentPrices[`${ stock.symbol }`]}</td>
-                                                            <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
-                                                            <td><button type="button" class="btn btn-danger btn-sm" onClick={() => this.handleDelete(`${ stock.id }`)}>Delete</button></td>
-                                                            </tr>
-                                                    )
-                                                  }
-                                                )
-                                              }
-                                              </tbody>
-                                    </table>
-                                </div>
             </div>
             </div>
         </React.Fragment>
