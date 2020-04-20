@@ -1,6 +1,5 @@
 import React from "react"
 import { Redirect } from "react-router-dom"
-
 import 'bootswatch/dist/united/bootstrap.min.css'
 import Flexbox from 'flexbox-react';
 import Box from '@material-ui/core/Box'
