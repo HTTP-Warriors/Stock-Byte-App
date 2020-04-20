@@ -10,6 +10,7 @@ class Home extends React.Component {
     this.state = {
       articles: [],
       chartData: [],
+      chartData1: [],
       chartLoading: false
     }
     this.getArticles()
