@@ -1,5 +1,5 @@
 import React from "react"
-
+import Chart from "./chart"
 
 class Playground extends React.Component {
   constructor(props){
@@ -24,7 +24,9 @@ class Playground extends React.Component {
       leaderboardData: [],
       userInFocus: {},
       rightSideShow: "watchlist",
-      tabWatchListStatus: true
+      tabWatchListStatus: true,
+      chartData:[],
+      chartLoading: false
     }
 
   }
@@ -301,6 +303,8 @@ class Playground extends React.Component {
   }
 
   setStockInFocus = (symbol) => {
+    this.resetFeedback()
+    this.getChart(symbol)
     this.setState({
       stockInFocus: symbol
     })
@@ -349,9 +353,21 @@ class Playground extends React.Component {
     })
   }
 
+  getChart = (symbol) => {
+    fetch(`https://cloud.iexapis.com//stable/stock/${symbol}/intraday-prices?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
+    .then((response) => {
+      return response.json()
+    })
+    .then((payload) => {
+        this.setState({
+          chartData: payload,
+          chartLoading: true})
+    })
+  }
+
+
+
   render(){
-    console.log(this.state.stockList);
-    console.log(this.state.stockInFocus);
     const { playgroundAccountData, stockList, currentPrices, watchList } = this.state
     let netWorth = playgroundAccountData.cash
     let unrealizedGain = 0
@@ -373,11 +389,14 @@ class Playground extends React.Component {
             </button>
           </div>
         }
+
         { this.state.hasPlaygroundAccount &&
           <div>
           <div class="row">
             <div class="col-sm-3">
             <div>
+
+            {/* account information table */}
               <table>
                 <tr >
                   <th scope="row">Cash: </th>
@@ -397,6 +416,7 @@ class Playground extends React.Component {
                 </tr>
               </table>
 
+              {/* account portfolio table*/}
               <table class="table table-hover">
                 <thead>
                   <tr class="table-primary">
@@ -423,13 +443,17 @@ class Playground extends React.Component {
                 }
                 </tbody>
               </table>
+
               </div>
             </div>
             <div class="col-sm-6">
             {this.state.stockInFocus &&
               <div>
+              {/* stock show section */}
                 <h1>{ this.state.stockInFocus }</h1>
-                <img src={`https://finviz.com/chart.ashx?t=${this.state.stockInFocus}&ty=c&ta=0&p=d`} style={{width:"70%"}}/>
+                <div id = "chart">
+                  { this.state.chartLoading ? <Chart chartData = {this.state.chartData}  /> : "Oh well" }
+                </div>
                 <h4>Current Price: { roundToTwo(currentPrices[`${ this.state.stockInFocus }`]) }</h4>
                 <h4>Average Price: { stockList.find(value => value.symbol === this.state.stockInFocus)?roundToTwo(stockList.find(value => value.symbol === this.state.stockInFocus).average_price):0 }</h4>
                 <h4>Current Position: { stockList.find(value => value.symbol === this.state.stockInFocus)?stockList.find(value => value.symbol === this.state.stockInFocus).total_quantity:0 }</h4>
@@ -437,8 +461,19 @@ class Playground extends React.Component {
 
               </div>
             }
+            {!this.state.stockInFocus &&
+              <div>
+              {/* overview show section */}
+              <h1>Welcome to Playground! { this.props.current_user.nick_name }</h1>
+
+              </div>
+            }
+
+
+
             </div>
             <div class="col-sm-3">
+            {/* nav tabs switch between watchlist and leaderboard */}
               <ul class="nav nav-tabs">
                 <li class={this.state.tabWatchListStatus?"nav-item active":"nav-item"} >
                   <a class="nav-link" data-toggle="tab" onClick = {() => this.showWatchList() }>Watch List</a>
@@ -447,6 +482,7 @@ class Playground extends React.Component {
                   <a class="nav-link" data-toggle="tab" onClick = {() => this.showLeaderBoard() } >Leader Board</a>
                 </li>
               </ul>
+              {/* watchlist */}
               {this.state.rightSideShow === "watchlist" &&
               <div id="watchlist">
                 <table class="table table-hover">
@@ -472,6 +508,7 @@ class Playground extends React.Component {
               </div>
             }
 
+            {/* leaderboard */}
             {this.state.rightSideShow === "leaderboard" &&
               <div id="leaderboard">
                 <table class="table table-hover">
@@ -496,6 +533,8 @@ class Playground extends React.Component {
                 </table>
               </div>
             }
+
+            {/* user's stocks table*/}
             {this.state.rightSideShow === "userstock" &&
                 <div id="playerPortfolio">
                 {this.state.userInFocus.nickName &&
@@ -528,12 +567,10 @@ class Playground extends React.Component {
               </div>
             }
 
-
-
             </div>
           </div>
 
-
+{/* feedback alert */}
           <div>
             { this.state.feedbackForm.action &&
               <div class="alert alert-dismissible alert-info">
@@ -545,6 +582,7 @@ class Playground extends React.Component {
           </div>
 
           <div class="row">
+{/* find stock form */}
             <div class="col-sm-3">
             <div class="form-group">
                 <label class="col-form-label" for="inputDefault">Find a stock</label>
@@ -552,6 +590,8 @@ class Playground extends React.Component {
                 <button type="submit" onClick= { this.handleSubmit } class="btn btn-info">Find</button>
             </div>
           </div>
+
+{/* place trade order */}
             <div class="col-sm-9">
             <form>
               <div class="form-group">
@@ -562,7 +602,9 @@ class Playground extends React.Component {
               </div>
             </form>
             </div>
+
           </div>
+
           </div>
         }
       </>

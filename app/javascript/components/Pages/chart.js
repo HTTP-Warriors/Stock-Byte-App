@@ -12,7 +12,7 @@ class Chart extends React.Component {
             console.log(lightChartData)
             // const chart = createChart(document.body, { responsive: true, width: 400, height: 300 });
             // chart.resize(400, 300)
-            // const lineSeries = chart.addLineSeries(); 
+            // const lineSeries = chart.addLineSeries();
             // let chartShow = lineSeries.setData(lightChartData)
             // console.log(chartShow)
         return (
@@ -33,12 +33,11 @@ class Chart extends React.Component {
                         secondsVisible: false
                     }}}
                     lineSeries = {[{
-                        data: lightChartData 
+                        data: lightChartData
                     }]}
                     height = {320}
                     autoWidth
                 />
-                <div>hey!</div>
             </>
             );
         }

@@ -16,8 +16,8 @@ class Stock extends React.Component {
       },
       stockQuote: {},
       stockNews: [],
-      showPage: false
-      // logoUrl:""
+      showPage: false,
+      stockRatings: {}
     }
   }
 
@@ -25,7 +25,7 @@ class Stock extends React.Component {
     this.getStockList()
     this.getStockQuote()
     this.getStockNews()
-    // this.getStockLogo()
+    this.getStockRatings()
     }
 
   // method to get quote information, it is an object
@@ -59,21 +59,41 @@ class Stock extends React.Component {
       })
       })
   }
-// //method to get company logo
-//   getStockLogo = () => {
-//     const { symbol } = this.props.match.params
-//     fetch(`https://cloud.iexapis.com/stable/stock/${ symbol }/logo?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
-//       .then((response)=>{
-//     if(response.status === 200){
-//        return(response.json())
-//         }
-//       })
-//       .then((result)=>{
-//        this.setState({
-//          logoUrl:result.url
-//        })
-//       })
-//   }
+// methods to get stocks ratings
+  getStockRatings = () => {
+    const { symbol } = this.props.match.params
+    fetch(`https://finnhub.io/api/v1/stock/recommendation?symbol=${symbol}&token=bqa247nrh5r8t7qn5tb0`)
+      .then((response)=>{
+    if(response.status === 200){
+      return(response.json())
+        }
+      })
+      .then((result)=>{
+        if(result[0]){
+          let ratingData= result[0]
+          let ratingNums = ratingData.buy + ratingData.hold + ratingData.sell
+          let rating = (ratingData.buy + ratingData.hold * 2 + ratingData.sell * 3)/ratingNums
+          let recommend = "Buy"
+          if(rating>2.4){
+            recommend = "Sell"
+          }else if(rating>1.6){
+            recommend = "Hold"
+          }
+          let buyBar = Math.round(ratingData.buy*100/ratingNums)
+          let sellBar = Math.round(ratingData.sell*100/ratingNums)
+          let holdBar = 100 - buyBar - sellBar
+          this.setState({
+            stockRatings:
+            { recommend: recommend,
+              buyBar: buyBar,
+              sellBar: sellBar,
+              holdBar: holdBar }
+          })
+        }
+      })
+  }
+
+
 
   //method to get stock listed in user's portfolio, then pass the list to getStock()
   getStockList = () => {
@@ -170,7 +190,7 @@ class Stock extends React.Component {
   }
 
   render () {
-    const { tradeList, stockQuote, stockNews, showPage } = this.state
+    const { tradeList, stockQuote, stockNews, showPage, stockRatings} = this.state
     const { symbol } = this.props.match.params
     return (
       <React.Fragment>
@@ -183,8 +203,19 @@ class Stock extends React.Component {
           <p>current price is ${ Math.round(stockQuote.close*100)/100 }</p>
           <p>${ Math.round(stockQuote.change*100)/100 } { Math.round(stockQuote.percent_change*100)/100 }%</p>
           <p>open: ${ Math.round(stockQuote.open*100)/100 }</p>
-          <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`}/>
+          <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`} style={{width:"300px"}}/>
         </div>
+
+
+{/*stock ratings*/}
+        <h4>Analysts recommendation: { stockRatings.recommend } </h4>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" style={{width: `${stockRatings.buyBar}%`}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-info" role="progressbar" style={{width: `${stockRatings.holdBar}%`}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-danger" role="progressbar" style={{width: `${stockRatings.sellBar}%`}} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+
 {/* stock news */}
         <div>
           <h3>Latest News about { stockQuote.name }</h3>
@@ -203,6 +234,10 @@ class Stock extends React.Component {
             }
           </div>
         </div>
+
+
+
+
 {/* if nothing in tradeList, then user will not see a trade table */}
         {(tradeList.length>0) &&
           <div>
