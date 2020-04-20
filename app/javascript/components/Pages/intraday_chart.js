@@ -2,19 +2,14 @@ import React from "react"
 import KaktanaChart from 'kaktana-react-lightweight-charts'
 
 
-class Chart extends React.Component {
+class IntradayChart extends React.Component {
 
     render () {
             const { chartData } = this.props
-            let lightChartData = chartData.map((element)=>{
-                return ({ time: element.date, value: element.close })
+            let lightChartData = chartData.filter(element=>element.average>0).map((element)=>{
+                let time = new Date(`${element.date}T${element.minute}`)
+                return ({ time: time.getTime() / 1000 - 25200 , value: element.average })
             })
-            // console.log(lightChartData)
-            // const chart = createChart(document.body, { responsive: true, width: 400, height: 300 });
-            // chart.resize(400, 300)
-            // const lineSeries = chart.addLineSeries();
-            // let chartShow = lineSeries.setData(lightChartData)
-            // console.log(chartShow)
         return (
             <>
                 <KaktanaChart
@@ -42,4 +37,4 @@ class Chart extends React.Component {
             );
         }
 }
-export default Chart
+export default IntradayChart

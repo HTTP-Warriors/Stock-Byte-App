@@ -92,7 +92,7 @@ class App extends React.Component {
           <Route exact path="/stocknotfound/" component={ StockNotFound } />
           <Route exact path="/stock/:symbol" render={ (props) => <Stock {...props}/> } />
           <Route exact path="/portfolio/" render={ (props) => <Portfolio /> } />
-          <Route exact path="/playground/" render={ (props) => <Playground /> } />
+          <Route exact path="/playground/" render={ (props) => <Playground current_user = { current_user } /> } />
           <Route exact path="/overview/" render={ (props) => <Overview /> } />
           <Route exact path="/"  component={ Home } />
           <Route component={ NotFound } />
