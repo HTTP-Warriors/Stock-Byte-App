@@ -157,20 +157,6 @@ class Playground extends React.Component {
    })
   }
 
-  createStock = () => {
-    return fetch(`/stocks?portfolio=playground`, {
-        body: JSON.stringify(this.state.form),
-        headers: {
-            "Content-Type": "application/json"
-        },
-        method: "POST"
-    })
-    .then((response) => {
-        if(response.ok){
-          return this.getStockList()
-        }
-    })
-  }
 
   validSymbol = (symbol) => {
     fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
@@ -199,10 +185,7 @@ class Playground extends React.Component {
       })
       .then((result)=>{
         if(result.price){
-          this.createStock(form.symbol)
-          this.setState({
-            stockInFocus: form.symbol
-          })
+          this.setStockInFocus(form.symbol)
         }
       })
 
