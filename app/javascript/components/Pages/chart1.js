@@ -1,15 +1,13 @@
 import React from "react"
 import KaktanaChart from 'kaktana-react-lightweight-charts'
 
-
-class IntradayChart extends React.Component {
+class Chart1 extends React.Component {
 
     render () {
-            const { chartData } = this.props
-            let lightChartData = chartData.filter(element=>element.average>0).map((element)=>{
-                let time = new Date(`${element.date}T${element.minute}`)
-                return ({ time: time.getTime() / 1000 - 25200 , value: element.average })
-            })
+            const { chartData1 } = this.props
+            let lightChartData1 = chartData1.map((element)=>{
+                return ({ time: element.date, value: element.close })
+                })
         return (
             <>
                 <KaktanaChart
@@ -83,14 +81,15 @@ class IntradayChart extends React.Component {
                                 secondsVisible: false
                             }
                         }}
-                    lineSeries = {[{
-                        data: lightChartData
+                    lineSeries =  
+                    {[{
+                        data: lightChartData1
                     }]}
                     height = {320}
-                    autoWidth
+                    width = {640}
                 />
             </>
             );
         }
 }
-export default IntradayChart
+export default Chart1

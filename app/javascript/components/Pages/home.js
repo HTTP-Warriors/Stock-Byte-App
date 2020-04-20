@@ -2,6 +2,7 @@ import React from "react"
 import Flexbox from 'flexbox-react';
 import background from "./background.jpg"
 import Chart from "./chart"
+import Chart1 from "./chart1"
 import TextLoop from "react-text-loop";
 
 class Home extends React.Component {
@@ -15,6 +16,7 @@ class Home extends React.Component {
     }
     this.getArticles()
     this.getChart()
+    this.getChart1()
   }
 
 getArticles = () => {
@@ -35,6 +37,16 @@ getChart = () => {
   })
   .then((payload) => {
       this.setState({chartData:payload, chartLoading:true})
+  })
+}
+
+getChart1 = () => {
+  fetch('https://sandbox.iexapis.com/stable/stock/AAPL/chart/1m?token=Tsk_8d3ccc170f2b4e59940c7906f2d4c32f')
+  .then((response) => {
+    return response.json()
+  })
+  .then((payload) => {
+      this.setState({chartData1:payload, chartLoading:true})
   })
 }
 
@@ -143,6 +155,11 @@ getChart = () => {
                         <div id="homeChart">
                         { this.state.chartLoading ? <Chart chartData = {this.state.chartData}  /> : "Oh well" }
                         </div>
+                        </div>
+                        <div className="card-body">
+                        <div id="homeChart1">
+                        { this.state.chartLoading ? <Chart1 chartData1 = {this.state.chartData1}  /> : "Oh well" }
+                        </div>
                           <a href="https://iexcloud.io" className="card-link" target="_blank"> Chart Data provided by IEX Cloud</a> <br />
                           <a href="https://www.tradingview.com/" className="card-link" target="_blank">Chart Graph provided by Trading View</a>
                         </div>
@@ -153,7 +170,7 @@ getChart = () => {
                   
                   </div>
 
-                 </Flexbox>
+                </Flexbox>
 
 
             <Flexbox element="footer" height="60px">
