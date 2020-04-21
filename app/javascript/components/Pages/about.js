@@ -19,7 +19,7 @@ class About extends React.Component {
                 <div class="card mb-5" >
                   <h3 class="card-header">Richie Edquid</h3>
                   <div class="card-body">
-                    <h5 class="card-title">Position</h5>
+                    <h5 class="card-title">Front End, External APIs, and Charts</h5>
                   </div>
                   <img style={{height:"200px", display:"block", marginLeft: "auto", marginRight: "auto", borderRadius:"5px"}} src={richie} alt="Richie's photo for bio" />
                   <div class="card-body">
