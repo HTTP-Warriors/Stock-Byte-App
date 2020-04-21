@@ -8,7 +8,7 @@ class IntradayChart extends React.Component {
             const { chartData } = this.props
             let lightChartData = chartData.filter(element=>element.average>0).map((element)=>{
                 let time = new Date(`${element.date}T${element.minute}`)
-                return ({ time: time.getTime() / 1000 - 25200 , value: element.average })
+                return ({ time: time.getTime() / 1000 - 25200 , value: element.close })
             })
         return (
             <>
@@ -24,7 +24,7 @@ class IntradayChart extends React.Component {
                                 dateFormat: "yyyy/MMMM/dd",
                                 priceFormatter: function(price) {
                                     // add $ sign before price
-                        
+
                                     return '$' + price;
                                     },
                                 },
@@ -86,7 +86,7 @@ class IntradayChart extends React.Component {
                     lineSeries = {[{
                         data: lightChartData
                     }]}
-                    height = {320}
+                    height = {250}
                     autoWidth
                 />
             </>

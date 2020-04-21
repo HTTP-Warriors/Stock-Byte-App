@@ -76,11 +76,6 @@ class Playground extends React.Component {
       })
     }
 
-
-
-
-
-
   getPortfolio = () => {
     fetch(`/portfolios`)
     .then((response) => {
@@ -99,6 +94,7 @@ class Playground extends React.Component {
         }
     })
   }
+
   createPlaygroundAccount = () => {
       return fetch(`/portfolios`, {
           body: JSON.stringify({'name': 'playground', 'cash': 100000.00}),
@@ -157,7 +153,6 @@ class Playground extends React.Component {
    })
   }
 
-
   validSymbol = (symbol) => {
     fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
       .then((response)=>{
@@ -191,7 +186,6 @@ class Playground extends React.Component {
 
   }
 
-
   handleChange = (event) => {
       let { form } = this.state
       form[event.target.name] = event.target.value.toUpperCase()
@@ -219,7 +213,6 @@ class Playground extends React.Component {
     }
   }
 
-
   createTrade = (request) => {
     let symbol = this.state.stockInFocus
     let validForm = this.validTrade(request)
@@ -245,13 +238,13 @@ class Playground extends React.Component {
       }
   }
 
-
   handleBuySubmit = (event) => {
     event.preventDefault()
     let { tradeForm } = this.state
     tradeForm.action = 1
     this.createTrade(this.state.tradeForm)
   }
+
   handleSellSubmit = (event) => {
     event.preventDefault()
     let { tradeForm } = this.state
@@ -327,8 +320,6 @@ class Playground extends React.Component {
     })
   }
 
-
-
   resetFeedback = () => {
     this.setState({
       feedbackForm:{}
@@ -363,21 +354,17 @@ class Playground extends React.Component {
     return(
 
 
-
-
       <>
 
       { !this.state.hasPlaygroundAccount &&
         <div className = "page-wrap">
           <h1><center><p>Are you ready to enter the playground?</p> <p>You will be given $100,000 Virtual Money to start.</p></center></h1>
-          <button type="button" class="myButton" font-size="500px"
+          <button type="button" class="myButton" font-size="400px"
             onClick={() => this.createPlaygroundAccount()}>
           Yes! Let's PLAY!
           </button>
-
         </div>
       }
-
 
       { this.state.hasPlaygroundAccount &&
         <div >
@@ -391,7 +378,7 @@ class Playground extends React.Component {
 
         <div class="grid-item">
         {/* account information table */}
-          <table>
+          <table style={{fontSize:"15px"}}>
             <tr >
               <th scope="row">Cash: </th>
               <td>${ Math.round(playgroundAccountData.cash*100)/100 }</td>
@@ -415,13 +402,13 @@ class Playground extends React.Component {
 
 
         <div class="grid-item">
-        {!this.state.stockInFocus &&
+
           <div>
           {/* overview show section */}
           <h1><center>Welcome to Playground! { this.props.current_user.nick_name }</center></h1>
 
           </div>
-        }
+
         </div>
 
 
@@ -429,10 +416,17 @@ class Playground extends React.Component {
 
 
 
+        <div class="grid-item">
 
-
-
-        <div class="grid-item">3</div>
+        <ul class="nav nav-tabs" style={{fontSize:"20px"}}>
+          <li class={this.state.tabWatchListStatus?"nav-item active":"nav-item"} >
+            <a class="nav-link" data-toggle="tab" onClick = {() => this.showWatchList() }>Watch List</a>
+          </li>
+          <li class={this.state.tabWatchListStatus?"nav-item":"nav-item active"}>
+            <a class="nav-link" data-toggle="tab" onClick = {() => this.showLeaderBoard() } >Leader Board</a>
+          </li>
+        </ul>
+        </div>
 
 
 
@@ -479,16 +473,9 @@ class Playground extends React.Component {
 
 
 
-
-
-
-
-
-
-
-        <div class="grid-item">
+        <div class="grid-item" style={{height:"500px"}}>
         {this.state.stockInFocus &&
-          <div>
+          <div style={{margin:"2em"}}>
           {/* stock show section */}
             <h1>{ this.state.stockInFocus }</h1>
             <div id = "chart">{ this.state.chartLoading ? <IntradayChart chartData = {this.state.chartData}  /> : "Oh well" }</div>
@@ -517,14 +504,7 @@ class Playground extends React.Component {
 
         {/* nav tabs switch between watchlist and leaderboard */}
 
-          <ul class="nav nav-tabs">
-            <li class={this.state.tabWatchListStatus?"nav-item active":"nav-item"} >
-              <a class="nav-link" data-toggle="tab" onClick = {() => this.showWatchList() }>Watch List</a>
-            </li>
-            <li class={this.state.tabWatchListStatus?"nav-item":"nav-item active"}>
-              <a class="nav-link" data-toggle="tab" onClick = {() => this.showLeaderBoard() } >Leader Board</a>
-            </li>
-          </ul>
+
 
 
 
@@ -613,11 +593,17 @@ class Playground extends React.Component {
           </div>
         }
 
-  
+
         </div>
 
 
-        <div class="grid-item">7</div>
+        <div class="grid-item">
+          <div class="form-inline my-2">
+            <button type="submit" style={{marginRight:"1em",marginLeft:"25%"}}onClick= { this.handleBuySubmit } class="btn btn-success my-2 my-sm-0" >Buy</button>
+            <input Placeholder="Quantity" style={{width:"20%", margin:"1em"}} onChange={ this.handleTradeChange } type="text" class="form-control" name="quantity"/>
+            <button type="submit" onClick= { this.handleSellSubmit } class="btn btn-danger my-2 my-sm-0">Sell</button>
+          </div>
+        </div>
 
 
         <div class="grid-item">
@@ -634,9 +620,13 @@ class Playground extends React.Component {
         </div>
 
 
-        <div class="grid-item">9
+        <div class="grid-item">
 
-
+        <div class="form-inline my-2">
+            <label class="col-form-label" for="inputDefault" style={{marginLeft:"15%"}}>Find a stock</label>
+            <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Stock Symbol" style={{width:"40%", margin:"1em"}}/>
+            <button type="submit" onClick= { this.handleSubmit } class="btn btn-info my-2 my-sm-0">Find</button>
+        </div>
 
 
         </div>
@@ -644,48 +634,6 @@ class Playground extends React.Component {
 </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  <div class="grid-container">
-        {/* find stock form */}
-                    <div class="col-sm-3">
-                    <div class="form-inline my-2">
-                        <label class="col-form-label" for="inputDefault">Find a stock</label>
-                        <input onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here" style={{width:"70%"}}/>
-                        <button type="submit" onClick= { this.handleSubmit } class="btn btn-info my-2 my-sm-0">Find</button>
-                    </div>
-                  </div>
-
-        {/* place trade order */}
-                    <div class="col-sm-3">
-                      <div class="form-inline my-2">
-                        <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
-                        <input style={{width:"20%"}} onChange={ this.handleTradeChange } type="text" class="form-control" name="quantity"/>
-                        <button type="submit" onClick= { this.handleBuySubmit } class="btn btn-success my-2 my-sm-0" >Buy</button>
-                        <button type="submit" onClick= { this.handleSellSubmit } class="btn btn-danger my-2 my-sm-0">Sell</button>
-                      </div>
-                    </div>
-
-                  </div>
 
                   </div>
                 }
