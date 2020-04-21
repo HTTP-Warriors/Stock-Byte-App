@@ -288,7 +288,7 @@ class Stock extends React.Component {
 
 {/*stock ratings*/}
         <h2><center>Analysts recommendation: { stockRatings.recommend } </center></h2>
-        <div  className="page-wrap">
+        <div class="progress">
           <div class="progress-bar bg-success" role="progressbar" style={{width: `${stockRatings.buyBar}%`}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
           <div class="progress-bar bg-info" role="progressbar" style={{width: `${stockRatings.holdBar}%`}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
           <div class="progress-bar bg-danger" role="progressbar" style={{width: `${stockRatings.sellBar}%`}} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>

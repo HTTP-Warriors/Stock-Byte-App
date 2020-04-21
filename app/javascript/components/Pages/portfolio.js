@@ -231,9 +231,8 @@ class Portfolio extends React.Component {
 
 
             <div>
-                  <h1>Portfolio List</h1>
-                  <p><h2>Net Worth: $ { netWorth.toFixed(2) }</h2></p>
-                  <p><h2>Total Gain/Loss: $ { (netWorth - totalCost).toFixed(2) }</h2></p>
+                  <h3>Net Worth: $ { netWorth.toFixed(2) }</h3>
+                  <h3>Total Gain/Loss: $ { (netWorth - totalCost).toFixed(2) }</h3>
             </div>
 
             <div>
@@ -245,7 +244,7 @@ class Portfolio extends React.Component {
               {/* find stock inputbox and button */}
                         <div className="container">
                             <div className="form-inline my-2 my-lg-0">
-                                <label className="active-pink-3 active-pink-4 mb-4" for="inputDefault"><h2>Find a stock</h2></label>
+                                <label className="active-pink-3 active-pink-4 mb-4" for="inputDefault"><h3>Find a stock</h3></label>
                             </div>
 
                         <div className="form-inline my-2">
