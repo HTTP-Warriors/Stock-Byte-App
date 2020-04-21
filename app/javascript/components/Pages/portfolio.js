@@ -248,7 +248,7 @@ class Portfolio extends React.Component {
                             </div>
 
                         <div className="form-inline my-2">
-                              <input className="form-control" onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
+                              <input className="form-control" onChange={ this.handleChange } type="text" name="symbol" Placeholder="Enter Stock Symbol Here"/>
                               <button className="btn btn-outline-warning my-2 my-sm-0" type="submit" onClick= { this.handleSubmit }>Find</button>
                         </div>
               </div>

@@ -59,29 +59,30 @@ getChart1 = () => {
           <Flexbox flexDirection="column" minHeight="100%">
 
             <Flexbox flexGrow={1}>
-            <div className="card mb-3">
-              <h3 className="card-header">
+
+
+            <div className="card mb-3" >
+              <h3 className="card-header" >
                 Let us learn about Stock Market!
               </h3>
-                  <div className="card-body">
-                    <h5 className="card-title">WHAT DOES STOCK MARKET DO?</h5>
-                    <p><img src={ background } style={{width:"75%"}} /> </p>
+                    <h5 className="card-header card-title">WHAT DOES STOCK MARKET DO?</h5>
+                    <p><img src={ background } style={{width:"70%"}} /> </p>
                     <p className="card-subtitle text-muted">The Bull and Bear market meet UP!</p>
-                  </div>
+
 
                   <div className="card text-white bg-warning mb-3">
                     <div className="card-header card-title"><h3>Stock market basics</h3>
                     </div>
                     <div className="card-body">
                       <p className="card-text">
-                      The stock market is made up of exchanges, like the New York Stock Exchange and the Nasdaq. Stocks are listed on a specific exchange, which brings buyers and sellers together and acts as a market for the shares of those stocks. The exchange tracks the supply and demand — and directly related, the price — of each stock. (Need to back up a bit? Read our explainer about stocks.)
-                      <br />
-                      But this isn’t your typical market, and you can’t show up and pick your shares off a shelf the way you select produce at the grocery store. Individual traders are typically represented by brokers — these days, that’s often an online broker. You place your stock trades through the broker, which then deals with the exchange on your behalf. (Need a broker? See our analysis of the best stockbrokers for beginners.)
-                      <br />
-                      The NYSE and the Nasdaq are open from 9:30 a.m. to 4 p.m. Eastern, with premarket and after-hours trading sessions also available, depending on your broker.
-                      <br />
+                      <p>The stock market is made up of exchanges, like the New York Stock Exchange and the Nasdaq. Stocks are listed on a specific exchange, which brings buyers and sellers together and acts as a market for the shares of those stocks. The exchange tracks the supply and demand — and directly related, the price — of each stock. (Need to back up a bit? Read our explainer about stocks.)
                       </p>
-                      <a href="https://www.nerdwallet.com/article/investing/how-to-invest-in-stocks" className="btn btn-primary" target="_blank">How To invest in stocks</a>
+                      <p>But this isn’t your typical market, and you can’t show up and pick your shares off a shelf the way you select produce at the grocery store. Individual traders are typically represented by brokers — these days, that’s often an online broker. You place your stock trades through the broker, which then deals with the exchange on your behalf. (Need a broker? See our analysis of the best stockbrokers for beginners.)
+                      </p>
+                      <p>The NYSE and the Nasdaq are open from 9:30 a.m. to 4 p.m. Eastern, with premarket and after-hours trading sessions also available, depending on your broker.
+
+                      </p>
+                      <a href="https://www.nerdwallet.com/article/investing/how-to-invest-in-stocks" className="btn btn-primary" target="_blank">How To invest in stocks</a> </p>
                     </div>
                   </div>
                   <div className="card text-white bg-warning mb-3">
@@ -159,6 +160,8 @@ getChart1 = () => {
 
                         <div className="card-body">
                         <div id="homeChart">
+                        <h2>IBM</h2>
+                        <h3>International Business Machines Corp.</h3>
                         { this.state.chartLoading ? <Chart chartData = {this.state.chartData}  /> : "Oh well" }
                         </div>
                         </div>
@@ -167,6 +170,8 @@ getChart1 = () => {
 
                         <div className="card-body">
                         <div id="homeChart1">
+                        <h2>AAPL</h2>
+                        <h3>Apple Inc</h3>
                         { this.state.chartLoading ? <Chart1 chartData1 = {this.state.chartData1}  /> : "Oh well" }
                         </div>
                           <a href="https://iexcloud.io" className="card-link" target="_blank"> Chart Data provided by IEX Cloud</a> <br />
