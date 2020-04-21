@@ -514,7 +514,7 @@ class Playground extends React.Component {
 
         <div class="grid-item">
 
-        <div class="col-sm-3">
+
         {/* nav tabs switch between watchlist and leaderboard */}
 
           <ul class="nav nav-tabs">
@@ -613,7 +613,7 @@ class Playground extends React.Component {
           </div>
         }
 
-      </div>
+  
         </div>
 
 
