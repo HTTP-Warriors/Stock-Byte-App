@@ -196,7 +196,7 @@ class Stock extends React.Component {
       <React.Fragment>
 
 
-
+<div className="page-wrap">
 
 {showPage && <div>
 
@@ -322,6 +322,7 @@ class Stock extends React.Component {
 
 
       </div>}
+      </div>
       </React.Fragment>
     );
   }
