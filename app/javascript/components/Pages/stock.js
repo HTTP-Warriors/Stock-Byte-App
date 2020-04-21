@@ -194,21 +194,100 @@ class Stock extends React.Component {
     const { symbol } = this.props.match.params
     return (
       <React.Fragment>
+
+
+<div className="page-wrap">
+
 {showPage && <div>
-{/* stock information */}
-        <div>
-          <h2>{ symbol.toUpperCase() }</h2>
-          <h4>{ stockQuote.name }</h4>
-          {/*}<img src={this.state.logoUrl}/>*/}
-          <p>current price is ${ Math.round(stockQuote.close*100)/100 }</p>
-          <p>${ Math.round(stockQuote.change*100)/100 } { Math.round(stockQuote.percent_change*100)/100 }%</p>
-          <p>open: ${ Math.round(stockQuote.open*100)/100 }</p>
-          <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`} style={{width:"300px"}}/>
-        </div>
+
+  {/* if this stock is not in user's portfolio, then user will not see the form to add a trade */}
+      <div class="grid-container">
+          { this.state.inPortfolio &&
+            <form className="form-inline my-2 my-lg-0">
+              <div class="form-group">
+                <p><label >Buying or Selling</label></p>
+                <p><select onChange={ this.handleChange } type="text" value = { this.state.form.action } className="form-control mr-sm-2" name="action">
+                  <option value="1">Buy</option>
+                  <option value="-1">Sell</option>
+                </select></p>
+
+
+                <p><label class="col-form-label" for="inputDefault">Quantity of stocks</label></p>
+                <p><input onChange={ this.handleChange } type="text" className="form-control mr-sm-2" name="quantity"/></p>
+
+
+                <p><label class="col-form-label" for="inputDefault">Price per stock</label></p>
+                <p><input className="form-control mr-sm-2" onChange={ this.handleChange } type="text" class="form-control" name="price"/></p>
+                <p><button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick= { this.handleSubmit }>Add this trade</button></p>
+              </div>
+            </form>}
+
+
+
+
+            {/* stock information */}
+            <div class="row">
+              <div class="col-sm-4">
+                      <div  className="page-wrap">
+                        <h2>{ symbol.toUpperCase() }</h2>
+                        <h4>{ stockQuote.name }</h4>
+                        {/*}<img src={this.state.logoUrl}/>*/}
+                        <p>current price is ${ Math.round(stockQuote.close*100)/100 }</p>
+                        <p>${ Math.round(stockQuote.change*100)/100 } { Math.round(stockQuote.percent_change*100)/100 }%</p>
+                        <p>open: ${ Math.round(stockQuote.open*100)/100 }</p>
+                        <img src={`https://finviz.com/chart.ashx?t=${symbol}&ty=c&ta=0&p=d`} style={{width:"300px"}}/>
+                      </div>
+              </div>
+
+
+
+              {/* if nothing in tradeList, then user will not see a trade table */}
+              <div class="col-sm-4">
+                      {(tradeList.length>0) &&
+                        <div className="page-wrap">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">Action</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            { tradeList.map((trade, index)=>{
+                              return(
+                                <tr class="table-light" key={ index }>
+                                  <td>{ (trade.action===1)?"Bought":"Sold" }</td>
+                                  <td>{ trade.price }</td>
+                                  <td>{ trade.quantity }</td>
+                                  <td>
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                      onClick={() => this.deleteTrade(`${ trade.id }`)}>
+                                    Delete
+                                    </button>
+                                  </td>
+                                </tr>
+                                )
+                              })}
+                          </tbody>
+                        </table>
+                      </div>}
+                  </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
 
 
 {/*stock ratings*/}
-        <h4>Analysts recommendation: { stockRatings.recommend } </h4>
+        <h2><center>Analysts recommendation: { stockRatings.recommend } </center></h2>
         <div class="progress">
           <div class="progress-bar bg-success" role="progressbar" style={{width: `${stockRatings.buyBar}%`}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
           <div class="progress-bar bg-info" role="progressbar" style={{width: `${stockRatings.holdBar}%`}} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -217,7 +296,7 @@ class Stock extends React.Component {
 
 
 {/* stock news */}
-        <div>
+        <div className="page-wrap">
           <h3>Latest News about { stockQuote.name }</h3>
           <div class="list-group">
             { stockNews.map((article, index) => {
@@ -238,56 +317,12 @@ class Stock extends React.Component {
 
 
 
-{/* if nothing in tradeList, then user will not see a trade table */}
-        {(tradeList.length>0) &&
-          <div>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Action</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              { tradeList.map((trade, index)=>{
-                return(
-                  <tr class="table-light" key={ index }>
-                    <td>{ (trade.action===1)?"Bought":"Sold" }</td>
-                    <td>{ trade.price }</td>
-                    <td>{ trade.quantity }</td>
-                    <td>
-                      <button type="button" class="btn btn-danger btn-sm"
-                        onClick={() => this.deleteTrade(`${ trade.id }`)}>
-                      Delete
-                      </button>
-                    </td>
-                  </tr>
-                  )
-                })}
-            </tbody>
-          </table>
-        </div>}
 
-{/* if this stock is not in user's portfolio, then user will not see the form to add a trade */}
-        { this.state.inPortfolio &&
-          <form>
-            <div class="form-group">
-              <label >Buying or Selling</label>
-              <select onChange={ this.handleChange } type="text" value = { this.state.form.action } class="form-control" name="action">
-                <option value="1">Buy</option>
-                <option value="-1">Sell</option>
-              </select>
-              <label class="col-form-label" for="inputDefault">Quantity of stocks</label>
-              <input onChange={ this.handleChange } type="text" class="form-control" name="quantity"/>
-              <label class="col-form-label" for="inputDefault">Price per stock</label>
-              <input onChange={ this.handleChange } type="text" class="form-control" name="price"/>
-              <button type="submit" onClick= { this.handleSubmit }>Add this trade</button>
-            </div>
-          </form>
-        }
+
+
+
       </div>}
+      </div>
       </React.Fragment>
     );
   }

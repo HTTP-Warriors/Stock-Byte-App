@@ -1,7 +1,9 @@
 import React from "react"
 import { Redirect } from "react-router-dom"
-
 import 'bootswatch/dist/united/bootstrap.min.css'
+import Flexbox from 'flexbox-react';
+import Box from '@material-ui/core/Box'
+
 
 class Portfolio extends React.Component {
     constructor(props){
@@ -174,93 +176,128 @@ class Portfolio extends React.Component {
     return (
 
         <React.Fragment>
-<div  className="page-wrap-other">
-{/* find stock inputbox and button */}
+
+<div className="page-wrap">
+
+        <div class="grid-container" style={{ maxWidth: "70%" }}>
 
 
-          <div class="form-inline my-2 my-lg-0" >
-              <label class="col-form-label" for="inputDefault">Find a stock</label>
-              <input className="form-control mr-sm-2" onChange={ this.handleChange } type="text" class="form-control" name="symbol" Placeholder="Enter Stock Symbol Here"/>
-              <button className="btn btn-outline-warning my-2 my-sm-0" type="submit" onClick= { this.handleSubmit }>Find</button>
-          </div>
 
-{/* if the user enters a new valid stock, show stock info card */}
-          { this.state.stockStatus=="NEW" &&
+        {/* Portfolio table */}
+                      <div className="containerStuff">
+                            <table class="table table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Symbol</th>
+                                          <th scope="col">Average Price</th>
+                                          <th scope="col">Quantity</th>
+                                          <th scope="col">Current Price</th>
+                                          <th scope="col">Gain/Loss</th>
+                                          <th scope="col">Delete</th>
+                                        </tr>
+                                      </thead>
+
+
+                                      <tbody>
+
+                                      { stockList.map((stock, index) => {
+                                        return(
+
+                                              <tr class="table-dark" key={ index }>
+
+                                                    <td scope="row">
+                                                      <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
+                                                      <br />
+                                                      <small>{ stockQuotes[`${ stock.symbol }`]?stockQuotes[`${ stock.symbol }`].name: null }</small>
+                                                    </td>
+
+
+                                                    <td>{ stock.average_price.toFixed(2) }</td>
+                                                    <td>{ stock.total_quantity }</td>
+                                                    <td>{ currentPrices[`${ stock.symbol }`]}</td>
+                                                    <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
+                                                    <td><button type="button" class="btn btn-danger btn-sm" onClick={() => this.handleDelete(`${ stock.id }`)}>Delete</button></td>
+                                                    </tr>
+                                            )
+                                          }
+                                        )
+                                      }
+                                      </tbody>
+                            </table>
+                        </div>
+
+
+
+
+
             <div>
-              <div class="card border-primary mb-3" style={{ maxWidth: "30rem" }}>
-                <div class="card-header">New Stock</div>
-                <div class="card-body">
-                  <h4 class="card-title">{ stockInfo.symbol } { currentPrices[`${ stockInfo.symbol }`] }
-                    <button type="button" class="btn btn-success pull-right"
-                      onClick={() => this.createStock()}>
-                      Add
-                    </button>
-                  </h4>
-                  <p class="card-text">{ stockInfo.companyName }</p>
-                  <p class="card-text">{ stockInfo.exchange }</p>
-                  <p class="card-text">{ stockInfo.industry }</p>
-                  <p class="card-text">{ stockInfo.description }</p>
-                </div>
+                  <h3>Net Worth: $ { netWorth.toFixed(2) }</h3>
+                  <h3>Total Gain/Loss: $ { (netWorth - totalCost).toFixed(2) }</h3>
+            </div>
+
+            <div>
+
+
+
+
+              <div>
+              {/* find stock inputbox and button */}
+                        <div className="container">
+                            <div className="form-inline my-2 my-lg-0">
+                                <label className="active-pink-3 active-pink-4 mb-4" for="inputDefault"><h3>Find a stock</h3></label>
+                            </div>
+
+                        <div className="form-inline my-2">
+                              <input className="form-control" onChange={ this.handleChange } type="text" name="symbol" Placeholder="Enter Stock Symbol Here"/>
+                              <button className="btn btn-outline-warning my-2 my-sm-0" type="submit" onClick= { this.handleSubmit }>Find</button>
+                        </div>
               </div>
-            </div>
-          }
 
-{/* if user enters a invalid symbol, show error message */}
-          { this.state.stockStatus=="INVALID" &&
-            <div>
-            <p>Sorry, Can't find that stock. Please enter the correct symbol.</p>
-            </div>
-          }
 
-{/* if user enters a symbol already in list, show error message */}
-          { this.state.stockStatus=="OLD" &&
-            <div>
-            <p>This stock is already in your portfolio.</p>
-            </div>
-          }
 
-{/* Portfolio table */}
-          <div>
-          <h3>Portfolio List</h3>
-          <p>Net Worth: $ { netWorth.toFixed(2) }</p>
-          <p>Total Gain/Loss: $ { (netWorth - totalCost).toFixed(2) }</p>
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Symbol</th>
-                <th scope="col">Average Price</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Current Price</th>
-                <th scope="col">Gain/Loss</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-            { stockList.map((stock, index) => {
-              return(
-                <tr class="table-dark" key={ index }>
-                  <th scope="row">
-                    <a href={`/stock/${ stock.symbol }`}>{ stock.symbol }</a>
-                    <br />
-                    <small>{ stockQuotes[`${ stock.symbol }`]?stockQuotes[`${ stock.symbol }`].name: null }</small>
-                  </th>
-                  <td>{ stock.average_price.toFixed(2) }</td>
-                  <td>{ stock.total_quantity }</td>
-                  <td>{ currentPrices[`${ stock.symbol }`]}</td>
-                  <td>{ (currentPrices[`${ stock.symbol }`] * stock.total_quantity - stock.value).toFixed(2) }</td>
-                  <td>
-                  <button type="button" class="btn btn-danger btn-sm"
-                    onClick={() => this.handleDelete(`${ stock.id }`)}>
-                    Delete
-                  </button>
-                  </td>
-                </tr>)}
-              )
-            }
-            </tbody>
-          </table>
-          </div>
-</div>
+              {/* if the user enters a new valid stock, show stock info card */}
+
+              <div>
+                              <div className="container" >
+
+                                        { this.state.stockStatus=="NEW" &&
+                                            <div>
+                                                  <div class="card border-primary mb-3" style={{ maxWidth: "100%" }}>
+                                                        <div class="card-header">New Stock</div>
+                                                          <div class="card-body">
+                                                                  <h4 class="card-title">{ stockInfo.symbol } { currentPrices[`${ stockInfo.symbol }`] }
+                                                                        <button type="button" class="btn btn-success pull-right" onClick={() => this.createStock()}>Add</button>
+                                                                  </h4>
+                                                              <p class="card-text">{ stockInfo.companyName }</p>
+                                                              <p class="card-text">{ stockInfo.exchange }</p>
+                                                              <p class="card-text">{ stockInfo.industry }</p>
+                                                              <p class="card-text">{ stockInfo.description }</p>
+                                                          </div>
+                                                   </div>
+                                            </div>
+                                        }
+                              </div>
+                              <div className="container">
+                              {/* if user enters a invalid symbol, show error message */}
+                                        { this.state.stockStatus=="INVALID" &&
+                                          <div>
+                                          <h1>Sorry, Can't find that stock. Please enter the correct symbol.</h1>
+                                          </div>
+                                        }
+
+                              {/* if user enters a symbol already in list, show error message */}
+                                        { this.state.stockStatus=="OLD" &&
+                                          <div>
+                                          <h1>This stock is already in your portfolio.</h1>
+                                          </div>
+                                        }
+                              </div>
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
         </React.Fragment>
 
         );

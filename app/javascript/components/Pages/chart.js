@@ -21,6 +21,7 @@ class Chart extends React.Component {
                                 // add $ sign before price
                     
                                 return '$' + price;
+
                                 },
                             },
                         grid: {
@@ -78,12 +79,12 @@ class Chart extends React.Component {
                             secondsVisible: false
                         }
                         }}
-                    lineSeries =  
+                    lineSeries =
                     {[{
                         data: lightChartData
                     }]}
-                    height = {320}
-                    width = {640}
+                    height = {220}
+                    width = {300}
                 />
             </>
             );

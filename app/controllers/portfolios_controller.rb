@@ -33,15 +33,17 @@ class PortfoliosController < ApplicationController
   end
 
   def leaderboard
-    @all_playgrounds = Portfolio.where(name: "playground")
     @playgroundBoard = []
-    @all_playgrounds.each do |account|
-      @nick_name = User.find(account.user_id).nick_name
-      @cash = account.cash
-      @stock_list = account.stocks.all.select do |stock|
-        stock.total_quantity > 0
+    User.all.each do |user|
+      @nick_name = user.nick_name
+      if user.portfolios.find_by(name: "playground")
+        @playground = user.portfolios.find_by(name: "playground")
+        @cash = @playground.cash
+        @stock_list = @playground.stocks.all.select do |stock|
+          stock.total_quantity > 0
+        end
+        @playgroundBoard<<{ nick_name: @nick_name, cash: @cash, stock_list: @stock_list}
       end
-      @playgroundBoard<<{ nick_name: @nick_name, cash: @cash, stock_list: @stock_list}
     end
     render json: @playgroundBoard
   end

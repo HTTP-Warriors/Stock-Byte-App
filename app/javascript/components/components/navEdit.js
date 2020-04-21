@@ -5,7 +5,7 @@ import sbl from './sbl.png'
 
 
 
-class NavBar extends React.Component {
+class NavEdit extends React.Component {
   constructor(props){
     super(props)
     this.state={
@@ -51,14 +51,15 @@ class NavBar extends React.Component {
     sign_out_route,
     edit_user_route
     } = this.props;
-    console.log(logged_in);
 
 
     return(
       <React.Fragment>
+      <li>
       <a>
       <img src= {sbl}  style={{width: "25%", height:"25%"}} alt="Stock Byte Rules!!!"/>
       </a>
+      </li>
 
 
 
@@ -76,49 +77,29 @@ class NavBar extends React.Component {
                   <a class="nav-link" data-toggle="pill" href="/about">About</a>
                </li>
 
+               <li class="nav-item btn-lg">
+                  <a class="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
+               </li>
 
+               <li class="nav-item btn-lg">
+                  <a class="nav-link" data-toggle="pill" href="/playground">Playground</a>
+               </li>
 
-               {logged_in &&
-                 <li class="nav-item btn-lg">
-                 <a class="nav-link" data-toggle="pill" href="/portfolio">Portfolio</a>
-                 </li>}
-
-                 {logged_in &&
-                   <li class="nav-item btn-lg">
-                   <a class="nav-link" data-toggle="pill" href="/playground">Playground</a>
-                   </li>}
-
-
-
-               {logged_in &&
                <li class="nav-item btn-lg">
                    <a class="nav-link" data-toggle="pill" href= "/users/edit">Account</a>
-               </li>}
+               </li>
 
-               {!logged_in &&
                <li class="nav-item btn-lg">
-                   <a class="nav-link" data-toggle="pill" href= "/users/sign_up" >Sign Up</a>
-               </li>}
+                  <a class href="/users/sign_out">Sign Out</a>
+               </li>
 
-               {logged_in &&
-                 <li class="nav-item btn-lg">
-                 <a class href={sign_out_route}>Sign Out</a>
-                 </li>}
+              <form className="form-inline my-2 my-lg-0">
+              <li>
+                <input className="form-control mr-sm-2" onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
 
-               {!logged_in &&
-               <li class="btn-lg">
-                   <a class href= "/users/sign_in">Sign In</a>
-               </li>}
-
-
-
-                      <form className="form-inline my-2 my-lg-0">
-                      <li>
-                        <input className="form-control mr-sm-2" onChange = { this.handleChange } type="text" placeholder="Stock Search" name="symbol" />
-
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick = { this.handleSubmit }>Find</button>
-                      </li>
-                      </form>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick = { this.handleSubmit }>Find</button>
+              </li>
+              </form>
 
         </ul>
       </nav>
@@ -130,4 +111,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar
+export default NavEdit
