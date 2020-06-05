@@ -1,6 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
-import Header from "./components/header"
 import NavBar from './components/navigationbar'
 import Overview from "./Pages/overview"
 import Portfolio from "./Pages/portfolio"
@@ -10,9 +8,7 @@ import About from "./Pages/about"
 import StockNotFound from "./Pages/stocknotfound"
 import Home from "./Pages/home"
 import NotFound from "./Pages/notfound"
-import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom"
-import ReactRailsUJS from 'react_ujs'
-import KaktanaChart from 'kaktana-react-lightweight-charts'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 class App extends React.Component {
   constructor(props){
@@ -30,9 +26,8 @@ class App extends React.Component {
     .then((response) => {
       if(response.status === 200){
           return(response.json())
-        }
       }
-    )
+    })
     .then((result) => {
       if(result.length === 0){
         this.createDefaultPortfolio()
@@ -48,24 +43,19 @@ class App extends React.Component {
     })
   }
 // create the default portfolio
-  createDefaultPortfolio = () => {
-      return fetch(`/portfolios`, {
-          body: JSON.stringify({'name': 'default'}),
-
-          headers: {
-              "Content-Type": "application/json"
-          },
-          method: "POST"
-      })
-      .then((response) => {
-          if(response.ok){
-            return this.getPortfolio()
-          }
-      })
+  createDefaultPortfolio = async () => {
+    const response = await fetch(`/portfolios`, {
+      body: JSON.stringify({ 'name': 'default' }),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    if (response.ok) {
+      return this.getPortfolio()
+    }
   }
-
-
-
+  
   render () {
     const {
       logged_in,
@@ -75,34 +65,27 @@ class App extends React.Component {
       edit_user_route
     } = this.props;
     return (
-
-    <React.Fragment>
-      <NavBar
+      <React.Fragment>
+        <NavBar
           logged_in = { logged_in }
           sign_in_route = { sign_in_route }
           sign_out_route = { sign_out_route }
           edit_user_route = { edit_user_route }
-          />
-
-
-
-      <Router>
-        <Switch>
-          <Route exact path="/about/" component={ About } />
-          <Route exact path="/stocknotfound/" component={ StockNotFound } />
-          <Route exact path="/stock/:symbol" render={ (props) => <Stock {...props}/> } />
-          <Route exact path="/portfolio/" render={ (props) => <Portfolio /> } />
-          <Route exact path="/playground/" render={ (props) => <Playground current_user = { current_user } /> } />
-          <Route exact path="/overview/" render={ (props) => <Overview /> } />
-          <Route exact path="/"  component={ Home } />
-          <Route component={ NotFound } />
-        </Switch>
-      </Router>
-
-
-    </React.Fragment>
-    );
-    }
+        />
+        <Router>
+          <Switch>
+            <Route exact path="/about/" component={ About } />
+            <Route exact path="/stocknotfound/" component={ StockNotFound } />
+            <Route exact path="/stock/:symbol" render={ (props) => <Stock {...props}/> } />
+            <Route exact path="/portfolio/" render={ (props) => <Portfolio /> } />
+            <Route exact path="/playground/" render={ (props) => <Playground current_user = { current_user } /> } />
+            <Route exact path="/overview/" render={ (props) => <Overview /> } />
+            <Route exact path="/"  component={ Home } />
+            <Route component={ NotFound } />
+          </Switch>
+        </Router>
+      </React.Fragment>
+    )
+  }
 }
-
 export default App;

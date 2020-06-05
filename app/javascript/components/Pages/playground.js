@@ -95,19 +95,17 @@ class Playground extends React.Component {
     })
   }
 
-  createPlaygroundAccount = () => {
-      return fetch(`/portfolios`, {
-          body: JSON.stringify({'name': 'playground', 'cash': 100000.00}),
-          headers: {
-              "Content-Type": "application/json"
-          },
-          method: "POST"
-      })
-      .then((response) => {
-          if(response.ok){
-            return this.getPortfolio()
-          }
-      })
+  createPlaygroundAccount = async () => {
+      const response = await fetch(`/portfolios`, {
+      body: JSON.stringify({ 'name': 'playground', 'cash': 100000 }),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    if (response.ok) {
+      return this.getPortfolio()
+    }
   }
 
   getStockList = () => {
@@ -138,7 +136,7 @@ class Playground extends React.Component {
     }
 
   getCurrentPrice = (symbol) => {
-    fetch(`https://api.twelvedata.com/price?symbol=${symbol}&apikey=bc07ae0baa6241d79c88764a862a7dba`)
+    fetch(`https://cloud.iexapis.com/stable//stock/${symbol}/quote/latestPrice?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
       .then((response)=>{
     if(response.status === 200){
        return(response.json())
@@ -146,7 +144,7 @@ class Playground extends React.Component {
    })
    .then((result)=>{
      const { currentPrices } = this.state
-     currentPrices[`${symbol}`] = result.price
+     currentPrices[`${symbol}`] = result
      this.setState({
        currentPrices: currentPrices
      })
@@ -213,26 +211,24 @@ class Playground extends React.Component {
     }
   }
 
-  createTrade = (request) => {
+  createTrade = async (request) => {
     let symbol = this.state.stockInFocus
     let validForm = this.validTrade(request)
     if(validForm.tradeForm){
-        return fetch(`/trades?portfolio=playground&stock=${symbol}`, {
-          body: JSON.stringify(validForm.tradeForm),
-          headers: {
-            "Content-Type": "application/json"
-          },
-          method: "Post"
-          })
-          .then((response) => {
-            if(response.ok){
-              this.updatePortfolio(validForm.value)
-              this.getStockList()
-              this.setState({
-                feedbackForm: validForm.tradeForm
-              })
-            }
-          })
+        const response = await fetch(`/trades?portfolio=playground&stock=${symbol}`, {
+        body: JSON.stringify(validForm.tradeForm),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "Post"
+      })
+      if (response.ok) {
+        this.updatePortfolio(validForm.value)
+        this.getStockList()
+        this.setState({
+          feedbackForm: validForm.tradeForm
+        })
+      }
         }else{
         alert("something is wrong, cannot place the trade")
       }
@@ -327,7 +323,7 @@ class Playground extends React.Component {
   }
 
   getChart = (symbol) => {
-    fetch(`https://cloud.iexapis.com//stable/stock/${symbol}/intraday-prices?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
+    fetch(`https://cloud.iexapis.com/stable/stock/${symbol}/intraday-prices?token=pk_3e33ec663d95431bac64f43bb0586cd7`)
     .then((response) => {
       return response.json()
     })
